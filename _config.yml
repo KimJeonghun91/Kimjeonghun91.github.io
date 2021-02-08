@@ -50,7 +50,7 @@ author:
 # Add links to the sidebar.
 menu:
   - title:             바라봄
-    url:               /mypost/barabom/
+    url:               /barabom/
   - title:             Example
     url:               /example/
   - title:             Documentation
