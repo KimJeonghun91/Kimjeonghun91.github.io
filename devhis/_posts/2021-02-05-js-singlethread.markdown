@@ -1,9 +1,9 @@
 ---
 layout: post
-title: 'Javascript 싱글 스레드'
+title: 'Javascript - 싱글 스레드'
 subtitle: 'Javascript 싱글 스레드 눈으로 확인하기.'
-categories: devhis-js
-tags: js git javascript
+categories: devhis-rn
+tags: ReactNative
 comments: true
 ---
 
