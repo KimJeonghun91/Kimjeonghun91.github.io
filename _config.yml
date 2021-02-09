@@ -74,8 +74,8 @@ menu:
 copyright:             © 2021. All rights reserved.
 
 # Format of the permalinks
-# permalink:             /:categories/:year-:month-:day-:title/
-permalink:             none
+permalink:             /:categories/:year-:month-:day-:title/
+# permalink:             none
 
 # Pagination configuration (used by the `blog` layout)
 paginate:              10
@@ -141,10 +141,10 @@ defaults:
       sitemap:         false
 
   # # You can use the following to enable comments on all posts.
-  # - scope:
-  #     type:            posts
-  #   values:
-  #     comments:        true
+  - scope:
+      type:            posts
+    values:
+      comments:        true
 
   # `jekyll-seo-tag` will mark collection outputs as `BlogPosting`,
   # but we want them to be `WebPage`s:
@@ -179,7 +179,7 @@ kramdown:
 
 # Setting a disqus shortname will enable the comment section on
 # pages with `comments: true` in the front matter.
-# disqus:                <username>
+disqus:                RightHot
 
 # Setting a tinyletter username will enable the newsletter subscription box.
 # PRO version only!
