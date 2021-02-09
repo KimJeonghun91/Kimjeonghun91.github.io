@@ -1,8 +1,10 @@
 ---
 layout: tag-blog
-title: 소식
+type: tag
+title: 바라봄 소식
 slug: barabom-news
 category: barabom
-menu: false
-order: 1
+sidebar: true
+description: >
+   바라봄 소식 입니다.
 ---
