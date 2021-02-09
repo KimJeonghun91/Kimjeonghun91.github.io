@@ -51,6 +51,8 @@ author:
 menu:
   - title:             바라봄
     url:               /barabom/
+  - title:             개발기록
+    url:               /devhis/
   - title:             Example
     url:               /example/
   - title:             Documentation
