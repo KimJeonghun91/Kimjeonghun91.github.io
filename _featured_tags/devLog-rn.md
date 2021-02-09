@@ -1,8 +1,8 @@
 ---
 layout: tag-blog
 title: ReactNative
-slug: devhis-rn
-category: devhis
+slug: devLog-rn
+category: devLog
 menu: false
 order: 1
 ---

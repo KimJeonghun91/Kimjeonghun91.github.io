@@ -6,18 +6,18 @@ layout: list
 title: 개발기록
 
 # The name of the tag, used in a post's front matter (e.g. tags: [<slug>]).
-slug: devhis
+slug: devLog
 
 # (Optional) Write a short (~150 characters) description of this featured tag.
 description: >
  
 
-# (Optional) You can disable grouping posts by date.
+# (Optional) 날짜별 게시글 그룹화 여부
 # no_groups: true
 
 menu: true
 
 # Exclude this example category from the sitemap.
 # DON'T USE THIS SETTING IN YOUR CATEGORIES!
-sitemap: true
+sitemap: false
 ---

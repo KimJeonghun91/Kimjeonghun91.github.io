@@ -2,7 +2,7 @@
 layout: post
 title: 'Javascript - 싱글 스레드'
 subtitle: 'Javascript 싱글 스레드 눈으로 확인하기.'
-categories: devhis-rn
+categories: devLog-rn
 tags: ReactNative
 comments: true
 ---

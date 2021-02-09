@@ -1,8 +1,8 @@
 ---
 layout: tag-blog
 title: Javascript
-slug: devhis-js
-category: devhis
+slug: devLog-js
+category: devLog
 menu: false
 order: 1
 ---
