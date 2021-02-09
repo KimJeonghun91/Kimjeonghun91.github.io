@@ -1,4 +1,15 @@
 ---
+layout: list
+type: category
+title: 개발기록
+slug: devlog
+sidebar: true
+order: 2
+description: >
+  
+---
+
+<!-- ---
 # Featured tags need to have either the `list` or `grid` layout (PRO only).
 layout: list
 
@@ -20,4 +31,4 @@ menu: true
 # Exclude this example category from the sitemap.
 # DON'T USE THIS SETTING IN YOUR CATEGORIES!
 sitemap: false
----
+--- -->

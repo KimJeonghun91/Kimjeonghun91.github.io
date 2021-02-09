@@ -1,4 +1,15 @@
 ---
+layout: list
+type: category
+title: 바라봄
+slug: barabom
+sidebar: true
+order: 3
+description: >
+  반려동물 통합 케어 플랫폼 바라봄APP
+---
+
+<!-- ---
 # Featured tags need to have either the `list` or `grid` layout (PRO only).
 layout: list
 
@@ -20,4 +31,4 @@ menu: true
 # Exclude this example category from the sitemap.
 # DON'T USE THIS SETTING IN YOUR CATEGORIES!
 sitemap: false
----
+--- -->
