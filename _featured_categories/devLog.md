@@ -2,7 +2,7 @@
 layout: list
 type: category
 title: 개발기록
-slug: devlog
+slug: devLog
 sidebar: true
 order: 2
 description: >
