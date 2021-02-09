@@ -52,7 +52,7 @@ menu:
   - title:             바라봄
     url:               /barabom/
   - title:             개발기록
-    url:               /devLog/
+    url:               /devlog/
   - title:             Example
     url:               /example/
   - title:             Documentation
