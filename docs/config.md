@@ -4,7 +4,6 @@ title: Config
 description: >
   This chapter covers the many configuration options of Hydejack, allowing you to tailor it to your needs.
 hide_description: true
-sitemap: false
 ---
 
 Once Jekyll is running, you can start with basic configuration by adding various entries to `_config.yml`. 
@@ -344,7 +343,7 @@ author:
   social:
     email:    mail@qwtel.com
     rss:      {{ site.url }}{{ site.baseurl }}/feed.xml # make sure you provide an absolute URL
-    download: https://github.com/hydecorp/hydejack/archive/v9.1.0.zip
+    download: https://github.com/hydecorp/hydejack/archive/v9.1.1.zip
 ~~~
 
 
@@ -465,10 +464,10 @@ There are a couple of things to know about this gem:
 *  It is not supported on GitHub Pages. 
    You have to build the site on your machine before uploading to GitHub,
    or use a more permissive cloud building tool such as Netlify. 
-   See [the section below](#mathjax) for an alternative.
 *  You need some kind of JavaScript runtime on your machine.
    Usually installing [NodeJS](https://nodejs.org/en/download/) will suffice. 
-   For details, see <https://github.com/kramdown/math-katex#documentation>
+   Alternatively, adding `gem "duktape"` will also do.
+   For more, see <https://github.com/kramdown/math-katex#documentation>
 
 Before you add math content, remember to run `bundle install` and restart Jekyll.
 
@@ -476,7 +475,19 @@ Before you add math content, remember to run `bundle install` and restart Jekyll
 [katex]: https://khan.github.io/KaTeX/
 [mathjax]: https://www.mathjax.org/
 
-## Adding custom favicons and app icons
+
+## Adding custom Favicons and App Icons
+### Changing the Favicon
+By default, Hydejack will use the Favicon from `/assets/icons/favicon.ico` and Apple Touch Icon from `/assets/icons/icon-192x192.png`.
+You can either override these files, or override the path in the config file via `favicon` and `app_touch_icon` keys:
+
+```yml
+# file: "_config.yml"
+favicon: /favicon.ico
+apple_touch_icon: /assets/img/logo.png
+```
+
+### Changing the App Icons
 By default, Hydejack includes its own favicon, as well as app icons in 8 different resolutions.
 
 | Name               | Resolution |
