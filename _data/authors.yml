@@ -8,11 +8,9 @@ author1:
   # Used at the bottom of each page and at the top of the `about` layout
   # Markdown enabled, can use multiple paragraphs (enabled by `|`)
   about:             |
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-    
-    Open `_data/authors.yml` to edit this text.
+    React, ReactNative 개발자.<br>
+    반려동물 통합 케어 플랫폼 '바라봄' 개발 및 운영 중.<br>
+    ML/AI , IOT 기술에 관심이 많으며 기술을 통해 반려동물의 삶을 개선하기 위해 노력하고 있습니다.
 
   # This photo will be used in the about section
   picture:
