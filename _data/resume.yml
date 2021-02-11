@@ -2,49 +2,42 @@
 # If you don't have a JSON Resume you can just edit this YAML file instead.
 # See also: <https://jsonresume.org/>.
 basics:
-  name: "Richard Hendricks"
+  name: "김정훈 (RightHot)"
   label: "Programmer"
   picture: "https://placehold.it/240x240"
-  email: ""
-  phone: "(912) 555-4321"
-  website: "https://piedpiper.com"
+  email: "suuuk3@naver.com"
+  phone: "010-9184-9185"
+  website: "https://kimjeonghun91.github.io"
   summary: >
-    Richard hails from Tulsa.
-    He has earned degrees from the University of Oklahoma and Stanford. (Go Sooners and Cardinals!)
-    Before starting Pied Piper, he worked for Hooli as a part time software developer.
-    While his work focuses on applied information theory,
-    mostly optimizing lossless compression schema of both the length-limited and adaptive variants,
-    his non-work interests range widely,
-    everything from quantum computing to chaos theory.
-    He could tell you about it, but THAT would NOT be a “length-limited” conversation!
-    Open `_data/resume.yml` to edit this text.
+    동의대학원 Grand ICT 인공지능학과 재학중.<br>
+    반려동물 통합 케어 플랫폼 '바라봄' 개발 및 운영중.<br>
+    ML/AI , IOT 기술에 관심이 많으며 기술을 통해 반려동물의 삶을 개선하기 위해 노력하고 있습니다.
   location:
-    address: "2712 Broadway St"
-    postalCode: "CA 94115"
-    city: "San Francisco"
-    countryCode: "US"
-    region: "California"
+    address: ""
+    postalCode: ""
+    city: ""
+    countryCode: "부산 광역시"
+    region: ""
   profiles:
-    - network: "Twitter"
-      username: "RHendricksCEO"
-      url: ""
-    - network: "LinkedIn"
-      username: "Richard Hendricks"
-      url: ""
+    - network: "instagram"
+      username: "right_hot"
+      url: "https://www.instagram.com/right_hot"
+    - network: "facebook"
+      username: "righthot"
+      url: "https://www.facebook.com/righthot"
 work:
-  - company: "Pied Piper"
-    position: "CEO/President"
-    website: "https://piedpiper.com"
-    startDate: "2013-12-01"
+  - company: "0610studio"
+    position: "CEO"
+    website: "https://barabom.me"
+    startDate: "2019-07-01"
     endDate: ""
     summary: >
-      Pied Piper is a multi-platform technology based on a proprietary universal compression algorithm that has
-      consistently fielded high Weisman Scores™ that are not merely competitive,
-      but approach the theoretical limit of lossless compression.
+      프로그램 개발, WEB/APP 디자인, 영상제작 외주 작업 및<br>
+      반려동물 통합 케어 플랫폼 '바라봄(barabom)'을 운영중입니다.
     highlights:
-      - "Built an algorithm for artist to detect if their music was violating copy right infringement laws"
-      - "Successfully won Techcrunch Disrupt"
-      - "Optimized an algorithm that holds the current world record for Weisman Scores"
+      - 바라봄(barabom) APP은 구글 및 앱스토어에서 다운로드 가능합니다.
+      - 반려동물과 반려인의 더 나은 삶을 위해 노력하고 있습니다.
+      - 반려동물 의료 시설 및 반려동물 관련 시설과 생성을 도모합니다.
 volunteer:
   - organization: "CoderDojo"
     position: "Teacher"
