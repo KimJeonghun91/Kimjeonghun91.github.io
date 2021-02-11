@@ -1,4 +1,7 @@
 # Config
+# 
+#  bundle exec jekyll serve  
+# 
 # ========================================================================================
 
 # Uncomment and set the URL of your site (with protocol, e.g. `https://`)
@@ -112,7 +115,8 @@ font:                  Noto Sans, Helvetica, Arial, sans-serif
 
 # The font used for headings. Expects a string that is a valid CSS font-family value.
 # To change font-weight, see _sass/variables.scss
-font_heading:          Roboto Slab, Helvetica, Arial, sans-serif
+# font_heading:          Roboto Slab, Helvetica, Arial, sans-serif
+font_heading:          Helvetica, Arial, sans-serif
 
 # The font used for code blocks. Expects a string that is a valid CSS font-family value.
 font_code:             Fira Code, Menlo, Monaco, Consolas, monospace;
