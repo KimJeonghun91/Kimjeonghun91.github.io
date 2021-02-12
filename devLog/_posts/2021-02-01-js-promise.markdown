@@ -2,7 +2,7 @@
 layout: post
 title: 'Javascript - 프로미스(Promise)'
 subtitle: 'API 예제로 프로미스 알아보기'
-categories: devLog-js
+# categories: devLog-js
 tags: js git javascript
 comments: true
 ---
