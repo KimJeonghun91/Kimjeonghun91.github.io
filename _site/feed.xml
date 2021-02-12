@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" hreflang="en" /><updated>2021-02-12T09:23:50+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">RightHot</title><subtitle>Hydejack is a boutique Jekyll theme for hackers, nerds, and academics, with a focus on personal sites that are meant to impress.
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" hreflang="en" /><updated>2021-02-12T09:48:42+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">RightHot</title><subtitle>Hydejack is a boutique Jekyll theme for hackers, nerds, and academics, with a focus on personal sites that are meant to impress.
 </subtitle><author><name>RightHot</name><email>&lt;suuuk3@naver.com&gt;</email></author><entry><title type="html">바라봄 테스트</title><link href="http://localhost:4000/blog/barabom/barabom-news/2021-02-05-js-singlethread/" rel="alternate" type="text/html" title="바라봄 테스트" /><published>2021-02-05T00:00:00+09:00</published><updated>2021-02-05T00:00:00+09:00</updated><id>http://localhost:4000/blog/barabom/barabom-news/js-singlethread</id><content type="html" xml:base="http://localhost:4000/blog/barabom/barabom-news/2021-02-05-js-singlethread/">&lt;p&gt;아아 테스트&lt;/p&gt;</content><author><name>RightHot</name><email>&lt;suuuk3@naver.com&gt;</email></author><category term="barabom" /><category term="barabom-news" /><category term="바라봄" /><category term="소식" /><summary type="html">아아 테스트</summary></entry><entry><title type="html">Javascript 싱글 스레드 눈으로 확인하기.</title><link href="http://localhost:4000/blog/devlog/2021-02-05-js-singlethread/" rel="alternate" type="text/html" title="Javascript 싱글 스레드 눈으로 확인하기." /><published>2021-02-05T00:00:00+09:00</published><updated>2021-02-05T00:00:00+09:00</updated><id>http://localhost:4000/blog/devlog/js-singlethread</id><content type="html" xml:base="http://localhost:4000/blog/devlog/2021-02-05-js-singlethread/">&lt;p&gt;자바스크립트는 자바와는 다르게 싱글 스레드라고 한다.&lt;/p&gt;
 
 &lt;p&gt;한번에 하나의 작업만 수행할 수 있음에도 불구하고 비동기, 논블로킹등을 지원하기에 실제 코드상 눈으로 확인하긴 어렵다.&lt;/p&gt;
@@ -261,7 +261,7 @@
 &lt;p&gt;Hydejack 9 now lets you use content cards for both projects and posts. 
 The cards have been redesigned with a new hover style and drop shadows and they retain their unique transition-to-next-page animations, which now also work on the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;blog&lt;/code&gt; layout. The new &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;grid&lt;/code&gt; layout lets you do that.&lt;/p&gt;
 
-&lt;p&gt;Good images are key to making the most out of content cards. For that reason, a &lt;a href=&quot;/docs/basics/#adding-images&quot;&gt;chapter on images&lt;/a&gt; has been added to the documentation.&lt;/p&gt;
+&lt;p&gt;Good images are key to making the most out of content cards. For that reason, a &lt;a href=&quot;../../docs/basics.md#adding-images&quot;&gt;chapter on images&lt;/a&gt; has been added to the documentation.&lt;/p&gt;
 
 &lt;h2 id=&quot;built-in-search&quot;&gt;Built-In Search&lt;/h2&gt;
 
@@ -291,7 +291,7 @@ What’s unique about it is that it simply picks up the table of contents alread
   &lt;li&gt;…and the option to disable grouping projects by year.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;Read the the &lt;a href=&quot;/CHANGELOG/&quot; class=&quot;heading flip-title&quot;&gt;CHANGELOG&lt;/a&gt; for the full scope of features and improvements made in Hydejack 9.
+&lt;p&gt;Read the the &lt;a href=&quot;../../CHANGELOG.md&quot; class=&quot;heading flip-title&quot;&gt;CHANGELOG&lt;/a&gt; for the full scope of features and improvements made in Hydejack 9.
 Maybe just glance at it to confirm that it is indeed a pretty long list.&lt;/p&gt;
 
 &lt;h2 id=&quot;even-more-to-come&quot;&gt;Even More to Come&lt;/h2&gt;

@@ -81,6 +81,8 @@
 
 
 
+  <link rel="dns-prefetch" href="https://www.google-analytics.com">
+
 
 <link rel="preload" href="/assets/img/swipe.svg" as="image" id="_hrefSwipeSVG">
 
@@ -107,7 +109,7 @@
   w._search = {
     DATA_URL: '/assets/sitedata.json?no-cache',
     STORAGE_KEY: 'mini-search/',
-    INDEX_KEY: 'index--2021-02-12T09:23:50+09:00',
+    INDEX_KEY: 'index--2021-02-12T09:48:42+09:00',
   };
   w._clapButton = true;
 }(window);</script>
@@ -208,12 +210,12 @@ one that didn’t look awful buy modern design standards, and one that felt snap
 That and more is now Hydejack. I hope you enjoy it <a href="https://qwtel.com/">as much as I do</a>.</p>
 
 <h2 id="first-steps">First Steps</h2>
-<p>Start by reading the <a href="/docs/" class="heading flip-title">Documentation</a>.
+<p>Start by reading the <a href="docs/README.md" class="heading flip-title">Documentation</a>.
 Specifically, the chapters below should be relevant now:</p>
 
 <ul class="related-posts faded">
-  <li><a href="/docs/install/" class="heading flip-title">Install</a> — How to install and run Hydejack.</li>
-  <li><a href="/docs/config/" class="heading flip-title">Config</a> — Once Jekyll is running you can start with basic configuration.</li>
+  <li><a href="docs/install.md" class="heading flip-title">Install</a> — How to install and run Hydejack.</li>
+  <li><a href="docs/config.md" class="heading flip-title">Config</a> — Once Jekyll is running you can start with basic configuration.</li>
 </ul>
 
 <p>After you’ve familiarized yourself with Hydejack, you can delete the following folders and files
@@ -355,18 +357,6 @@ containing example content:</p>
         </a>
       </li>
     
-      
-      <li>
-        <a
-          
-          href="/docs/"
-          class="sidebar-nav-item "
-          
-        >
-          Documentation
-        </a>
-      </li>
-    
   
 </ul>
 
@@ -494,6 +484,33 @@ containing example content:</p>
   
 
   
+  <script>!function(w, d) {
+    w.ga=w.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+
+    /**/
+      ga('create', 'G-8XHWYJ2Z7H', 'auto');
+    /**/
+
+    var pushStateEl = d.getElementById('_pushState');
+    var timeoutId;
+    pushStateEl.addEventListener('hy-push-state-load', function() {
+      w.clearTimeout(timeoutId);
+      timeoutId = w.setTimeout(function() {
+        ga('set', 'page', w.location.pathname);
+        ga('send', 'pageview');
+      }, 500);
+    });
+
+    d.addEventListener('hy--cookies-ok', function () {
+      w.ga(function(tracker) {
+        w.ga("set", "anonymizeIp", undefined);
+        localStorage && localStorage.setItem("ga--client-id", tracker.get("clientId"));
+      });
+    });
+
+    w.loadJSDeferred('https://www.google-analytics.com/analytics.js');
+  }(window, document);</script>
+
 
   <script type="module">
     if ('serviceWorker' in navigator) {
