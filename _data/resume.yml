@@ -53,6 +53,12 @@ volunteer:
     startDate: "2020-08-01"
     endDate: "2020-10-01"
     summary: "지역 커뮤니티 활성화를 위한 청년 활동"
+  - organization: "부산시"
+    position: "Two weeks"
+    website: ""
+    startDate: "2019-06-01"
+    endDate: "2020-7-01"
+    summary: "2주 동안 모바일 앱 또는 웹서비스의 출시를 목표로 하는 초단기 프로젝트"
     # highlights:
     #   - "Awarded 'Teacher of the Month'"
 # education:
