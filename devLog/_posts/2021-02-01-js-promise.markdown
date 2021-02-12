@@ -5,6 +5,8 @@ subtitle: 'API 예제로 프로미스 알아보기'
 # categories: devLog-js
 tags: js git javascript
 comments: true
+# image: 
+#   path: /assets/img/default_code.png
 ---
 
 ### Javascript - 프로미스(Promise)

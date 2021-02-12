@@ -5,6 +5,8 @@ subtitle: 'Javascript 싱글 스레드 눈으로 확인하기.'
 # categories: devLog-rn
 tags: ReactNative
 comments: true
+# image: 
+#   path: /assets/img/default_code.png
 ---
 
 ## Javascript 싱글 스레드 눈으로 확인하기.
@@ -16,6 +18,7 @@ comments: true
 따라서 아래 자바와의 비교를 코드를 통해 싱글 스레드를 눈으로 확인해보겠다.
 
 **잘못 된 정보가 있다면 댓글로 알려주길 바랍니다!**
+
 <br/>
  
 
