@@ -9,7 +9,7 @@ title: Thank You!
 sitemap: false
 --- -->
 
-Thank you for buying the PRO version of Hydejack! 🎉
+<!-- Thank you for buying the PRO version of Hydejack! 🎉
 
 More than one year ago I was looking for a blogging platform but couldn't find it:
 One that would let me write posts in markdown with my own editor,
@@ -49,4 +49,4 @@ containing example content:
 [documentation]: docs/README.md
 [install]: docs/install.md
 [upgrade]: docs/upgrade.md
-[config]: docs/config.md
+[config]: docs/config.md -->
