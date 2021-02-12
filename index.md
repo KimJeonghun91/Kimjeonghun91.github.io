@@ -1,8 +1,13 @@
 ---
+layout: welcome
+title:  Welcome
+cover:  true #!! Add this
+---
+<!-- ---
 layout: page
 title: Thank You!
 sitemap: false
----
+--- -->
 
 Thank you for buying the PRO version of Hydejack! 🎉
 
