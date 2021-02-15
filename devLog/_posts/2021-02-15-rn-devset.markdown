@@ -1,0 +1,40 @@
+---
+layout: post
+title: 'ReactNative Typescript 프로젝트 환경 설정'
+subtitle: 'RN + Typescript 환경 설정'
+categories: devLog-rn
+tags: ReactNative Ts
+comments: true
+# image: 
+#   path: /assets/img/default_code.png
+---
+
+### React Native CLI 설치
+
+```bash
+yarn global add @react-native-community/cli
+```
+
+### Typescript 템플릿 추가하여 프로젝트 생성
+
+```powershell
+react-native init [프로젝트이름] --template react-native-template-typescript
+```
+
+### navigation을 통한 param 전달 방법
+
+```jsx
+navigation.navigate("pageName", { name:'data' })
+```
+
+```jsx
+const route = useRoute<RouteProp<{ T: { name: string } }, 'T'>>();
+const [getData, setGetData] = useState<string>(route.params.name)
+```
+
+### 안드로이드 디버그 APK 빌드
+
+```bash
+cd android
+./gradlew bundleDebug
+```

@@ -2,8 +2,8 @@
 layout: post
 title: 'Javascript - 프로미스(Promise)'
 subtitle: 'API 예제로 프로미스 알아보기'
-# categories: devLog-js
-tags: js git javascript
+categories: devLog-js
+tags: Javascript
 comments: true
 # image: 
 #   path: /assets/img/default_code.png

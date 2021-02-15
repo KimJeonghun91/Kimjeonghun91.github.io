@@ -24,9 +24,9 @@ sitemap: false
 
 <br>
 
-> 사용된 기술
+> 사용 기술 및 기여도
 
-ReactNative, NodeJs, MySql, AWS
+ReactNative(100%), NodeJs(90%), MySql(90%), AWS(100%)
 
 <br>
 

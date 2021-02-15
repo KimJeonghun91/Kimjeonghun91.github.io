@@ -1,6 +1,6 @@
 ---
 layout: resume
-title: Résumé*
+title: RightHot
 description: >
   
 hide_description: true
