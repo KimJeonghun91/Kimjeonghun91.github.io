@@ -9,8 +9,9 @@ comments: true
 #   path: /assets/img/default_code.png
 ---
 
-### React Native CLI 설치
+### ReactNative Typescript 프로젝트 환경 설정
 
+### React Native CLI 설치
 ```bash
 yarn global add @react-native-community/cli
 ```

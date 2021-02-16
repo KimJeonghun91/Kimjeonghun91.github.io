@@ -9,6 +9,8 @@ comments: true
 #   path: /assets/img/default_code.png
 ---
 
+## Javascript - 싱글 스레드 눈으로 확인하기.
+
 ## Javascript 싱글 스레드 눈으로 확인하기.
 
 자바스크립트는 자바와는 다르게 싱글 스레드라고 한다.
