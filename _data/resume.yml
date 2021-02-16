@@ -95,6 +95,13 @@ skills:
       - "NodeJs"
       - "AWS"
       # - "GIF"
+  - name: "Design"
+    # level: "Master"
+    keywords:
+      - "Photoshop"
+      - "Illustrator"
+      - "Adobe XD"
+      # - "GIF"
 # languages:
 #   - language: "English"
 #     fluency: "Native speaker"

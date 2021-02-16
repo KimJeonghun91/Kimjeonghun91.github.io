@@ -34,6 +34,19 @@ const route = useRoute<RouteProp<{ T: { name: string } }, 'T'>>();
 const [getData, setGetData] = useState<string>(route.params.name)
 ```
 
+### 빌드 옵션
+
+```bash
+# 로컬 서버 시작
+yarn start
+
+# 안드로이드 디버그 빌드
+yarn android
+
+# IOS 디버그 빌드
+yarn ios [--device 'device name']
+```
+
 ### 안드로이드 디버그 APK 빌드
 
 ```bash
