@@ -54,11 +54,11 @@ volunteer:
     endDate: "2020-10-01"
     summary: "지역 커뮤니티 활성화를 위한 청년 활동"
   - organization: "부산시"
-    position: "Two weeks"
+    position: "TwoWeeks"
     website: ""
     startDate: "2019-06-01"
     endDate: "2020-7-01"
-    summary: "2주 동안 모바일 앱 또는 웹서비스의 출시를 목표로 하는 초단기 프로젝트"
+    summary: "2주 동안 서비스 출시를 목표로 하는 초단기 프로젝트"
     # highlights:
     #   - "Awarded 'Teacher of the Month'"
 # education:
@@ -72,9 +72,12 @@ volunteer:
     #   - "DB1101 - Basic SQL"
     #   - "CS2011 - Java Introduction"
 awards:
-  - title: "메이커 창업 동아리"
+  - title: "우수상"
     date: "2020-12-17"
-    awarder: "우수상"
+    awarder: "메이커 창업 동아리"
+  - title: "정보처리기사"
+    date: "2018-05-25"
+    awarder: "HRDK"
     # summary: "There is no spoon."
 # publications:
 #   - name: "Video compression for 3d media"
