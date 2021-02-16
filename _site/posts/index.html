@@ -107,7 +107,7 @@
   w._search = {
     DATA_URL: '/assets/sitedata.json?no-cache',
     STORAGE_KEY: 'mini-search/',
-    INDEX_KEY: 'index--2021-02-16T16:41:58+09:00',
+    INDEX_KEY: 'index--2021-02-16T19:59:00+09:00',
   };
   w._clapButton = true;
 }(window);</script>
@@ -630,7 +630,20 @@ html{--accent-color: rgb(79,177,186);--accent-color-faded: rgba(79,177,186,0.5);
     w.ga=w.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
 
     /**/
-      ga('create', 'G-8XHWYJ2Z7H', 'auto');
+      if (navigator.CookiesOK) {
+        ga('create', 'G-8XHWYJ2Z7H', 'auto');
+      } else if (d.cookie.indexOf("hy--cookies-ok=true") > -1) {
+        ga('create', 'G-8XHWYJ2Z7H', {
+          'storage': 'none',
+          'clientId': localStorage ? localStorage.getItem('ga--client-id') : undefined
+        });
+      } else {
+        ga('create', 'G-8XHWYJ2Z7H', {
+          'storage': 'none'
+        });
+        ga('set', 'forceSSL', true);
+        ga('set', 'anonymizeIp', true);
+      }
     /**/
 
     var pushStateEl = d.getElementById('_pushState');
@@ -728,6 +741,21 @@ html{--accent-color: rgb(79,177,186);--accent-color-faded: rgba(79,177,186,0.5);
     <span class="sr-only">Permalink</span>
     <span class="content-hash"></span>
   </a>
+</template>
+
+  
+    <template id="_cookies-banner-template">
+  <div id="_cookies-banner" class="navbar fixed-bottom CookiesOK">
+    <div class="content">
+      <div class="nav-btn-bar">
+        <small class="faded">
+          <span>This site uses cookies. <a href="/cookies-policy/">Cookies Policy</a>.
+</span>
+          <button id="_cookies-ok" class="btn btn-primary btn-sm">Okay</button>
+        </small>
+      </div>
+    </div>
+  </div>
 </template>
 
   

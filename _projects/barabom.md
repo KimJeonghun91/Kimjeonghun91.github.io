@@ -5,7 +5,7 @@ caption: 반려동물 통합 케어 플랫폼
 # description: >
 #   This is how I use Hydejack on my personal site. 
 #   Much of the development is informed from my experience of using it myself, creating a tight feedback loop.
-date: 1 Jun 2020
+date: 1 Jun 2021
 image: 
   path: /assets/img/projects/thumb_barabom.png
   # srcset: 
