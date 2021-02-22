@@ -11,8 +11,6 @@ comments: true
 
 ### ReactNative - google 로그인
 
-# ReactNative - google 로그인
-
 ## 파이어베이스 설정
 
 > [https://rnfirebase.io/](https://rnfirebase.io/)
