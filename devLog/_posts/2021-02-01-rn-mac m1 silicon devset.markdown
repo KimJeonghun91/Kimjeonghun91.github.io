@@ -19,7 +19,26 @@ comments: true
 
 ![mac m1 로제타](/assets/img/post/20210218_m1_002.png)
 
-### 2. Homebrew 설치
+### 2. Java 설치 & 환경변수 설정
+
+- 자바 설치
+- 환경변수 : [https://whitepaek.tistory.com/28](https://whitepaek.tistory.com/28)
+
+```bash
+java -version
+javac -version
+
+# 설치된 자바 확인
+/usr/libexec/java_home -V | grep jdk
+
+# 자바 삭제
+sudo rm -rf /Library/Internet\ Plug-Ins/JavaAppletPlugin.plugin
+sudo rm -rf /Library/Java/JavaVirtualMachines
+sudo rm -rf /Library/Application\ Support/Oracle/Java/
+sudo rm -rf /Library/PreferencePanes/JavaControlPanel.prefPane
+```
+
+### 3. Homebrew 설치
 
 - 루비(Ruby)로 개발된 맥OS, 리눅스 용 패키지 관리 애플리케이션
 
@@ -33,7 +52,7 @@ arch -x86_64 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebr
 
 출처: [https://www.44bits.io/ko/post/setup-apple-silicon-m1-for-developers](https://www.44bits.io/ko/post/setup-apple-silicon-m1-for-developers)
 
-### 3. Node,yarn,watchman 설치
+### 4. Node, yarn, watchman 설치
 
 ```bash
 node -–version
@@ -44,7 +63,7 @@ arch -x86_64 /usr/local/bin/brew install yarn
 arch -x86_64 /usr/local/bin/brew install watchman
 ```
 
-### 4. Cocoapods 설치
+### 5. Cocoapods 설치
 
 ```bash
 pod --version
@@ -55,7 +74,7 @@ sudo arch -x86_64 gem install cocoapods
 arch -x86_64 pod install
 ```
 
-### 5. ffi 설치
+### 6. ffi 설치
 
 ```bash
 arch -x86_64 sudo gem install ffi
