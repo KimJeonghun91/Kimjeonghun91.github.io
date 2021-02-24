@@ -21,12 +21,13 @@ comments: true
 
 ### 2. Java 설치 & 환경변수 설정
 
-- 자바 설치
-- 환경변수 : [https://whitepaek.tistory.com/28](https://whitepaek.tistory.com/28)
+- 자바 설치 : [https://www.java.com/ko/download/](https://www.java.com/ko/download/)
+- JDK 설치 : [https://www.oracle.com/java/technologies/javase-downloads.html](https://www.oracle.com/java/technologies/javase-downloads.html)
+- 환경변수 : [https://whitepaek.tistory.com/28https://stackoverflow.com/questions/38835931/react-native-adb-reverse-enoent](https://stackoverflow.com/questions/38835931/react-native-adb-reverse-enoent)
 
 ```bash
-java -version
-javac -version
+java -version   # jre
+javac -version  # jdk
 
 # 설치된 자바 확인
 /usr/libexec/java_home -V | grep jdk
@@ -90,6 +91,16 @@ arch -x86_64 sudo gem install ffi
 
 ```jsx
 sudo xcode-select --switch /Applications/Xcode.app
+```
+
+- **java.lang.NoClassDefFoundError: Could not initialize class org.codehaus.groovy.vmplugin.v7.Java7**
+
+```jsx
+// gradle-wrapper.properties
+
+distributionUrl=https\://services.gradle.org/distributions/gradle-6.2-all.zip
+// 아래 버전으로 변경
+distributionUrl=https\://services.gradle.org/distributions/gradle-6.3-all.zip
 ```
 
 - **android 빌드 에러**
