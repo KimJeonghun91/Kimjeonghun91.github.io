@@ -23,22 +23,22 @@
   
     
 <!-- Begin Jekyll SEO tag v2.7.1 -->
-<title>Node - express-generator 구조 | RightHot</title>
+<title>Javascript - 싱글 스레드 눈으로 확인하기. | RightHot</title>
 <meta name="generator" content="Jekyll v3.9.0" />
-<meta property="og:title" content="Node - express-generator 구조" />
+<meta property="og:title" content="Javascript - 싱글 스레드 눈으로 확인하기." />
 <meta name="author" content="RightHot" />
 <meta property="og:locale" content="ko_KR, en_US" />
-<meta name="description" content="Node - express-generator 구조" />
-<meta property="og:description" content="Node - express-generator 구조" />
-<link rel="canonical" href="http://localhost:4000/blog/devlog/devlog-node/2021-02-28-node-express-g/" />
-<meta property="og:url" content="http://localhost:4000/blog/devlog/devlog-node/2021-02-28-node-express-g/" />
+<meta name="description" content="Javascript 싱글 스레드 눈으로 확인하기." />
+<meta property="og:description" content="Javascript 싱글 스레드 눈으로 확인하기." />
+<link rel="canonical" href="http://localhost:4000/blog/devlog/2021-02-05-js-singlethread/" />
+<meta property="og:url" content="http://localhost:4000/blog/devlog/2021-02-05-js-singlethread/" />
 <meta property="og:site_name" content="RightHot" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2021-02-28T00:00:00+09:00" />
+<meta property="article:published_time" content="2021-02-05T00:00:00+09:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Node - express-generator 구조" />
+<meta property="twitter:title" content="Javascript - 싱글 스레드 눈으로 확인하기." />
 <script type="application/ld+json">
-{"datePublished":"2021-02-28T00:00:00+09:00","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/assets/img/logo.png"},"name":"RightHot"},"url":"http://localhost:4000/blog/devlog/devlog-node/2021-02-28-node-express-g/","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/blog/devlog/devlog-node/2021-02-28-node-express-g/"},"author":{"@type":"Person","name":"RightHot"},"description":"Node - express-generator 구조","headline":"Node - express-generator 구조","dateModified":"2021-02-28T00:00:00+09:00","@type":"BlogPosting","@context":"https://schema.org"}</script>
+{"datePublished":"2021-02-05T00:00:00+09:00","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/assets/img/logo.png"},"name":"RightHot"},"url":"http://localhost:4000/blog/devlog/2021-02-05-js-singlethread/","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/blog/devlog/2021-02-05-js-singlethread/"},"author":{"@type":"Person","name":"RightHot"},"description":"Javascript 싱글 스레드 눈으로 확인하기.","headline":"Javascript - 싱글 스레드 눈으로 확인하기.","dateModified":"2021-02-05T00:00:00+09:00","@type":"BlogPosting","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -65,7 +65,7 @@
 <meta name="generator" content="Hydejack v9.1.1" />
 
 
-<link rel="alternate" href="http://localhost:4000/blog/devlog/devlog-js/2021-02-01-js-promise/" hreflang="ko-kr, en-us">
+<link rel="alternate" href="http://localhost:4000/blog/devlog/2021-02-01-js-promise/" hreflang="ko-kr, en-us">
 
 <link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="RightHot" />
 
@@ -109,7 +109,7 @@
   w._search = {
     DATA_URL: '/assets/sitedata.json?no-cache',
     STORAGE_KEY: 'mini-search/',
-    INDEX_KEY: 'index--2021-03-02T16:15:08+09:00',
+    INDEX_KEY: 'index--2021-03-04T16:24:31+09:00',
   };
   w._clapButton = true;
 }(window);</script>
@@ -212,16 +212,7 @@ html{--accent-color: rgb(79,177,186);--accent-color-faded: rgba(79,177,186,0.5);
       <li>
       
         <span>/</span>
-        
-        
-        <a href="/blog/devlog/devlog-node/">devlog-node</a>
-      
-      </li>
-    
-      <li>
-      
-        <span>/</span>
-        <span>2021-02-28-node-express-g</span>
+        <span>2021-02-05-js-singlethread</span>
       
       </li>
     
@@ -233,18 +224,18 @@ html{--accent-color: rgb(79,177,186);--accent-color-faded: rgba(79,177,186,0.5);
 
 
 
-<article id="post-blog-devlog-devlog-node-node-express-g" class="page post mb6" role="article">
+<article id="post-blog-devlog-js-singlethread" class="page post mb6" role="article">
   <header>
     <h1 class="post-title flip-project-title">
       
-        Node - express-generator 구조
+        Javascript - 싱글 스레드 눈으로 확인하기.
       
     </h1>
 
     <div class="post-date">
       
       <span class="ellipsis mr1">
-        <time datetime="2021-02-28T00:00:00+09:00">28 Feb 2021</time> in <a href="/blog/devlog/" class="flip-title">DevLog</a><span>Devlog-node</span> on <span>Reactnative</span>
+        <time datetime="2021-02-05T00:00:00+09:00">05 Feb 2021</time> in <a href="/blog/devlog/" class="flip-title">Devlog</a> on <a href="/tag-javascript/" class="flip-title">Javascript</a>
       </span>
       
         
@@ -264,134 +255,94 @@ html{--accent-color: rgb(79,177,186);--accent-color-faded: rgba(79,177,186,0.5);
   </header>
 
   
-    <h1 id="node---express-generator-구조">Node - express-generator 구조</h1>
+    <h2 id="javascript-싱글-스레드-눈으로-확인하기">Javascript 싱글 스레드 눈으로 확인하기.</h2>
+
+<p>자바스크립트는 자바와는 다르게 싱글 스레드라고 한다.</p>
+
+<p>한번에 하나의 작업만 수행할 수 있음에도 불구하고 비동기, 논블로킹등을 지원하기에 실제 코드상 눈으로 확인하긴 어렵다.</p>
+
+<p>따라서 아래 자바와의 비교를 코드를 통해 싱글 스레드를 눈으로 확인해보겠다.</p>
+
+<p><strong>잘못 된 정보가 있다면 댓글로 알려주길 바랍니다!</strong></p>
+
+<p><br /></p>
 
 <blockquote>
-  <p>bin/www</p>
+  <p>JAVA</p>
 </blockquote>
 
-<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span><span class="err"> </span><span class="nx">app</span> <span class="o">=</span><span class="err"> </span><span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">../app</span><span class="dl">'</span><span class="p">);</span> <span class="err"> </span>
-<span class="kd">var</span><span class="err"> </span><span class="nx">debug</span> <span class="o">=</span><span class="err"> </span><span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">debug</span><span class="dl">'</span><span class="p">)(</span><span class="dl">'</span><span class="s1">learn-express:server</span><span class="dl">'</span><span class="p">);</span> <span class="err"> </span>
-<span class="kd">var</span><span class="err"> </span><span class="nx">http</span> <span class="o">=</span><span class="err"> </span><span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">http</span><span class="dl">'</span><span class="p">);</span>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">NoSyncDataMain</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="nc">Data</span> <span class="n">data</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Data</span><span class="o">();</span>
+    <span class="c1">// static으로 공용으로 사용하는 객체 생성</span>
+    <span class="c1">// Tom클래스와 Jane 클래스에서 동시에 값을 막 넣음</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"main 시작"</span><span class="o">);</span>
+        <span class="nc">Tom</span> <span class="n">t</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Tom</span><span class="o">();</span>
+        <span class="nc">Jane</span> <span class="n">j</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Jane</span><span class="o">();</span>
+        <span class="n">t</span><span class="o">.</span><span class="na">start</span><span class="o">();</span>
+        <span class="n">j</span><span class="o">.</span><span class="na">start</span><span class="o">();</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"main 종료"</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+<span class="kd">class</span> <span class="nc">Tom</span> <span class="kd">extends</span> <span class="nc">Thread</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">run</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">1000000</span><span class="o">;</span> <span class="n">i</span> <span class="o">++)</span> <span class="o">{</span>
+            <span class="nc">NoSyncDataMain</span><span class="o">.</span><span class="na">data</span><span class="o">.</span><span class="na">i</span> <span class="o">++;</span>
+        <span class="o">}</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Tom : "</span> <span class="o">+</span> <span class="nc">NoSyncDataMain</span><span class="o">.</span><span class="na">data</span><span class="o">.</span><span class="na">i</span><span class="o">);</span>
+        <span class="c1">// 최종 출력이 다르게 찍히는건 그때 10만연산이 끝났기 때문.</span>
+        <span class="c1">// 예를들어 Tom은 17만일때 10만이 끝났는데 Jane이 3만남음.</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+<span class="kd">class</span> <span class="nc">Jane</span> <span class="kd">extends</span> <span class="nc">Thread</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">run</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">1000000</span><span class="o">;</span> <span class="n">i</span> <span class="o">++)</span> <span class="o">{</span>
+            <span class="nc">NoSyncDataMain</span><span class="o">.</span><span class="na">data</span><span class="o">.</span><span class="na">i</span> <span class="o">++;</span>
+        <span class="o">}</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Jane : "</span> <span class="o">+</span> <span class="nc">NoSyncDataMain</span><span class="o">.</span><span class="na">data</span><span class="o">.</span><span class="na">i</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+<span class="kd">class</span> <span class="nc">Data</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+<span class="o">}</span>
 </code></pre></div></div>
 
-<ul>
-  <li><strong>app</strong> : express() 인스턴스. <code class="language-plaintext highlighter-rouge">app.set(키,값)</code> 형태로 데이터를 저장할 수 있으며 <code class="language-plaintext highlighter-rouge">app.get(키)</code>로 가져올 수 있다.</li>
-  <li><strong>debug</strong> : 콘솔에 로그를 남길 수 있는 모듈</li>
-  <li><strong>http</strong> : 서버 생성 모듈</li>
-</ul>
-
-<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err"> </span><span class="kd">var</span><span class="err"> </span><span class="nx">port</span><span class="err"> </span><span class="o">=</span> <span class="nx">normalizePort</span><span class="p">(</span><span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">PORT</span> <span class="o">||</span><span class="err"> </span><span class="dl">'</span><span class="s1">3000</span><span class="dl">'</span><span class="p">);</span>
-</code></pre></div></div>
-
-<ul>
-  <li>process.env 객체에 PORT 값이 있으면 사용하고 없으면 3000을 기본 포트로 사용</li>
-</ul>
-
-<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err"> </span><span class="kd">var</span><span class="err"> </span><span class="nx">server</span><span class="err"> </span><span class="o">=</span> <span class="nx">http</span><span class="p">.</span><span class="nx">createServer</span><span class="p">(</span><span class="nx">app</span><span class="p">);</span> <span class="err"> </span><span class="nx">server</span><span class="p">.</span><span class="nx">listen</span><span class="p">(</span><span class="nx">port</span><span class="p">);</span>
-</code></pre></div></div>
-
-<ul>
-  <li>지정된 포트로 서버 실행</li>
-</ul>
+<p><img src="/assets/img/post/99F9A74E5FA152002B.png" alt="Javascript test" />
+<br /><br /></p>
 
 <blockquote>
-  <p>app.js</p>
+  <p>Javascript</p>
 </blockquote>
 
-<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span><span class="err"> </span><span class="nx">app</span> <span class="o">=</span> <span class="nx">express</span><span class="p">();</span> <span class="err"> </span>
-<span class="nx">app</span><span class="p">.</span><span class="kd">set</span><span class="p">(</span><span class="dl">'</span><span class="s1">views</span><span class="dl">'</span><span class="p">,</span> <span class="nx">path</span><span class="p">.</span><span class="nx">join</span><span class="p">(</span><span class="nx">__dirname</span><span class="p">,</span><span class="err"> </span><span class="dl">'</span><span class="s1">views</span><span class="dl">'</span><span class="p">));</span> <span class="err"> </span>
-<span class="nx">app</span><span class="p">.</span><span class="kd">set</span><span class="p">(</span><span class="dl">'</span><span class="s1">view engine</span><span class="dl">'</span><span class="p">,</span><span class="err"> </span><span class="dl">'</span><span class="s1">pug</span><span class="dl">'</span><span class="p">);</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">mCnt</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">main 시작</span><span class="dl">"</span><span class="p">)</span>
+
+<span class="k">new</span> <span class="nb">Promise</span><span class="p">((</span><span class="nx">resolve</span><span class="p">,</span> <span class="nx">reject</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="mi">1000000</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">mCnt</span> <span class="o">=</span> <span class="nx">mCnt</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="nx">resolve</span><span class="p">()</span>
+<span class="p">}).</span><span class="nx">then</span><span class="p">((</span><span class="nx">resData</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">Tom : </span><span class="dl">"</span> <span class="o">+</span> <span class="nx">mCnt</span><span class="p">)</span>
+<span class="p">});</span>
+
+<span class="k">new</span> <span class="nb">Promise</span><span class="p">((</span><span class="nx">resolve</span><span class="p">,</span> <span class="nx">reject</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="mi">2000000</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">mCnt</span> <span class="o">=</span> <span class="nx">mCnt</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="nx">resolve</span><span class="p">()</span>
+<span class="p">}).</span><span class="nx">then</span><span class="p">((</span><span class="nx">resData</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">Jane : </span><span class="dl">"</span> <span class="o">+</span> <span class="nx">mCnt</span><span class="p">)</span>
+<span class="p">});</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">main 종료</span><span class="dl">"</span><span class="p">)</span>
 </code></pre></div></div>
 
-<ul>
-  <li><code class="language-plaintext highlighter-rouge">app.set</code> 을 사용하여 express 환경 설정 가능</li>
-</ul>
+<p><img src="/assets/img/post/997BD04E5FA152102A.png" alt="Javascript test" />
+<br /><br /></p>
 
-<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">app</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="nx">logger</span><span class="p">(</span><span class="dl">'</span><span class="s1">dev</span><span class="dl">'</span><span class="p">));</span> <span class="err"> </span>
-<span class="nx">app</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="nx">express</span><span class="p">.</span><span class="nx">json</span><span class="p">());</span> <span class="err"> </span>
-<span class="nx">app</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="nx">express</span><span class="p">.</span><span class="nx">urlencoded</span><span class="p">({</span><span class="err"> </span><span class="na">extended</span><span class="p">:</span><span class="err"> </span><span class="kc">false</span><span class="err"> </span><span class="p">}));</span> <span class="err"> </span>
-<span class="nx">app</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="nx">cookieParser</span><span class="p">());</span> <span class="err"> </span>
-<span class="nx">app</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="nx">express</span><span class="p">.</span><span class="kd">static</span><span class="p">(</span><span class="nx">path</span><span class="p">.</span><span class="nx">join</span><span class="p">(</span><span class="nx">__dirname</span><span class="p">,</span> <span class="dl">'</span><span class="s1">public</span><span class="dl">'</span><span class="p">)));</span>
-</code></pre></div></div>
-
-<ul>
-  <li><code class="language-plaintext highlighter-rouge">app.use</code> 를 사용하여 미들웨어 추가</li>
-</ul>
-
-<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">...</span> <span class="err"> </span>
-<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span><span class="err"> </span><span class="o">=</span> <span class="nx">app</span><span class="p">;</span>
-</code></pre></div></div>
-
-<ul>
-  <li>모듈로 내보내고 <code class="language-plaintext highlighter-rouge">www</code> 에서 사용</li>
-</ul>
-
-<h1 id="express-미들웨어">express 미들웨어</h1>
-
-<h3 id="미들웨어란">미들웨어란?</h3>
-
-<blockquote>
-  <p>요청과 응답의 중간에 위치하여 기능을 추가하거나 필터링함.</p>
-</blockquote>
-
-<ul>
-  <li>
-    <p>미들웨어 형태</p>
-
-    <div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="err"> </span><span class="nx">app</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">req</span><span class="p">,</span><span class="err"> </span><span class="nx">res</span><span class="p">,</span><span class="err"> </span><span class="nx">next</span><span class="p">)</span> <span class="p">{</span>
-  <span class="err">   </span> <span class="err"> </span><span class="p">...</span>
-  <span class="err">   </span> <span class="err"> </span><span class="nx">next</span><span class="p">();</span>
-  <span class="err"> </span><span class="p">})</span>
-</code></pre></div>    </div>
-  </li>
-  <li>
-    <p><strong>next()</strong> : 요청의 흐름을 제어함</p>
-    <ul>
-      <li><code class="language-plaintext highlighter-rouge">next()</code> : 다음 미들웨어로 이동</li>
-      <li><code class="language-plaintext highlighter-rouge">next('route')</code> : 다음 라우터로 이동</li>
-      <li><code class="language-plaintext highlighter-rouge">next(error내용)</code> : 에러 핸들러 이동</li>
-    </ul>
-  </li>
-</ul>
-
-<h3 id="미들웨어-종류-및-기능">미들웨어 종류 및 기능</h3>
-
-<ul>
-  <li>
-    <p><strong>morgan</strong></p>
-
-    <p>콘솔 기록 미들웨어</p>
-  </li>
-  <li>
-    <p><strong>body-parser</strong></p>
-
-    <p>본문을 해석해주는 미들웨어. json, raw, text등의 본문 데이터들을 해석해 req.body에 추가함</p>
-
-    <p>(ex) URL-encoded 형태의 <code class="language-plaintext highlighter-rouge">name=righthot&amp;age=30</code> 데이터를  으로 변형</p>
-  </li>
-  <li>
-    <p><strong>cookie-parser</strong></p>
-
-    <p>쿠키를 해석해주는 미들웨어</p>
-  </li>
-  <li>
-    <p><strong>static</strong></p>
-
-    <p>정적인 파일 제공, 정적 파일을 불러올 수 있으며, 경로를 다르게 지정 가능</p>
-
-    <div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nx">app</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="dl">'</span><span class="s1">/pd</span><span class="dl">'</span><span class="p">,</span> <span class="nx">express</span><span class="p">.</span><span class="kd">static</span><span class="p">(</span><span class="nx">path</span><span class="p">.</span><span class="nx">join</span><span class="p">(</span><span class="nx">__dirname</span><span class="p">,</span><span class="err"> </span><span class="dl">'</span><span class="s1">images/pd</span><span class="dl">'</span><span class="p">)));</span>
-
-  <span class="c1">// http://localhost:3000/images/pd</span>
-  <span class="c1">// http://localhost:3000/pd</span>
-</code></pre></div>    </div>
-  </li>
-  <li>
-    <p><strong>express-session</strong></p>
-
-    <p>세션 관리 미들웨어</p>
-  </li>
-</ul>
+<p>온라인 코드실행기 : https://hashcode.co.kr/code_runners?language=javascript</p>
 
   
 </article>
@@ -576,7 +527,7 @@ ML/AI , IOT 기술에 관심이 많으며 기술을 통해 반려동물의 삶�
     
 
 
-  <aside class="other-projects related mb0" role="complementary">  <h2>최근 포스트</h2>  <div class="columns">          <div class="column column-1-2">                  <article class="project-card">  <a href="/blog/devlog/devlog-rn/2021-02-22-rn-google-sign-in/" class="no-hover no-print-link flip-project" tabindex="-1">    <div class="project-card-img aspect-ratio sixteen-nine fallback-img">          </div>  </a>  <h3 class="project-card-title flip-project-title">    <a href="/blog/devlog/devlog-rn/2021-02-22-rn-google-sign-in/" class="flip-title">ReactNative - google 로그인</a>  </h3>      <a class="fill-card no-hover" href="/blog/devlog/devlog-rn/2021-02-22-rn-google-sign-in/" tabindex="-1"><span class="sr-only">Continue reading ReactNative - google 로그인</span></a></article>              </div>          <div class="column column-1-2">                  <article class="project-card">  <a href="/blog/devlog/devlog-rn/2021-02-15-rn-devset/" class="no-hover no-print-link flip-project" tabindex="-1">    <div class="project-card-img aspect-ratio sixteen-nine fallback-img">          </div>  </a>  <h3 class="project-card-title flip-project-title">    <a href="/blog/devlog/devlog-rn/2021-02-15-rn-devset/" class="flip-title">ReactNative - Typescript 프로젝트 환경 설정</a>  </h3>      <a class="fill-card no-hover" href="/blog/devlog/devlog-rn/2021-02-15-rn-devset/" tabindex="-1"><span class="sr-only">Continue reading ReactNative - Typescript 프로젝트 환경 설정</span></a></article>              </div>      </div></aside>
+  <aside class="other-projects related mb0" role="complementary">  <h2>최근 포스트</h2>  <div class="columns">          <div class="column column-1-2">                  <article class="project-card">  <a href="/blog/devlog/2021-02-28-node-express-g/" class="no-hover no-print-link flip-project" tabindex="-1">    <div class="project-card-img aspect-ratio sixteen-nine fallback-img">          </div>  </a>  <h3 class="project-card-title flip-project-title">    <a href="/blog/devlog/2021-02-28-node-express-g/" class="flip-title">Node - express-generator 구조</a>  </h3>      <a class="fill-card no-hover" href="/blog/devlog/2021-02-28-node-express-g/" tabindex="-1"><span class="sr-only">Continue reading Node - express-generator 구조</span></a></article>              </div>          <div class="column column-1-2">                  <article class="project-card">  <a href="/blog/devlog/2021-02-22-rn-google-sign-in/" class="no-hover no-print-link flip-project" tabindex="-1">    <div class="project-card-img aspect-ratio sixteen-nine fallback-img">          </div>  </a>  <h3 class="project-card-title flip-project-title">    <a href="/blog/devlog/2021-02-22-rn-google-sign-in/" class="flip-title">ReactNative - google 로그인</a>  </h3>      <a class="fill-card no-hover" href="/blog/devlog/2021-02-22-rn-google-sign-in/" tabindex="-1"><span class="sr-only">Continue reading ReactNative - google 로그인</span></a></article>              </div>      </div></aside>
 
   
 
@@ -584,7 +535,7 @@ ML/AI , IOT 기술에 관심이 많으며 기술을 통해 반려동물의 삶�
     
 
 
-  <aside class="related mb4" role="complementary">  <h2 class="hr-bottom">추천 포스트</h2>  <ul class="related-posts">          <li class="h4">  <a href="/blog/devlog/devlog-rn/2021-02-15-rn-devset/" class="flip-title"><span>ReactNative - Typescript 프로젝트 환경 설정</span></a>  <time class="faded fine" datetime="2021-02-15T00:00:00+09:00">15 Feb 2021</time></li>          <li class="h4">  <a href="/blog/devlog/devlog-rn/2021-02-22-rn-google-sign-in/" class="flip-title"><span>ReactNative - google 로그인</span></a>  <time class="faded fine" datetime="2021-02-22T00:00:00+09:00">22 Feb 2021</time></li>          <li class="h4">  <a href="/blog/devlog/devlog-rn/2021-02-01-rn-mac-m1-silicon-devset/" class="flip-title"><span>Silicon m1 mac - ReactNative 개발 환경</span></a>  <time class="faded fine" datetime="2021-02-01T00:00:00+09:00">01 Feb 2021</time></li>      </ul></aside>
+  <aside class="related mb4" role="complementary">  <h2 class="hr-bottom">추천 포스트</h2>  <ul class="related-posts">          <li class="h4">  <a href="/blog/devlog/2021-02-15-rn-devset/" class="flip-title"><span>ReactNative - Typescript 프로젝트 환경 설정</span></a>  <time class="faded fine" datetime="2021-02-15T00:00:00+09:00">15 Feb 2021</time></li>          <li class="h4">  <a href="/blog/barabom/barabom-news/2021-02-05-js-singlethread/" class="flip-title"><span>바라봄 테스트</span></a>  <time class="faded fine" datetime="2021-02-05T00:00:00+09:00">05 Feb 2021</time></li>          <li class="h4">  <a href="/blog/devlog/2021-02-28-node-express-g/" class="flip-title"><span>Node - express-generator 구조</span></a>  <time class="faded fine" datetime="2021-02-28T00:00:00+09:00">28 Feb 2021</time></li>      </ul></aside>
 
   
 
@@ -676,57 +627,104 @@ ML/AI , IOT 기술에 관심이 많으며 기술을 통해 반려동물의 삶�
 <ul>
   
     
-      
-      <li>
-        <a
-          id="_drawer--opened"
-          href="/barabom/"
-          class="sidebar-nav-item "
-          
-        >
-          바라봄
-        </a>
-      </li>
+    
     
       
-      <li>
-        <a
-          
-          href="/devLog/"
-          class="sidebar-nav-item "
-          
-        >
-          DevLog
-        </a>
-      </li>
+        
+      
     
       
-      <li>
-        <a
-          
-          href="/projects/"
-          class="sidebar-nav-item "
-          
-        >
-          Projects
-        </a>
-      </li>
+        
+      
     
       
-      <li>
-        <a
+        
+      
+    
+      
+        
           
-          href="/resume/"
-          class="sidebar-nav-item "
           
-        >
-          About Me
-        </a>
-      </li>
+          <li>
+            
+            <div class="list-wrapper">
+              <a  href="/resume/" class="sidebar-nav-item"  >About Me</a>
+              
+            </div>
+            
+          </li>
+        
+      
+    
+      
+        
+          
+          
+          <li>
+            
+            <div class="list-wrapper">
+              <a  href="/projects/" class="sidebar-nav-item"  >Projects</a>
+              
+            </div>
+            
+          </li>
+        
+      
+    
+      
+        
+          
+          
+          <li>
+            
+              <input type="checkbox" id="list-item-11" />
+            
+            <div class="list-wrapper">
+              <a  href="/blog/devlog/" class="sidebar-nav-item"  >Devlog</a>
+              
+                <label class="folder" for="list-item-11">▾</label>
+              
+            </div>
+            
+              <ul class="list-body">
+                  <li>
+                    <a class="sidebar-nav-subitem" href="/tag-javascript/">Javascript</a>
+                  </li>
+              
+            
+              
+                  <li>
+                    <a class="sidebar-nav-subitem" href="/tag-node/">Node</a>
+                  </li>
+              
+            
+              
+                  <li>
+                    <a class="sidebar-nav-subitem" href="/tag-reactnative/">ReactNative</a>
+                  </li>
+              </ul>
+            
+          </li>
+        
+      
+    
+      
+        
+          
+          
+          <li>
+            
+            <div class="list-wrapper">
+              <a  href="/tags/" class="sidebar-nav-item"  >Tags</a>
+              
+            </div>
+            
+          </li>
+        
+      
     
   
 </ul>
-
   </nav>
 
   

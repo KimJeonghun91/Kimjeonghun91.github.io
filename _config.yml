@@ -50,15 +50,15 @@ author:
   # twitter:             <username>
 
 # Add links to the sidebar.
-menu:
-  # - title:             바라봄
-  #   url:               /barabom/
-  - title:             DevLog
-    url:               /devLog/
-  - title:             Projects
-    url:               /projects/
-  - title:             About Me
-    url:               /resume/
+# menu:
+#   # - title:             바라봄
+#   #   url:               /barabom/
+#   - title:             DevLog
+#     url:               /devLog/
+#   - title:             Projects
+#     url:               /projects/
+#   - title:             About Me
+#     url:               /resume/
 
 # Add links to the footer.
 # Typically you'll want to link to your cookie- or privacy policy (if appliable), etc..

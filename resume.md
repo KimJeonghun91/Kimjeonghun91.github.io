@@ -1,7 +1,9 @@
 ---
 layout: resume
-title: RightHot
+title: About Me
+order: 1
 description: >
+sidebar: true
   
 hide_description: true
 left_column:
