@@ -2,8 +2,8 @@
 layout: post
 title: 'Javascript - 싱글 스레드'
 subtitle: 'Javascript 싱글 스레드 눈으로 확인하기.'
-categories: devLog-js
-tags: Javascript
+category: devlog
+tags: javascript
 comments: true
 # image: 
 #   path: /assets/img/default_code.png

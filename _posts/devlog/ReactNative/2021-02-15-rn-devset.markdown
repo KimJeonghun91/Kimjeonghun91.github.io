@@ -2,8 +2,8 @@
 layout: post
 title: 'ReactNative Typescript 프로젝트 환경 설정'
 subtitle: 'RN + Typescript 환경 설정'
-categories: devLog-rn
-tags: ReactNative Ts
+category: devlog
+tags: reactnative
 comments: true
 # image: 
 #   path: /assets/img/default_code.png

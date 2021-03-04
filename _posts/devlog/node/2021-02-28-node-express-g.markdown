@@ -2,8 +2,8 @@
 layout: post
 title: 'Node - express-generator 구조'
 subtitle: 'Node - express-generator 구조'
-categories: devLog-node
-tags: ReactNative
+category: devlog
+tags: node
 comments: true
 # image: 
 #   path: /assets/img/default_code.png

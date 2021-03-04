@@ -2,8 +2,8 @@
 layout: post
 title: 'ReactNative - google 로그인'
 subtitle: 'ReactNative - google 로그인'
-categories: devLog-rn
-tags: ReactNative
+category: devlog
+tags: reactnative
 comments: true
 # image: 
 #   path: /assets/img/default_code.png

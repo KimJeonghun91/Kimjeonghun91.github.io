@@ -2,8 +2,8 @@
 layout: post
 title: 'Silicon m1 mac - ReactNative 개발 환경'
 subtitle: '인텔 기반 환경 설정'
-categories: devLog-rn
-tags: ReactNative
+category: devlog
+tags: reactnative
 comments: true
 # image: 
 #   path: /assets/img/default_code.png
