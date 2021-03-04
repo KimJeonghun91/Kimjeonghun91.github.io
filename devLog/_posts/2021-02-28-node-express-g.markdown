@@ -108,7 +108,7 @@ module.exports = app;
 
     본문을 해석해주는 미들웨어. json, raw, text등의 본문 데이터들을 해석해 req.body에 추가함
 
-    (ex) URL-encoded 형태의 `name=righthot&age=30` 데이터를  으로 변형
+    (ex) URL-encoded 형태의 `name=righthot&age=30` 데이터를 `{name: 'righthot', age:30}` 으로 변형
 
 - **cookie-parser**
 
