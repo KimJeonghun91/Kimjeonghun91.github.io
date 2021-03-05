@@ -122,15 +122,15 @@ module.exports = app;
 
     - 정적 파일이란?
 
+        정적 파일이란, 직접 값에 변화를 주지 않는 이상 변하지 않는 파일을 의미합니다. 
+
+        예를 들면, image, css 파일, js 파일 등을 의미
+
     ```jsx
     app.use('/pd', express.static(path.join(__dirname, 'images/pd')));
 
     // 실제경로 : http://localhost:3000/images/pd
     // 요청경로 : http://localhost:3000/pd
-
-    1. Static File(정적 파일)
-
-    정적 파일이란, 직접 값에 변화를 주지 않는 이상 변하지 않는 파일을 의미합니다. 예를 들면, image, css 파일, js 파일 등을 의미합니다.  express는 이러한 정적 파일들을 손쉽게 제공할 수 있는 기능을 가지고 있습니다.
     ```
 
 - **express-session**
