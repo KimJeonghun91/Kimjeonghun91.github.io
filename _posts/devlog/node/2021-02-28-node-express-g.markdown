@@ -108,7 +108,9 @@ module.exports = app;
 
     본문을 해석해주는 미들웨어. json, raw, text등의 본문 데이터들을 해석해 req.body에 추가함
 
-    (ex) URL-encoded 형태의 `name=righthot&age=30` 데이터를 `{name: 'righthot', age:30}` 으로 변형
+    - 예제
+
+        URL-encoded 형태의 `name=righthot&age=30` 데이터를  `{name: 'righthot', age:30}` 으로 변형
 
 - **cookie-parser**
 
@@ -118,11 +120,17 @@ module.exports = app;
 
     정적인 파일 제공, 정적 파일을 불러올 수 있으며, 경로를 다르게 지정 가능
 
+    - 정적 파일이란?
+
     ```jsx
     app.use('/pd', express.static(path.join(__dirname, 'images/pd')));
 
     // http://localhost:3000/images/pd
     // http://localhost:3000/pd
+
+    1. Static File(정적 파일)
+
+    정적 파일이란, 직접 값에 변화를 주지 않는 이상 변하지 않는 파일을 의미합니다. 예를 들면, image, css 파일, js 파일 등을 의미합니다.  express는 이러한 정적 파일들을 손쉽게 제공할 수 있는 기능을 가지고 있습니다.
     ```
 
 - **express-session**
