@@ -125,8 +125,8 @@ module.exports = app;
     ```jsx
     app.use('/pd', express.static(path.join(__dirname, 'images/pd')));
 
-    // http://localhost:3000/images/pd
-    // http://localhost:3000/pd
+    // 실제경로 : http://localhost:3000/images/pd
+    // 요청경로 : http://localhost:3000/pd
 
     1. Static File(정적 파일)
 
