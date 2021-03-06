@@ -32,11 +32,6 @@ javac -version  # jdk
 # 설치된 자바 확인
 /usr/libexec/java_home -V | grep jdk
 
-# 자바 삭제
-sudo rm -rf /Library/Internet\ Plug-Ins/JavaAppletPlugin.plugin
-sudo rm -rf /Library/Java/JavaVirtualMachines
-sudo rm -rf /Library/Application\ Support/Oracle/Java/
-sudo rm -rf /Library/PreferencePanes/JavaControlPanel.prefPane
 ```
 
 ### 3. Homebrew 설치
@@ -117,3 +112,12 @@ distributionUrl=https\://services.gradle.org/distributions/gradle-6.3-all.zip
 1. 새로 프로젝트를 만들어서 필수 옵션을 다운로드
 2. 프로젝트 폴더 오른쪽클릭 → open module settings JDK 경로 확인
 
+- **Java 삭제**
+
+```bash
+# 자바 삭제
+sudo rm -rf /Library/Internet\ Plug-Ins/JavaAppletPlugin.plugin
+sudo rm -rf /Library/Java/JavaVirtualMachines
+sudo rm -rf /Library/Application\ Support/Oracle/Java/
+sudo rm -rf /Library/PreferencePanes/JavaControlPanel.prefPane
+```
