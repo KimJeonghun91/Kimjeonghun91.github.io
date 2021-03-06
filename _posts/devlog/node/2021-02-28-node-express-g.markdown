@@ -11,7 +11,7 @@ comments: true
 
 ### Node - express-generator 구조
 
-# Node - express-generator 구조
+# express-generator 구조
 
 > bin/www
 
@@ -56,10 +56,10 @@ app.set('view engine', 'pug');
  
 
 ```jsx
-app.use(logger('dev'));  
-app.use(express.json());  
-app.use(express.urlencoded({ extended: false }));  
-app.use(cookieParser());  
+app.use(logger('dev'));                            // morgan
+app.use(express.json());                           // body-parser
+app.use(express.urlencoded({ extended: false }));  // body-parser
+app.use(cookieParser());                           // cookie-parser
 app.use(express.static(path.join(__dirname, 'public')));
 ```
 
@@ -109,9 +109,6 @@ module.exports = app;
     본문을 해석해주는 미들웨어. json, raw, text등의 본문 데이터들을 해석해 req.body에 추가함
 
     - 예제
-
-        URL-encoded 형태의 `name=righthot&age=30` 데이터를  `{name: 'righthot', age:30}` 으로 변형
-
 - **cookie-parser**
 
     쿠키를 해석해주는 미들웨어
@@ -122,7 +119,9 @@ module.exports = app;
 
     - 정적 파일이란?
 
-        직접 값에 변화를 주지 않는 이상 변하지 않는 파일들 (image, css파일, js파일)
+        정적 파일이란, 직접 값에 변화를 주지 않는 이상 변하지 않는 파일을 의미합니다. 
+
+        예를 들면, image, css 파일, js 파일 등을 의미
 
     ```jsx
     app.use('/pd', express.static(path.join(__dirname, 'images/pd')));
