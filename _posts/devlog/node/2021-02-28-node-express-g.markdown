@@ -11,7 +11,19 @@ comments: true
 
 ### Node - express-generator 구조
 
-# express-generator 구조
+# express-generator 설치 및 환경
+
+```bash
+npm i -g express-generator
+
+# express 프레임워크 기반 워크스페이스 폴더 생성
+express [폴더명] --view=[뷰엔진]
+cd [폴더명]
+
+npm install
+```
+
+# express-generator 폴더 구조
 
 > bin/www
 
