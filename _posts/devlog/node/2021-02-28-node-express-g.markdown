@@ -23,7 +23,7 @@ cd [폴더명]
 npm install
 ```
 
-# express-generator 폴더 구조
+# express-generator 폴더 구조 
 
 > bin/www
 
