@@ -43,7 +43,7 @@ var http = require('http');
  var port = normalizePort(process.env.PORT || '3000');
 ```
 
-- process.env 객체에 PORT 값이 있으면 사용하고 없으면 3000을 기본 포트로 사용
+- process.env 객체에 PORT 값이 있으면 사용하고 없으면 3000을 기본 포트로 사용 
 
  
 
