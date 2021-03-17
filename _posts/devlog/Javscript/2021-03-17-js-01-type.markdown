@@ -1,7 +1,7 @@
 ---
 layout: post
-title: '01. 자바스크립트 - 타입'
-subtitle: '01. 자바스크립트 - 타입'
+title: 'Javascript 기초 01 - 타입'
+subtitle: 'Javascript 기초 01 - 타입'
 category: devlog
 tags: javascript
 comments: true
@@ -9,7 +9,7 @@ comments: true
 #   path: /assets/img/default_code.png
 ---
 
-### 01. 자바스크립트 - 타입
+### Javascript 기초 01 - 타입
 
 ## 형검사에 따른 언어 분류
 
