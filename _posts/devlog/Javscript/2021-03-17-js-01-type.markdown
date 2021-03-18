@@ -91,7 +91,7 @@ console.log(typeof a)   // number
 let a
 
 console.log(a)   // undefined
-console.log(b)   // Uncaught ReferenceError: b is not defined at ...
+console.log(b)   // Uncaught ReferenceError: b is not defined at ... 
 ```
 
 접근 가능한 스코프에 변수 자체가 선언되지 않으면 not defined 에러가 발생된다.
