@@ -84,7 +84,7 @@ console.log(typeof a)   // number
 
 ## 없는 값 , 선언되지 않은 값
 
-- undefined : 값이 없음.
+- undefined : 값이 없음. 
 - undeclared : 선언되지 않음.
 
 ```jsx
