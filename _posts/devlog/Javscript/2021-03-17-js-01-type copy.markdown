@@ -101,6 +101,6 @@ console.log(b)   // Uncaught ReferenceError: b is not defined at ...
 ```jsx
 let a
 
-console.log(a)   // undefined
-console.log(b)   // undefined
+console.log(typeof a === 'undefined')   // true
+console.log(typeof b === 'undefined')   // true
 ```
