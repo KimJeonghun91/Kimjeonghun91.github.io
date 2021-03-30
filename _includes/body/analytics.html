@@ -2,29 +2,24 @@
   <script>!function(w, d) {
     w.ga=w.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
 
-    /*{% if site.hydejack.cookies_banner %}*/
+    {% if site.hydejack.cookies_banner %}
       if (navigator.CookiesOK) {
-        ga('create', 'UA-193332112-1', 'auto');
-        // ga('create', '{{ site.google_analytics }}', 'auto');
+        ga('create', '{{ site.google_analytics }}', 'auto');
       } else if (d.cookie.indexOf("hy--cookies-ok=true") > -1) {
-        ga('create', 'UA-193332112-1', {
+        ga('create', '{{ site.google_analytics }}', {
           'storage': 'none',
           'clientId': localStorage ? localStorage.getItem('ga--client-id') : undefined
         });
       } else {
-        // ga('create', '{{ site.google_analytics }}', {
-        //   'storage': 'none'
-        // });
-        ga('create', 'UA-193332112-1', {
+        ga('create', '{{ site.google_analytics }}', {
           'storage': 'none'
         });
         ga('set', 'forceSSL', true);
         ga('set', 'anonymizeIp', true);
       }
-    /*{% else %}*/
-      // ga('create', '{{ site.google_analytics }}', 'auto');
-      ga('create', 'UA-193332112-1', 'auto');
-    /*{% endif %}*/
+    {% else %}
+      ga('create', '{{ site.google_analytics }}', 'auto');
+    {% endif %}
 
     var pushStateEl = d.getElementById('_pushState');
     var timeoutId;
