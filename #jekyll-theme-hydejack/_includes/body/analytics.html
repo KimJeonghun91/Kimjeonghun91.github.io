@@ -4,14 +4,14 @@
 
     /*{% if site.hydejack.cookies_banner %}*/
       if (navigator.CookiesOK) {
-        ga('create', 'G-8XHWYJ2Z7H', 'auto');
+        ga('create', 'UA-193332112-1', 'auto');
         // ga('create', '{{ site.google_analytics }}', 'auto');
       } else if (d.cookie.indexOf("hy--cookies-ok=true") > -1) {
         // ga('create', '{{ site.google_analytics }}', {
         //   'storage': 'none',
         //   'clientId': localStorage ? localStorage.getItem('ga--client-id') : undefined
         // });
-        ga('create', 'G-8XHWYJ2Z7H', {
+        ga('create', 'UA-193332112-1', {
           'storage': 'none',
           'clientId': localStorage ? localStorage.getItem('ga--client-id') : undefined
         });
@@ -19,7 +19,7 @@
         // ga('create', '{{ site.google_analytics }}', {
         //   'storage': 'none'
         // });
-         ga('create', 'G-8XHWYJ2Z7H', {
+         ga('create', 'UA-193332112-1', {
           'storage': 'none'
         });
         ga('set', 'forceSSL', true);
@@ -27,7 +27,7 @@
       }
     /*{% else %}*/
       // ga('create', '{{ site.google_analytics }}', 'auto');
-        ga('create', 'G-8XHWYJ2Z7H', 'auto');
+        ga('create', 'UA-193332112-1', 'auto');
     /*{% endif %}*/
 
     var pushStateEl = d.getElementById('_pushState');

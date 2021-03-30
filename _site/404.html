@@ -496,14 +496,14 @@ html{--accent-color: rgb(79,177,186);--accent-color-faded: rgba(79,177,186,0.5);
 
     /**/
       if (navigator.CookiesOK) {
-        ga('create', 'G-8XHWYJ2Z7H', 'auto');
+        ga('create', 'UA-193332112-1', 'auto');
       } else if (d.cookie.indexOf("hy--cookies-ok=true") > -1) {
-        ga('create', 'G-8XHWYJ2Z7H', {
+        ga('create', 'UA-193332112-1', {
           'storage': 'none',
           'clientId': localStorage ? localStorage.getItem('ga--client-id') : undefined
         });
       } else {
-        ga('create', 'G-8XHWYJ2Z7H', {
+        ga('create', 'UA-193332112-1', {
           'storage': 'none'
         });
         ga('set', 'forceSSL', true);

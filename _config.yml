@@ -177,7 +177,8 @@ kramdown:
 
 # Set your Google Analytics id to receive `pageview` events.
 # To remove Google Anaylics from your page, remove the line below.
-google_analytics:      G-8XHWYJ2Z7H
+# G-8XHWYJ2Z7H
+google_analytics:      UA-193332112-1
 
 # Setting a disqus shortname will enable the comment section on
 # pages with `comments: true` in the front matter.
