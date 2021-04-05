@@ -1,0 +1,84 @@
+---
+layout: post
+title: 'Javascript 기초 03 - 네이티브'
+subtitle: 'Javascript 기초 03 - 네이티브'
+category: devlog
+tags: javascript
+comments: true
+# image: 
+#   path: /assets/img/default_code.png
+---
+
+### Javascript 기초 03 - 네이티브
+
+네이티브란? 특정 환경(브라우저)에 종속되지 않은 ESMAScript 명세에 있는 내장 함수로 원시 값을 감싸는 객체 래퍼 이다.
+
+- String()
+- Number()
+- Boolean()
+- Array()
+- Object()
+- Function()
+- RegExp()
+- Date()
+- Error()
+- Symbol()
+
+`typeof` 를 이용해서 type을 구해보면 원시 값 및 객체의 type은 아래와 같다. 
+
+```jsx
+console.log(typeof "스물여섯")              // string
+console.log(typeof 26)                    // number
+console.log(typeof true)                  // boolean
+console.log(typeof [])                    // object
+console.log(typeof {})                    // object
+console.log(typeof function(){})          // function
+console.log(typeof (/regex-literal/i))    // object
+console.log(typeof (new Date))            // object 
+console.log(typeof (new Error))           // object
+```
+
+`[Object.prototype.toString.call](http://object.prototype.toString.call)` 객체의 [[class]]내부의 프로퍼티를 확인할 수 있다.
+
+아래 코드를 보면 String과 같은 원시값도 object로 랩핑 되어 있는 걸 확인할 수 있다.
+
+자바스크립트가 자동으로 랩핑해주기 때문에 객체에 내장된 함수를 사용할 수 있다.
+
+```jsx
+console.log(Object.prototype.toString.call("스물여섯"))          // [object String]
+console.log(Object.prototype.toString.call(26))                // [object Number]
+console.log(Object.prototype.toString.call(true))              // [object Boolean]
+console.log(Object.prototype.toString.call([]))                // [object Array]
+console.log(Object.prototype.toString.call({}))                // [object Object]
+console.log(Object.prototype.toString.call(function(){}))      // [object Function]
+console.log(Object.prototype.toString.call(/regex-literal/i))  // [object RegExp]
+console.log(Object.prototype.toString.call(new Date))          // [object Date]
+console.log(Object.prototype.toString.call(new Error))         // [object Error]
+```
+
+## 객체 래핑(박싱)
+
+원시 값엔 프로퍼티나 메서드가 없으므로 .length , toString() 등을 사용할 수 없다.
+
+따라서 이러한 메서드를 사용하려면 객체 래퍼로 감싸줘야하는데, 자바스크립트는 이를 자동으로 래핑한다.
+
+```jsx
+let a = 'righthot';
+
+console.log(a.length)           // 8
+console.log(a.toUpperCase())    // RIGHTHOT
+```
+
+위의 결과 처럼 자바스크립트는 자동으로 원시값을 래핑하기 때문에 직접 래핑 할 경우 오히려 프로그램이 느려지거나 예상치 못한 결과를 만날 수 있다.
+
+```jsx
+let a = new Boolean(false);
+        
+console.log(a)             // boolean {false}
+console.log('a = ' + a)    // a = false
+console.log('!a = ' + !a)  // !a = false
+```
+
+false 를 직접 래핑했을 때 a의 값이 예상과 달리 'truthy'한 객체이기 때문에 위와 같은 결과가 나타난다.
+
+따라서 원시값은 직접 객체 래퍼로 래핑하기보다는 그대로 사용하는 것이 좋다.
