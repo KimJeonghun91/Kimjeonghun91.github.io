@@ -44,6 +44,8 @@ for(let i=0;i<10;i++) {}
 
 - 인터프리터(interpreter)란?
 
+    인터프리터는 프로그래밍 언어의 소스 코드를 바로 실행하는 컴퓨터 프로그램 또는 환경을 말한다. 원시 코드를 기계어로 번역하는 컴파일러와 대비된다.
+
 ```jsx
 // 변수 선언문은 값으로 표현될 수 없기 때문에 그냥 문(Statement)이다.
 let a;
@@ -92,8 +94,8 @@ undefined                  // undefined 리터럴
     ```jsx
     console.log(a)  // undefined
     console.log(b)  // Uncaught ReferenceError: b is not defined
-        
-    var a;인터프리터가 값으로 평가(evaluate)하는 구문.인터프리터가 값으로 평가(evaluate)하는 구문.
+    
+    var a;
     ```
 
 ### **block-scoped**
