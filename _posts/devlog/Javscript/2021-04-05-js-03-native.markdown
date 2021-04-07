@@ -38,7 +38,7 @@ console.log(typeof (new Date))            // object
 console.log(typeof (new Error))           // object
 ```
 
-`[Object.prototype.toString.call](http://object.prototype.toString.call)` 객체의 [[class]]내부의 프로퍼티를 확인할 수 있다.
+`Object.prototype.toString.call` 객체의 [[class]]내부의 프로퍼티를 확인할 수 있다.
 
 아래 코드를 보면 String과 같은 원시값도 object로 랩핑 되어 있는 걸 확인할 수 있다.
 
