@@ -21,7 +21,7 @@ JavaScript는 C에서 영향을 받은 C-Family 언어로 기본적인 문법이
 
 자바스크립트 엔진은 소스코드를 가져와서, 문자열 단위로 분해하고(어휘 단위로 정리), 이들 문자열을 컴파일러가 이해할 수 있도록 바이트 코드로 변환한 후, 이를 실 행하며, 메모리를 할당하고, 가비지 컬렉팅을 한다.
 
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/c217ed1b-81cc-4845-9fe1-0a4e3fb14424/_2021-04-08__10.20.48.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/c217ed1b-81cc-4845-9fe1-0a4e3fb14424/_2021-04-08__10.20.48.png)
+![Javascript engine](/assets/img/post/js00engine.png)
 
 # 프로토타입 기반 언어
 
