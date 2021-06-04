@@ -6,7 +6,7 @@ basics:
   label: "Programmer"
   picture: /assets/img/me.png
   email: "suuuk3@naver.com"
-  phone: "010-9184-9185"
+  # phone: "010-9184-9185"
   website: "https://kimjeonghun91.github.io"
   summary: >
     동의대학원 Grand ICT 인공지능학과 재학 중.<br>
