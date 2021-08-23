@@ -39,6 +39,13 @@ work:
       - 반려동물과 반려인의 더 나은 삶을 위해 노력하고 있습니다.
       - 반려동물 의료 시설 및 반려동물 관련 시설과 상생을 도모합니다.
 volunteer:
+  - organization: "특허 출원"
+    position: "반려동물 AI 체중계"
+    website: ""
+    startDate: "2021-07-26"
+    endDate: "2021-07-26"
+    summary: "체중관리 인공 지능형 반려동물 사료 급여기 및 사료 급여 시스템"
+    # 출원 번호 : 10-2021-0097904 (2021-07-26)
   - organization: "부산시"
     position: "메이커 창업 동아리"
     website: ""
@@ -72,6 +79,9 @@ volunteer:
     #   - "DB1101 - Basic SQL"
     #   - "CS2011 - Java Introduction"
 awards:
+  - title: "특허 출원"
+    date: "2021-07-26"
+    awarder: "반려동물 AI 체중계"
   - title: "우수상"
     date: "2020-12-17"
     awarder: "메이커 창업 동아리"
