@@ -1,7 +1,7 @@
 ---
 layout: post
-title: '파이썬 기초 문법 - 자료형'
-subtitle: '파이썬 기초 문법 - 자료형'
+title: '파이썬 기초 01 - 자료형 (숫자,문자)'
+subtitle: '파이썬 기초 01 - 자료형 (숫자,문자)'
 category: devlog
 tags: python
 comments: true
@@ -9,7 +9,7 @@ comments: true
 #   path: /assets/img/default_code.png
 ---
 
-### 파이썬 기초 문법 - 자료형
+### 파이썬 기초 01 - 자료형 (숫자,문자)
 
 
 
@@ -229,7 +229,7 @@ comments: true
     print('t의 개수 : ',a.count('t'))
     
     # 문자 위치
-    print('t의 위치 : ',a.count('t'))
+    print('t의 위치 : ',a.index('t'))
     
     # 양쪽 공백 제거
     print('공백 제거 : ',a.lstrip())
@@ -240,7 +240,7 @@ comments: true
     
     ```
     t의 개수 :  2
-    t의 위치 :  2
+    t의 위치 :  6
     공백 제거 :  Don't dream, Be it  
     공문자열 나누기 :  ["  Don't dream", ' Be it  ']
     ```
