@@ -27,17 +27,17 @@ EC2 세팅의 경우 route53 에서 구매하면 편하게 세팅할 수 있는 
 
 - [https://console.aws.amazon.com/route53](https://console.aws.amazon.com/route53)
 
-![스크린샷 2022-01-20 오후 4.53.59.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/bfe2091f-5d50-4983-9156-8910feef6b16/스크린샷_2022-01-20_오후_4.53.59.png)
+![aws https](/assets/img/post/https01.png)
 
 ## 2. LightSaile DNS 생성
 
 네트워킹 메뉴에서 DNS 영역을 생성 한다.
 
-![스크린샷 2022-01-20 오후 4.56.36.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/dae5446d-d4b1-4c43-a95c-37a52ecb4838/스크린샷_2022-01-20_오후_4.56.36.png)
+![aws https](/assets/img/post/https02.png)
 
 호스팅에 이름 서버를 추가 하기위해 생성된 DNS 영역 하단의 이름 서버를 복사한다.
 
-![스크린샷 2022-01-20 오후 5.01.55.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/17baa416-1bdd-4f8b-8cc8-f2415da8fdfc/스크린샷_2022-01-20_오후_5.01.55.png)
+![aws https](/assets/img/post/https03.png)
 
 ## 3. 호스팅에 네임서버 추가
 
@@ -47,29 +47,29 @@ DNS 에서 복사한 이름 서버를 아래 `이름 서버 추가 또는 편집
 
 - [https://console.aws.amazon.com/route53/home#DomainListing](https://console.aws.amazon.com/route53/home#DomainListing:)
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/ca069435-669b-4082-894e-e9c7818c2f88/Untitled.png)
+![aws https](/assets/img/post/https04.png)
 
 ## 4. LightSail 로드 밸런서 생성
 
 다시 라이트세일로 돌아와서, 로드 밸런서를 생성합니다.
 
-![스크린샷 2022-01-20 오후 5.08.09.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/c0b05286-333e-4e01-8235-123e43a0716a/스크린샷_2022-01-20_오후_5.08.09.png)
+![aws https](/assets/img/post/https05.png)
 
 기존에 사용중인 인스턴스를 로드 밸런서에 연결.
 
-![스크린샷 2022-01-20 오후 5.08.56.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/31ca638a-e136-4a76-aa98-bb7665f5b202/스크린샷_2022-01-20_오후_5.08.56.png)
+![aws https](/assets/img/post/https06.png)
 
 ## 5.  https 인증서 생성 및 DNS 연결
 
 로드 밸런서에서 https 인증서를 생성합니다.
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/f0704c8b-ab2b-4751-bffe-a4725cf15d78/Untitled.png)
+![aws https](/assets/img/post/https07.png)
 
 인증서를 생성하면 기본 도메인, 하위 도메인 별로 레코드의 `이름`과 `값`이 생성 됩니다.
 
 **이 이름/값을 DNS에 등록해야됩니다.**
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/6d7efe82-c009-4686-967d-d7e0943d70c6/Untitled.png)
+![aws https](/assets/img/post/https08.png)
 
 다시 라이트세일의 DNS 영역으로 돌아와서 `CNAME 레코드`를 추가 합니다.
 
@@ -78,8 +78,8 @@ DNS 에서 복사한 이름 서버를 아래 `이름 서버 추가 또는 편집
 - 인증서 이름 → 도메인
 - 인증서 값 → 매핑
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/c405d4ee-87d9-4730-8d21-e34d3e42a1b0/Untitled.png)
+![aws https](/assets/img/post/https09.png)
 
 등록 후 잠시 기다리면... 아래 처럼 사용가능한 상태가 됩니다.
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/1a0dd3e6-d58b-4a97-9ac3-dd07b981e17e/Untitled.png)
+![aws https](/assets/img/post/https10.png)
