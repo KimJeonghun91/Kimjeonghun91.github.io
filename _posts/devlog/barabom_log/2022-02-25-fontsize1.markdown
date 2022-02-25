@@ -2,7 +2,7 @@
 layout: post
 title: '[바라봄 개발log] 접근성 개선 - 폰트 크기 (1)'
 subtitle: '[바라봄 개발log] 접근성 개선 - 폰트 크기 (1)'
-category: barabomlog
+category: devlog
 tags: barabomlog
 comments: true
 # image: 
