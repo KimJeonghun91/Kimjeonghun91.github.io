@@ -1,0 +1,52 @@
+---
+layout: post
+title: '[바라봄 개발log] 접근성 개선 - 폰트 크기 (1)'
+subtitle: '[바라봄 개발log] 접근성 개선 - 폰트 크기 (1)'
+category: barabomlog
+tags: barabomlog
+comments: true
+# image: 
+#   path: /assets/img/default_code.png
+---
+
+### [바라봄 개발log] 접근성 개선 - 폰트 크기 (1)
+
+## 들어가기에 앞서...
+
+바라봄 4.x.x 이전의 버전은 단순히 디자인이 망가진다는 이유로 시스템 폰트 크기는 무시한 체 폰트 크기를 고정했었다.
+
+바라봄을 완성하고 엄마에게 보여줬을 때, 시력이 나쁜 울 엄마는 내 앱을 제대로 사용할 수도 없었다.
+
+반려동물을 키우는 인구는 젊은층 부터 노년층까지 다양하고 반려동물을 사랑하는 마음은 모두 같을 것이다.
+
+그리고 가족 공유기능을 기획하고 있었던 시기였기에 폰트 접근성 개선을 먼저 하기로 마음먹었다.
+
+## 시스템 폰트 크기와 상용앱들
+
+먼저 시스템 폰트 크기를 최대로 키우고 네이버와 카카오에 앱을 열어봤는데, 상당히 실망했다. 두 앱 모두 시스템 폰트 크기 변동에 대응하고 있지 않았기 때문이다.
+
+![barabom_dev_log.png](/assets/img/post/fontsize01-1.png) |![barabom_dev_log.png](/assets/img/post/fontsize01-2.png) |![barabom_dev_log.png](/assets/img/post/fontsize01-3.png)
+--- | --- | 
+
+
+물론 각 앱들 모두 앱내 설정에서 변경이 가능했지만, 노년층이 혼자 해당 설정을 찾아 들어가기에는 쉽지 않아 보였다.
+
+![barabom_dev_log.png](/assets/img/post/fontsize01-4.png) |![barabom_dev_log.png](/assets/img/post/fontsize01-5.png) |![barabom_dev_log.png](/assets/img/post/fontsize01-6.png)
+--- | --- | 
+
+
+가장 사용자 경험이 좋았던 앱은 토스였다. UI 자체가 폰트 크기 변화를 고려하여 디자인되었고, 별도의 설정없이 네이티브 시스템 설정을 바꾼 것 만으로 즉시 적용이 되었다.
+
+( 깨알같은 네이버/카카오의 폰트를 보다가 토스를 보니 디폴트 크기 자체가 커서 시원 시원한 느낌이다. )
+
+![barabom_dev_log.png](/assets/img/post/fontsize01-7.png) |![barabom_dev_log.png](/assets/img/post/fontsize01-8.png) 
+--- | --- | 
+
+
+# 개발에 앞서...
+
+벤치마크할 대상 (토스)를 정하고 다시 내가 개발한 바라봄을 보니... 
+
+폰트 크기 변화를 고려하지 않은 UI 디자인 때문에 바로 개발에 착수할 수 없었다. 😭
+
+결국 디자이너와 기획 부터 다시 시작!
