@@ -26,13 +26,13 @@ comments: true
 먼저 시스템 폰트 크기를 최대로 키우고 네이버와 카카오에 앱을 열어봤는데, 상당히 실망했다. 두 앱 모두 시스템 폰트 크기 변동에 대응하고 있지 않았기 때문이다.
 
 ![barabom_dev_log.png](/assets/img/post/fontsize01-1.png) |![barabom_dev_log.png](/assets/img/post/fontsize01-2.png) |![barabom_dev_log.png](/assets/img/post/fontsize01-3.png)
---- | --- | 
+--- | --- | --- | 
 
 
 물론 각 앱들 모두 앱내 설정에서 변경이 가능했지만, 노년층이 혼자 해당 설정을 찾아 들어가기에는 쉽지 않아 보였다.
 
 ![barabom_dev_log.png](/assets/img/post/fontsize01-4.png) |![barabom_dev_log.png](/assets/img/post/fontsize01-5.png) |![barabom_dev_log.png](/assets/img/post/fontsize01-6.png)
---- | --- | 
+--- | --- | --- | 
 
 
 가장 사용자 경험이 좋았던 앱은 토스였다. UI 자체가 폰트 크기 변화를 고려하여 디자인되었고, 별도의 설정없이 네이티브 시스템 설정을 바꾼 것 만으로 즉시 적용이 되었다.
