@@ -11,6 +11,27 @@ comments: true
 
 ### [바라봄 개발log] 접근성 개선 - 폰트 크기 (2)
 
+## 폰트를 변경하자!
+
+최근에 인상깊은 글을 하나 봤다.
+
+[토스 피드 - 서체](https://blog.toss.im/article/beginning-of-tps)
+
+정말 똑똑한(?) 사람들은 다르구나, 많이 배웠고 공부를 더 해야겠다고 느꼈다.
+
+바라봄은 나눔 스퀘어를 사용하고 있었다.
+
+나눔 스퀘어도 좋은 폰트이지만, 몇몇 한글이 입력 되지 않아 이따금 버그로 오인받고는 했었다.
+
+![barabom_dev_log.png](/assets/img/post/font_02_00.png)
+
+토스 피드를 읽고 바로 [스포카한산스네오](https://spoqa.github.io/spoqa-han-sans/)로 변경했다.
+
+가독성 및 통일성이 높다는 장점과 '소비' 기능을 준비중인 시기였기에 숫자 가독성이 높은 점은 아주 마음에 들었다.
+
+곧바로 적용했고 글씨가 눈에 훨씬 잘 들어온다는 유저들의 피드백이 즉각 들어와서 기분이 좋았다.
+
+
 ## 공간을 확보하자!
 
 시스템 폰트의 최대 크기는 생각보다 더 크고 아름다웠다(?)
@@ -21,13 +42,11 @@ comments: true
 
 디자이너와 함께 늘릴 수 있는 공간을 먼저 체크하고, 늘리기 어려운 레이아웃은 변경하기로 했다.
 
-.
 
 ![barabom_dev_log.png](/assets/img/post/font_02_01.png)
 
 좌측 타임라인을 나타내는 선은 제거하고 우측 정렬된 텍스트는 좌측 정렬로 통일하기로 했다.
 
-.
 
 ![barabom_dev_log.png](/assets/img/post/font_02_02.png)
 
@@ -41,7 +60,6 @@ comments: true
 
 가장 메인 기능인 건강수첩을 우선적으로 변경했다.
 
-.
 
 ![barabom_dev_log.png](/assets/img/post/font_02_04.png)
 
