@@ -44,6 +44,8 @@ comments: true
 
 ![barabom_dev_log.png](/assets/img/post/pay03.png)
 
+(관절증상, 구토등 몇몇 증상의 경우 동영상을 찍어서 기록하면 동물병원에 갔을때 도움이 된다.)
+
 
 ## 불편하되 불편하지 않게
 
