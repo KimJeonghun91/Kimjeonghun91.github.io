@@ -45,21 +45,17 @@ work:
     summary: >
       프로그램 개발 업무 및 강의.
     highlights:
-      - ReactNative APP 개발
-        - 백그라운드 GPS 통신.
-        - PUSH 서비스.
-        - Firebase를 사용한 Crash , Analytics 관리 , Deep link 처리.
-        - SNS 로그인.
-        - WebRTC 및 외부 TURN 서버를 이용한 영상 통화 앱 개발.
-      - 서버 개발
-        - NodeJS , Express 를 이용한 API 서버 개발.
-        - Push 발송 스케쥴 개발.
-        - MySql DB 사용.
-      - 웹 개발
-        - React 기반 관리자 WebPage 개발.
-      - Android Native APP 개발
-        - 사이클링 장비와 BLE 통신을 통한 피트니스 앱 개발.
-        - Firebase RDB를 이용한 실시간 채팅.
+      - (APP) 백그라운드 GPS 통신.
+      - (APP) PUSH 서비스.
+      - (APP) Firebase를 사용한 Crash , Analytics 관리 , Deep link 처리.
+      - (APP) SNS 로그인.
+      - (APP) WebRTC 및 외부 STUN/TURN 서버를 이용한 영상 통화 앱 개발.
+      - (APP) 사이클링 장비와 BLE 통신을 통한 피트니스 앱 개발.
+      - (APP) Firebase RDB를 이용한 실시간 채팅.
+      - (BE) NodeJS , Express 를 이용한 API 서버 개발.
+      - (BE) Push 발송 스케쥴 개발.
+      - (BE) MySql DB 설계.
+      - (WEB) React 기반 관리자 WebPage 개발.
 volunteer:
   - organization: "특허 출원"
     position: "반려동물 AI 체중계"
