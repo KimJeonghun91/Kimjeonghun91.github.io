@@ -57,6 +57,12 @@ work:
       - (BE) MySql DB 설계.
       - (WEB) React 기반 관리자 WebPage 개발.
 volunteer:
+  - organization: "행정안전부"
+    position: "끝장발굴대회"
+    website: ""
+    startDate: "2022-05-01"
+    endDate: "2022-05-13"
+    summary: "제 6회 끝장발굴대회 멘토 활동"
   - organization: "특허 출원"
     position: "반려동물 AI 체중계"
     website: ""
@@ -97,9 +103,6 @@ volunteer:
     #   - "DB1101 - Basic SQL"
     #   - "CS2011 - Java Introduction"
 awards:
-  - title: "행정안전부 끝장발굴대회 6회"
-    date: "2022-05-13"
-    awarder: "멘토 활동"
   - title: "특허 출원"
     date: "2021-07-26"
     awarder: "반려동물 AI 체중계"
