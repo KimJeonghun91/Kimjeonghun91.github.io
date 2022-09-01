@@ -7,7 +7,7 @@ basics:
   picture: /assets/img/me.png
   email: "suuuk3@naver.com"
   # phone: "010-9184-9185"
-  url: "https://바라봄.com",
+  url: "https://바라봄.com"
   website: "https://kimjeonghun91.github.io/resume"
   summary: >
     디자인과 UI/UX 를 고민하는 개발자입니다. 특히 유저경험이 중요하다고 생각하며,<br>
@@ -113,10 +113,9 @@ awards:
   - title: "우수상"
     date: "2020-12-17"
     awarder: "메이커 창업 동아리(부산시)"
-certificates:
-  - name: "정보처리기사"
-    date: "2022-08-30"
-    issuer: "HRDK"
+  - title: "정보처리기사"
+    date: "2018-05-25"
+    awarder: "HRDK"
     # summary: "There is no spoon."
 # publications:
 #   - name: "Video compression for 3d media"
