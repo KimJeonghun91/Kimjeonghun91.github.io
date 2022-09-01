@@ -103,6 +103,9 @@ volunteer:
     #   - "DB1101 - Basic SQL"
     #   - "CS2011 - Java Introduction"
 awards:
+  - title: "AI 아이디어 경진대회(과기부)"
+    date: "2022-08-30"
+    awarder: "최우수상"
   - title: "특허 출원"
     date: "2021-07-26"
     awarder: "반려동물 AI 체중계"
