@@ -113,9 +113,10 @@ awards:
   - title: "우수상"
     date: "2020-12-17"
     awarder: "메이커 창업 동아리(부산시)"
-  - title: "정보처리기사"
-    date: "2018-05-25"
-    awarder: "HRDK"
+certificates:
+  - name: "정보처리기사"
+    date: "2022-08-30"
+    issuer: "HRDK"
     # summary: "There is no spoon."
 # publications:
 #   - name: "Video compression for 3d media"
