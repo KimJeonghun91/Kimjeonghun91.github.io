@@ -7,7 +7,7 @@ basics:
   picture: /assets/img/me.png
   email: "suuuk3@naver.com"
   # phone: "010-9184-9185"
-  website: "https://바라봄.com"
+  website: "https://kimjeonghun91.github.io/resume"
   summary: >
     디자인과 UI/UX 를 고민하는 개발자입니다. 특히 유저경험이 중요하다고 생각하며,<br>
     " 서비스의 대상이 누구인가? "  ,  " 유저가 서비스를 사용하면서 불편함은 없을까? "<br>
@@ -19,15 +19,15 @@ basics:
     countryCode: "부산 광역시"
     region: ""
   profiles:
+    - network: "github"
+      username: "kimjeonghun91"
+      url: "https://github.com/KimJeonghun91"
     - network: "instagram"
       username: "right_hot"
       url: "https://www.instagram.com/right_hot"
-    - network: "github"
-      username: "kimjeonghun91"
-      url: "https://kimjeonghun91.github.io"
-    # - network: "facebook"
-    #   username: "righthot"
-    #   url: "https://www.facebook.com/righthot"
+    - network: "facebook"
+      username: "righthot"
+      url: "https://www.facebook.com/righthot"
 work:
   - company: "0610studio"
     position: "CEO"
