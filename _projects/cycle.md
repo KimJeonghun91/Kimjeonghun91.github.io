@@ -5,7 +5,7 @@ caption: 사이클과 BLE 통신으로 운동 측정
 # description: >
 #   This is how I use Hydejack on my personal site. 
 #   Much of the development is informed from my experience of using it myself, creating a tight feedback loop.
-date: 1 Jun 2018
+date: 1 Jun 2019
 image: 
   path: /assets/img/projects/cycle01.png
   # srcset: 

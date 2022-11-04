@@ -1,11 +1,11 @@
 ---
 layout: project
 title: '운세 상담 앱'
-caption: 유저와 상담사의 채팅, VOIP의 BM을 가진앱. 일일운세,무료사주등의 부가기능을 추가 개발.
+caption: 유저와 상담사의 채팅, 영상/음성통화 탑재. 일일운세,무료사주등의 부가기능을 추가 개발.
 # description: >
 #   This is how I use Hydejack on my personal site. 
 #   Much of the development is informed from my experience of using it myself, creating a tight feedback loop.
-date: 1 Jun 2020
+date: 1 Jun 2018
 image: 
   path: /assets/img/projects/saju_pp.jpg
   # srcset: 
