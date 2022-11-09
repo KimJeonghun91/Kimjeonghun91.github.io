@@ -11,11 +11,11 @@ comments: true
 
 ### [바라봄 개발log] UX 개선 TOAST 알림
 
-# Toast notification 이란?
+### Toast notification 이란?
 
 토스트 알림은 짧은 메시지를 표시하기위한 비모달(non-modal)적이고 눈에 거슬리지 않는 요소이며 이벤트가 발생할 때 화면에 나타나는 알림.
 
-# 모달(modal)이란?
+### 모달(modal)이란?
 
 사용자 인터페이스 디자인 개념에서 자식 윈도에서 부모 윈도로 돌아가기 전에 사용자의 상호동작을 요구하는 창.
 
@@ -30,7 +30,7 @@ comments: true
 
 ![barabom_dev_log.png](/assets/img/post/uxalert01.gif)
 
-# 환승 연애 아니... 환승 건강수첩?!
+### 환승 연애 아니... 환승 건강수첩?!
 
 바라봄에 유입되는 유저들 중 다른앱에서 기록을 하다가 넘어오는 경우가 많이 보였다.
 
