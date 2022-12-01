@@ -1,618 +1,142 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="ko-KR, en-US"><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" hreflang="ko-KR, en-US" /><updated>2021-03-04T16:24:31+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">RightHot</title><subtitle>바르고, 뜨겁게... RightHot 블로그 입니다.
-</subtitle><author><name>RightHot</name><email>&lt;suuuk3@naver.com&gt;</email></author><entry><title type="html">Node - express-generator 구조</title><link href="http://localhost:4000/blog/devlog/2021-02-28-node-express-g/" rel="alternate" type="text/html" title="Node - express-generator 구조" /><published>2021-02-28T00:00:00+09:00</published><updated>2021-02-28T00:00:00+09:00</updated><id>http://localhost:4000/blog/devlog/node-express-g</id><content type="html" xml:base="http://localhost:4000/blog/devlog/2021-02-28-node-express-g/">&lt;h1 id=&quot;node---express-generator-구조&quot;&gt;Node - express-generator 구조&lt;/h1&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;bin/www&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;div class=&quot;language-jsx highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt;&lt;span class=&quot;err&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;app&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;err&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;../app&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt;
-&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt;&lt;span class=&quot;err&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;debug&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;err&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;debug&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;learn-express:server&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt;
-&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt;&lt;span class=&quot;err&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;http&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;err&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;http&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;app&lt;/strong&gt; : express() 인스턴스. &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;app.set(키,값)&lt;/code&gt; 형태로 데이터를 저장할 수 있으며 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;app.get(키)&lt;/code&gt;로 가져올 수 있다.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;debug&lt;/strong&gt; : 콘솔에 로그를 남길 수 있는 모듈&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;http&lt;/strong&gt; : 서버 생성 모듈&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;language-jsx highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;err&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt;&lt;span class=&quot;err&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;port&lt;/span&gt;&lt;span class=&quot;err&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;normalizePort&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;process&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;env&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;PORT&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;||&lt;/span&gt;&lt;span class=&quot;err&quot;&gt; &lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;3000&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;process.env 객체에 PORT 값이 있으면 사용하고 없으면 3000을 기본 포트로 사용&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;language-jsx highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;err&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt;&lt;span class=&quot;err&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;server&lt;/span&gt;&lt;span class=&quot;err&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;http&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;createServer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;app&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;server&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;listen&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;port&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;지정된 포트로 서버 실행&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;app.js&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;div class=&quot;language-jsx highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt;&lt;span class=&quot;err&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;app&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;express&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt;
-&lt;span class=&quot;nx&quot;&gt;app&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;set&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;views&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;path&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;join&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;__dirname&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;err&quot;&gt; &lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;views&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt;
-&lt;span class=&quot;nx&quot;&gt;app&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;set&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;view engine&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;err&quot;&gt; &lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;pug&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;app.set&lt;/code&gt; 을 사용하여 express 환경 설정 가능&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;language-jsx highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nx&quot;&gt;app&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;use&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;logger&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;dev&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt;
-&lt;span class=&quot;nx&quot;&gt;app&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;use&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;express&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;json&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;());&lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt;
-&lt;span class=&quot;nx&quot;&gt;app&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;use&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;express&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;urlencoded&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;&lt;span class=&quot;err&quot;&gt; &lt;/span&gt;&lt;span class=&quot;na&quot;&gt;extended&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;err&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;err&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}));&lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt;
-&lt;span class=&quot;nx&quot;&gt;app&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;use&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;cookieParser&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;());&lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt;
-&lt;span class=&quot;nx&quot;&gt;app&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;use&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;express&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;static&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;path&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;join&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;__dirname&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;public&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)));&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;app.use&lt;/code&gt; 를 사용하여 미들웨어 추가&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;language-jsx highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;...&lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt;
-&lt;span class=&quot;nx&quot;&gt;module&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;exports&lt;/span&gt;&lt;span class=&quot;err&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;app&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;모듈로 내보내고 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;www&lt;/code&gt; 에서 사용&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h1 id=&quot;express-미들웨어&quot;&gt;express 미들웨어&lt;/h1&gt;
-
-&lt;h3 id=&quot;미들웨어란&quot;&gt;미들웨어란?&lt;/h3&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;요청과 응답의 중간에 위치하여 기능을 추가하거나 필터링함.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;미들웨어 형태&lt;/p&gt;
-
-    &lt;div class=&quot;language-jsx highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;err&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;app&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;use&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;req&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;err&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;res&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;err&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;next&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;err&quot;&gt;   &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;...&lt;/span&gt;
-  &lt;span class=&quot;err&quot;&gt;   &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;next&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
-  &lt;span class=&quot;err&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;next()&lt;/strong&gt; : 요청의 흐름을 제어함&lt;/p&gt;
-    &lt;ul&gt;
-      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;next()&lt;/code&gt; : 다음 미들웨어로 이동&lt;/li&gt;
-      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;next('route')&lt;/code&gt; : 다음 라우터로 이동&lt;/li&gt;
-      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;next(error내용)&lt;/code&gt; : 에러 핸들러 이동&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;미들웨어-종류-및-기능&quot;&gt;미들웨어 종류 및 기능&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;morgan&lt;/strong&gt;&lt;/p&gt;
-
-    &lt;p&gt;콘솔 기록 미들웨어&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;body-parser&lt;/strong&gt;&lt;/p&gt;
-
-    &lt;p&gt;본문을 해석해주는 미들웨어. json, raw, text등의 본문 데이터들을 해석해 req.body에 추가함&lt;/p&gt;
-
-    &lt;p&gt;(ex) URL-encoded 형태의 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;name=righthot&amp;amp;age=30&lt;/code&gt; 데이터를 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;{name: 'righthot', age:30}&lt;/code&gt; 으로 변형&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;cookie-parser&lt;/strong&gt;&lt;/p&gt;
-
-    &lt;p&gt;쿠키를 해석해주는 미들웨어&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;static&lt;/strong&gt;&lt;/p&gt;
-
-    &lt;p&gt;정적인 파일 제공, 정적 파일을 불러올 수 있으며, 경로를 다르게 지정 가능&lt;/p&gt;
-
-    &lt;div class=&quot;language-jsx highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;nx&quot;&gt;app&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;use&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;/pd&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;express&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;static&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;path&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;join&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;__dirname&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;err&quot;&gt; &lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;images/pd&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)));&lt;/span&gt;
-
-  &lt;span class=&quot;c1&quot;&gt;// http://localhost:3000/images/pd&lt;/span&gt;
-  &lt;span class=&quot;c1&quot;&gt;// http://localhost:3000/pd&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;express-session&lt;/strong&gt;&lt;/p&gt;
-
-    &lt;p&gt;세션 관리 미들웨어&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;</content><author><name>RightHot</name><email>&lt;suuuk3@naver.com&gt;</email></author><category term="devlog" /><category term="node" /><summary type="html">Node - express-generator 구조</summary></entry><entry><title type="html">ReactNative - google 로그인</title><link href="http://localhost:4000/blog/devlog/2021-02-22-rn-google-sign-in/" rel="alternate" type="text/html" title="ReactNative - google 로그인" /><published>2021-02-22T00:00:00+09:00</published><updated>2021-02-22T00:00:00+09:00</updated><id>http://localhost:4000/blog/devlog/rn-google-sign-in</id><content type="html" xml:base="http://localhost:4000/blog/devlog/2021-02-22-rn-google-sign-in/">&lt;h2 id=&quot;파이어베이스-설정&quot;&gt;파이어베이스 설정&lt;/h2&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;&lt;a href=&quot;https://rnfirebase.io/&quot;&gt;https://rnfirebase.io/&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h3 id=&quot;파이어베이스--google-signin-모듈-설치&quot;&gt;파이어베이스,  google-signin 모듈 설치&lt;/h3&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;yarn add @react-native-firebase/app
-yarn add @react-native-community/google-signin
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;파이어베이스-콘솔에-프로젝트-추가&quot;&gt;파이어베이스 콘솔에 프로젝트 추가&lt;/h3&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://console.firebase.google.com/&quot;&gt;https://console.firebase.google.com/&lt;/a&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;안드로이드-셋업&quot;&gt;안드로이드 셋업&lt;/h3&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;파이어베이스 안드로이드 앱등록&lt;/li&gt;
-  &lt;li&gt;파이어베이스 콘솔 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;빌드/authentication&lt;/code&gt; 에서 구글 로그인 허용&lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;디버그 서명 인증서 SHA-1 확인&lt;/p&gt;
-
-    &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &lt;span class=&quot;nb&quot;&gt;cd &lt;/span&gt;android &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; ./gradlew signingReport
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;android/app&lt;/code&gt; 경로에 google-services.json 복사&lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/android/build.gradle&lt;/code&gt; 경로에 아래 코드 추가&lt;/p&gt;
-
-    &lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &lt;span class=&quot;n&quot;&gt;buildscript&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-   &lt;span class=&quot;n&quot;&gt;dependencies&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-     &lt;span class=&quot;c1&quot;&gt;// ... other dependencies&lt;/span&gt;
-     &lt;span class=&quot;n&quot;&gt;classpath&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;com&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;google&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;gms&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;google&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;services:&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;4.3&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;'&lt;/span&gt;
-     &lt;span class=&quot;c1&quot;&gt;// Add me --- /\&lt;/span&gt;
-   &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
- &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/android/app/build.gradle&lt;/code&gt; 경로에 아래 코드 추가&lt;/p&gt;
-
-    &lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &lt;span class=&quot;n&quot;&gt;apply&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;plugin:&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;com&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;android&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;application&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;'&lt;/span&gt;
- &lt;span class=&quot;n&quot;&gt;apply&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;plugin:&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;com&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;google&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;gms&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;google&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;services&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;'&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// &amp;lt;- Add this line&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h3 id=&quot;ios-셋업&quot;&gt;IOS 셋업&lt;/h3&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;파이어 베이스 IOS 앱등록&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/ios/[프로젝트 이름]&lt;/code&gt; 경로에 GoogleService-Info.plist 추가&lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/ios/{projectName}/AppDelegate.m&lt;/code&gt; 코드추가&lt;/p&gt;
-
-    &lt;div class=&quot;language-jsx highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &lt;span class=&quot;err&quot;&gt;#&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;Firebase&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;h&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
-
- - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions &lt;span class=&quot;si&quot;&gt;{&lt;/span&gt;
-   &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;FIRApp&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;defaultApp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;nil&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-     &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;FIRApp&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;configure&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
-   &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
- &lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;inpo.plist&lt;/code&gt; 에 REVERSED_CLIENT_ID 추가&lt;/p&gt;
-
-    &lt;div class=&quot;language-jsx highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;key&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;CFBundleURLTypes&lt;span class=&quot;p&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;key&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
- 	&lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
- 		&lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;dict&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
- 			&lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;key&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;CFBundleTypeRole&lt;span class=&quot;p&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;key&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
- 			&lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;Editor&lt;span class=&quot;p&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
- 			&lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;key&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;CFBundleURLSchemes&lt;span class=&quot;p&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;key&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
- 			&lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
- 				&lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;[REVERSED_CLIENT_ID]&lt;span class=&quot;p&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
- 			&lt;span class=&quot;p&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
- 		&lt;span class=&quot;p&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;dict&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
- 	&lt;span class=&quot;p&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h3 id=&quot;reactnative-코드&quot;&gt;ReactNative 코드&lt;/h3&gt;
-
-&lt;div class=&quot;language-jsx highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;GoogleSignin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;statusCodes&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;@react-native-community/google-signin&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;auth&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;@react-native-firebase/auth&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;
-
-&lt;span class=&quot;nx&quot;&gt;GoogleSignin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;configure&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;
-    &lt;span class=&quot;c1&quot;&gt;// scopes: ['https://www.googleapis.com/auth'], // what API you want to access on behalf of the user, default is email and profile&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;webClientId&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;''&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// client ID of type WEB for your server (needed to verify user ID and offline access)&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;iosClientId&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;''&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// [iOS] optional, if you want to specify the client ID of type iOS (otherwise, it is taken from GoogleService-Info.plist)&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;offlineAccess&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// if you want to access Google API on behalf of the user FROM YOUR SERVER&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;hostedDomain&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;''&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// specifies a hosted domain restriction&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;loginHint&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;''&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// [iOS] The user's ID, or email address, to be prefilled in the authentication UI if possible. [See docs here](https://developers.google.com/identity/sign-in/ios/api/interface_g_i_d_sign_in.html#a0a68c7504c31ab0b728432565f6e33fd)&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;forceCodeForRefreshToken&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// [Android] related to `serverAuthCode`, read the docs link below *.&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;accountName&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;''&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// [Android] specifies an account name on the device that should be used&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;await&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;GoogleSignin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;hasPlayServices&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;userInfo&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;await&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;GoogleSignin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;signIn&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-
-&lt;span class=&quot;c1&quot;&gt;// Create a Google credential with the token&lt;/span&gt;
-&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;googleCredential&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;auth&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;GoogleAuthProvider&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;credential&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;userInfo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;idToken&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;userCredential&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;await&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;auth&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;().&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;signInWithCredential&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;googleCredential&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>RightHot</name><email>&lt;suuuk3@naver.com&gt;</email></author><category term="devlog" /><category term="reactnative" /><summary type="html">파이어베이스 설정</summary></entry><entry><title type="html">ReactNative - Typescript 프로젝트 환경 설정</title><link href="http://localhost:4000/blog/devlog/2021-02-15-rn-devset/" rel="alternate" type="text/html" title="ReactNative - Typescript 프로젝트 환경 설정" /><published>2021-02-15T00:00:00+09:00</published><updated>2021-02-15T00:00:00+09:00</updated><id>http://localhost:4000/blog/devlog/rn-devset</id><content type="html" xml:base="http://localhost:4000/blog/devlog/2021-02-15-rn-devset/">&lt;h3 id=&quot;react-native-cli-설치&quot;&gt;React Native CLI 설치&lt;/h3&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;yarn global add @react-native-community/cli
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;typescript-템플릿-추가하여-프로젝트-생성&quot;&gt;Typescript 템플릿 추가하여 프로젝트 생성&lt;/h3&gt;
-
-&lt;div class=&quot;language-powershell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;react-native&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;init&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;프로젝트이름&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;--template&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;react-native-template-typescript&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;navigation을-통한-param-전달-방법&quot;&gt;navigation을 통한 param 전달 방법&lt;/h3&gt;
-
-&lt;div class=&quot;language-jsx highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nx&quot;&gt;navigation&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;navigate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;pageName&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div class=&quot;language-jsx highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;route&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;useRoute&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;RouteProp&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;T&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;string&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;T&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
-&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getData&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;setGetData&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;useState&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;route&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;params&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;빌드-옵션&quot;&gt;빌드 옵션&lt;/h3&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# 로컬 서버 시작&lt;/span&gt;
-yarn start
-
-&lt;span class=&quot;c&quot;&gt;# 안드로이드 디버그 빌드&lt;/span&gt;
-yarn android
-
-&lt;span class=&quot;c&quot;&gt;# IOS 디버그 빌드&lt;/span&gt;
-yarn ios &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;--device&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'device name'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;안드로이드-디버그-apk-빌드&quot;&gt;안드로이드 디버그 APK 빌드&lt;/h3&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;cd &lt;/span&gt;android
-./gradlew bundleDebug
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>RightHot</name><email>&lt;suuuk3@naver.com&gt;</email></author><category term="devlog" /><category term="reactnative" /><summary type="html">React Native CLI 설치</summary></entry><entry><title type="html">Javascript - 싱글 스레드 눈으로 확인하기.</title><link href="http://localhost:4000/blog/devlog/2021-02-05-js-singlethread/" rel="alternate" type="text/html" title="Javascript - 싱글 스레드 눈으로 확인하기." /><published>2021-02-05T00:00:00+09:00</published><updated>2021-02-05T00:00:00+09:00</updated><id>http://localhost:4000/blog/devlog/js-singlethread</id><content type="html" xml:base="http://localhost:4000/blog/devlog/2021-02-05-js-singlethread/">&lt;h2 id=&quot;javascript-싱글-스레드-눈으로-확인하기&quot;&gt;Javascript 싱글 스레드 눈으로 확인하기.&lt;/h2&gt;
-
-&lt;p&gt;자바스크립트는 자바와는 다르게 싱글 스레드라고 한다.&lt;/p&gt;
-
-&lt;p&gt;한번에 하나의 작업만 수행할 수 있음에도 불구하고 비동기, 논블로킹등을 지원하기에 실제 코드상 눈으로 확인하긴 어렵다.&lt;/p&gt;
-
-&lt;p&gt;따라서 아래 자바와의 비교를 코드를 통해 싱글 스레드를 눈으로 확인해보겠다.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;잘못 된 정보가 있다면 댓글로 알려주길 바랍니다!&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;JAVA&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;NoSyncDataMain&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Data&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;data&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Data&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
-    &lt;span class=&quot;c1&quot;&gt;// static으로 공용으로 사용하는 객체 생성&lt;/span&gt;
-    &lt;span class=&quot;c1&quot;&gt;// Tom클래스와 Jane 클래스에서 동시에 값을 막 넣음&lt;/span&gt;
-    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[]&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;args&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;nc&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;main 시작&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-        &lt;span class=&quot;nc&quot;&gt;Tom&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;t&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Tom&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
-        &lt;span class=&quot;nc&quot;&gt;Jane&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;j&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Jane&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;start&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;start&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
-        &lt;span class=&quot;nc&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;main 종료&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Tom&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Thread&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;run&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1000000&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;++)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-            &lt;span class=&quot;nc&quot;&gt;NoSyncDataMain&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;++;&lt;/span&gt;
-        &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-        &lt;span class=&quot;nc&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Tom : &quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;NoSyncDataMain&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-        &lt;span class=&quot;c1&quot;&gt;// 최종 출력이 다르게 찍히는건 그때 10만연산이 끝났기 때문.&lt;/span&gt;
-        &lt;span class=&quot;c1&quot;&gt;// 예를들어 Tom은 17만일때 10만이 끝났는데 Jane이 3만남음.&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Jane&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Thread&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;run&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1000000&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;++)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-            &lt;span class=&quot;nc&quot;&gt;NoSyncDataMain&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;++;&lt;/span&gt;
-        &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-        &lt;span class=&quot;nc&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Jane : &quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;NoSyncDataMain&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Data&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/post/99F9A74E5FA152002B.png&quot; alt=&quot;Javascript test&quot; /&gt;
-&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;Javascript&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;mCnt&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-
-&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;main 시작&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Promise&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;resolve&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;reject&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1000000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;nx&quot;&gt;mCnt&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;mCnt&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;resolve&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;then&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;resData&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;Tom : &lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;mCnt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Promise&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;resolve&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;reject&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2000000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;nx&quot;&gt;mCnt&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;mCnt&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;resolve&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;then&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;resData&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;Jane : &lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;mCnt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
-
-&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;main 종료&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/post/997BD04E5FA152102A.png&quot; alt=&quot;Javascript test&quot; /&gt;
-&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;온라인 코드실행기 : https://hashcode.co.kr/code_runners?language=javascript&lt;/p&gt;</content><author><name>RightHot</name><email>&lt;suuuk3@naver.com&gt;</email></author><category term="devlog" /><category term="javascript" /><summary type="html">Javascript 싱글 스레드 눈으로 확인하기.</summary></entry><entry><title type="html">바라봄 테스트</title><link href="http://localhost:4000/blog/barabom/barabom-news/2021-02-05-js-singlethread/" rel="alternate" type="text/html" title="바라봄 테스트" /><published>2021-02-05T00:00:00+09:00</published><updated>2021-02-05T00:00:00+09:00</updated><id>http://localhost:4000/blog/barabom/barabom-news/js-singlethread</id><content type="html" xml:base="http://localhost:4000/blog/barabom/barabom-news/2021-02-05-js-singlethread/">&lt;p&gt;아아 테스트&lt;/p&gt;</content><author><name>RightHot</name><email>&lt;suuuk3@naver.com&gt;</email></author><category term="barabom" /><category term="barabom-news" /><category term="바라봄" /><category term="소식" /><summary type="html">아아 테스트</summary></entry><entry><title type="html">Javascript - 프로미스(Promise)</title><link href="http://localhost:4000/blog/devlog/2021-02-01-js-promise/" rel="alternate" type="text/html" title="Javascript - 프로미스(Promise)" /><published>2021-02-01T00:00:00+09:00</published><updated>2021-02-01T00:00:00+09:00</updated><id>http://localhost:4000/blog/devlog/js-promise</id><content type="html" xml:base="http://localhost:4000/blog/devlog/2021-02-01-js-promise/">&lt;blockquote&gt;
-  &lt;p&gt;Promise 란?&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;비동기 작업의 결과값(성공,실패)를 저장하고 있는 컨테이너, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;resolve&lt;/code&gt; 와 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;reject&lt;/code&gt;를 통해 원하는 시점에 결과를 리턴할 수 있다.&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;Promise 생성&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;err&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;promise&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Promise&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;resolve&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;reject&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-&lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt;&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
-&lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;resolve&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-&lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;else&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-&lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;reject&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-&lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;err&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;Promise를 사용한 콜백 처리.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;&lt;strong&gt;미국 달러와 원화 , 엔화를 차례대로 서버에 요청하는 예제이다.&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;CORS를 피해갈 마땅한 GET 요청이 없어서 아래 API 사용했으므로 과다한 호출은 삼가 부탁드립니다.&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;각 나라별로 차례대로 환율을 비교해야하는 상황에 동시에 조회하는 API가 없다면 콜백 헬이 엄청나게 깊어 질 수도 있다.&lt;/p&gt;
-
-&lt;p&gt;하지만 아래와 같이 promise 를 사용하면 콜백헬을 극복할 수 있다.&lt;/p&gt;
-
-&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &lt;span class=&quot;cp&quot;&gt;&amp;lt;!DOCTYPE html&amp;gt;&lt;/span&gt;
- &lt;span class=&quot;nt&quot;&gt;&amp;lt;html&amp;gt;&lt;/span&gt;
- ​
- &lt;span class=&quot;nt&quot;&gt;&amp;lt;head&amp;gt;&lt;/span&gt;
-     &lt;span class=&quot;nt&quot;&gt;&amp;lt;meta&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;charset=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;utf-8&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
- &lt;span class=&quot;nt&quot;&gt;&amp;lt;/head&amp;gt;&lt;/span&gt;
- &lt;span class=&quot;nt&quot;&gt;&amp;lt;script&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;reqPromise&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;async&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;reqServerApi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-&lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt;&lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Promise&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;resolve&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;reject&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-&lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;요청 : &lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;reqServerApi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;err&quot;&gt; ​&lt;/span&gt;
-&lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;// AJAX HTTP 요청&lt;/span&gt;
-&lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;xhr&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;XMLHttpRequest&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
-&lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;xhr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;onreadystatechange&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-&lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt;&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;xhr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;readyState&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;===&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;xhr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;DONE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-&lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt;&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;xhr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;status&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;===&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;200&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;||&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;xhr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;status&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;===&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;201&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-&lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;resolve&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;xhr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;responseText&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// then&lt;/span&gt;
-&lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-&lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;reject&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;xhr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;status&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// catch&lt;/span&gt;
-&lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
-&lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;xhr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;open&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;GET&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;reqServerApi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;xhr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;send&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
-&lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;
-&lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;err&quot;&gt; ​&lt;/span&gt;
-&lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;reqPromise&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;https://earthquake.kr:23490/query/USDKRW&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;then&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;resData&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-&lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;요청 결과 1 : &lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;JSON&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;stringify&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;resData&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// USDKRW 환율 결과&lt;/span&gt;
-&lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt;&lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;reqPromise&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;https://earthquake.kr:23490/query/USDJPY&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;
-&lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;then&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;resData&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-&lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;요청 결과 2 : &lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;JSON&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;stringify&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;resData&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// USDJPY 환율 결과&lt;/span&gt;
-&lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;
-&lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;catch&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;errData&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-&lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;error&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;JSON&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;stringify&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;errData&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
-&lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;
-&lt;span class=&quot;err&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
- ​
- &lt;span class=&quot;nt&quot;&gt;&amp;lt;body&amp;gt;&lt;/span&gt;
- &lt;span class=&quot;nt&quot;&gt;&amp;lt;/body&amp;gt;&lt;/span&gt;
- ​
- &lt;span class=&quot;nt&quot;&gt;&amp;lt;/html&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; 요청 : https://earthquake.kr:23490/query/USDKRW  
- ​  
- 요청 결과 1 : &quot;{&quot;update&quot;:1602865436646,&quot;USDKRW&quot;:[1141.43,-3.409912,-0.29785056,1144.84,1144.83,1140.21,1147.53]}&quot;  
- ​  
- 요청 : https://earthquake.kr:23490/query/USDJPY  
- ​  
- 요청 결과 2 : &quot;{&quot;update&quot;:1602865436646,&quot;USDJPY&quot;:105.377,-0.037002563,-0.035102133,105.414,105.403,105.16,105.442]}&quot;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;async/await 패턴&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;위 패턴을 아래 처럼 변경해서 사용가능하다. 코드줄수는 좀 짧아졌지만 개인적으로는 전자의 패턴이 더 눈에 잘 들어오는듯 함.&lt;/p&gt;
-
-&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;!DOCTYPE html&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;html&amp;gt;&lt;/span&gt;
-
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;head&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;meta&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;charset=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;utf-8&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;/head&amp;gt;&lt;/span&gt;
- 
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;script&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;reqPromise&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;async&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;reqServerApi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Promise&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;resolve&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;reject&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-            &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;요청 : &lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;reqServerApi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-
-            &lt;span class=&quot;c1&quot;&gt;// AJAX HTTP 요청  &lt;/span&gt;
-            &lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;xhr&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;XMLHttpRequest&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
-            &lt;span class=&quot;nx&quot;&gt;xhr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;onreadystatechange&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-                &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;xhr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;readyState&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;===&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;xhr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;DONE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-                    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;xhr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;status&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;===&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;200&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;||&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;xhr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;status&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;===&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;201&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-                        &lt;span class=&quot;nx&quot;&gt;resolve&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;xhr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;responseText&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// then  &lt;/span&gt;
-                    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-                        &lt;span class=&quot;nx&quot;&gt;reject&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;xhr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;status&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// catch  &lt;/span&gt;
-                    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-                &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-            &lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
-            &lt;span class=&quot;nx&quot;&gt;xhr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;open&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;GET&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;reqServerApi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-            &lt;span class=&quot;nx&quot;&gt;xhr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;send&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-    &lt;span class=&quot;k&quot;&gt;async&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;getRate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;try&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-            &lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;resData&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-
-            &lt;span class=&quot;nx&quot;&gt;resData&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;await&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;reqPromise&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;https://earthquake.kr:23490/query/USDKRW&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-            &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;요청 결과 1 : &lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;JSON&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;stringify&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;resData&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// USDKRW 환율 결과  &lt;/span&gt;
-
-            &lt;span class=&quot;nx&quot;&gt;resData&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;await&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;reqPromise&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;https://earthquake.kr:23490/query/USDJPY&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-            &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;요청 결과 2 : &lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;JSON&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;stringify&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;resData&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// USDJPY 환율 결과  &lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;catch&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;error&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-            &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;error&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;error&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-    &lt;span class=&quot;nx&quot;&gt;getRate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
-
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;/body&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;/html&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;결과는 위와 동일.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;환율 API 출처 : &lt;a href=&quot;https://jaeheon.kr/12&quot;&gt;https://jaeheon.kr/12&lt;/a&gt;&lt;/p&gt;</content><author><name>RightHot</name><email>&lt;suuuk3@naver.com&gt;</email></author><category term="devlog" /><category term="javascript" /><summary type="html">Promise 란?</summary></entry><entry><title type="html">Silicon m1 mac - ReactNative 개발 환경</title><link href="http://localhost:4000/blog/devlog/2021-02-01-rn-mac-m1-silicon-devset/" rel="alternate" type="text/html" title="Silicon m1 mac - ReactNative 개발 환경" /><published>2021-02-01T00:00:00+09:00</published><updated>2021-02-01T00:00:00+09:00</updated><id>http://localhost:4000/blog/devlog/rn-mac%20m1%20silicon%20devset</id><content type="html" xml:base="http://localhost:4000/blog/devlog/2021-02-01-rn-mac-m1-silicon-devset/">&lt;blockquote&gt;
-  &lt;p&gt;애플 m1 환경이 아직 불안정 하기 때문에 인텔 버전으로 설치&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h3 id=&quot;1-터미널-로제타로-실행&quot;&gt;1. 터미널 로제타로 실행&lt;/h3&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/post/20210218_m1_001.png&quot; alt=&quot;mac m1 로제타&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/post/20210218_m1_002.png&quot; alt=&quot;mac m1 로제타&quot; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;2-java-설치--환경변수-설정&quot;&gt;2. Java 설치 &amp;amp; 환경변수 설정&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;자바 설치 : &lt;a href=&quot;https://www.java.com/ko/download/&quot;&gt;https://www.java.com/ko/download/&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;JDK 설치 : &lt;a href=&quot;https://www.oracle.com/java/technologies/javase-downloads.html&quot;&gt;https://www.oracle.com/java/technologies/javase-downloads.html&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;환경변수 : &lt;a href=&quot;https://stackoverflow.com/questions/38835931/react-native-adb-reverse-enoent&quot;&gt;https://whitepaek.tistory.com/28https://stackoverflow.com/questions/38835931/react-native-adb-reverse-enoent&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;java &lt;span class=&quot;nt&quot;&gt;-version&lt;/span&gt;   &lt;span class=&quot;c&quot;&gt;# jre&lt;/span&gt;
-javac &lt;span class=&quot;nt&quot;&gt;-version&lt;/span&gt;  &lt;span class=&quot;c&quot;&gt;# jdk&lt;/span&gt;
-
-&lt;span class=&quot;c&quot;&gt;# 설치된 자바 확인&lt;/span&gt;
-/usr/libexec/java_home &lt;span class=&quot;nt&quot;&gt;-V&lt;/span&gt; | &lt;span class=&quot;nb&quot;&gt;grep &lt;/span&gt;jdk
-
-&lt;span class=&quot;c&quot;&gt;# 자바 삭제&lt;/span&gt;
-&lt;span class=&quot;nb&quot;&gt;sudo rm&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-rf&lt;/span&gt; /Library/Internet&lt;span class=&quot;se&quot;&gt;\ &lt;/span&gt;Plug-Ins/JavaAppletPlugin.plugin
-&lt;span class=&quot;nb&quot;&gt;sudo rm&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-rf&lt;/span&gt; /Library/Java/JavaVirtualMachines
-&lt;span class=&quot;nb&quot;&gt;sudo rm&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-rf&lt;/span&gt; /Library/Application&lt;span class=&quot;se&quot;&gt;\ &lt;/span&gt;Support/Oracle/Java/
-&lt;span class=&quot;nb&quot;&gt;sudo rm&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-rf&lt;/span&gt; /Library/PreferencePanes/JavaControlPanel.prefPane
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;3-homebrew-설치&quot;&gt;3. Homebrew 설치&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;루비(Ruby)로 개발된 맥OS, 리눅스 용 패키지 관리 애플리케이션&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;brew &lt;span class=&quot;nt&quot;&gt;--version&lt;/span&gt;
-
-&lt;span class=&quot;nb&quot;&gt;arch&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-x86_64&lt;/span&gt; /bin/bash &lt;span class=&quot;nt&quot;&gt;-c&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;$(&lt;/span&gt;curl &lt;span class=&quot;nt&quot;&gt;-fsSL&lt;/span&gt; https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh&lt;span class=&quot;si&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
-
-&lt;span class=&quot;c&quot;&gt;# 터미널 재시작&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;출처: &lt;a href=&quot;https://www.44bits.io/ko/post/setup-apple-silicon-m1-for-developers&quot;&gt;https://www.44bits.io/ko/post/setup-apple-silicon-m1-for-developers&lt;/a&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;4-node-yarn-watchman-설치&quot;&gt;4. Node, yarn, watchman 설치&lt;/h3&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;node -–version
-watchman –version
-
-&lt;span class=&quot;nb&quot;&gt;arch&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-x86_64&lt;/span&gt; /usr/local/bin/brew &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;node
-&lt;span class=&quot;nb&quot;&gt;arch&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-x86_64&lt;/span&gt; /usr/local/bin/brew &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;yarn
-&lt;span class=&quot;nb&quot;&gt;arch&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-x86_64&lt;/span&gt; /usr/local/bin/brew &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;watchman
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;5-cocoapods-설치&quot;&gt;5. Cocoapods 설치&lt;/h3&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;pod &lt;span class=&quot;nt&quot;&gt;--version&lt;/span&gt;
-
-&lt;span class=&quot;nb&quot;&gt;sudo arch&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-x86_64&lt;/span&gt; gem &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;cocoapods
-
-&lt;span class=&quot;c&quot;&gt;# pod 실행시&lt;/span&gt;
-&lt;span class=&quot;nb&quot;&gt;arch&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-x86_64&lt;/span&gt; pod &lt;span class=&quot;nb&quot;&gt;install&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;6-ffi-설치&quot;&gt;6. ffi 설치&lt;/h3&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;arch&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-x86_64&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;gem &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;ffi
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;hr /&gt;
-
-&lt;hr /&gt;
-
-&lt;h1 id=&quot;에러&quot;&gt;에러&lt;/h1&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;xcrun: error: SDK “iphoneos” cannot be located&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;language-jsx highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nx&quot;&gt;sudo&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;xcode&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;select&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;--&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;switch&lt;/span&gt; &lt;span class=&quot;sr&quot;&gt;/Applications/&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Xcode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;app&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;java.lang.NoClassDefFoundError: Could not initialize class org.codehaus.groovy.vmplugin.v7.Java7&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;language-jsx highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;// gradle-wrapper.properties&lt;/span&gt;
-
-&lt;span class=&quot;nx&quot;&gt;distributionUrl&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;https&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;\&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;//services.gradle.org/distributions/gradle-6.2-all.zip&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;// 아래 버전으로 변경&lt;/span&gt;
-&lt;span class=&quot;nx&quot;&gt;distributionUrl&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;https&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;\&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;//services.gradle.org/distributions/gradle-6.3-all.zip&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;android 빌드 에러&lt;/strong&gt;&lt;/p&gt;
-
-    &lt;p&gt;buildscript 에서 사용하고 있는 버전들을&lt;/p&gt;
-
-    &lt;p&gt;preferences - AndroidSDK 에서 찾아서 전부 설치해준다 (ShowPackageDetail 체크)&lt;/p&gt;
-
-    &lt;p&gt;&lt;img src=&quot;/assets/img/post/20210218_m1_01.png&quot; alt=&quot;reat native android&quot; /&gt;&lt;/p&gt;
-
-    &lt;p&gt;&lt;img src=&quot;/assets/img/post/20210218_m1_02.png&quot; alt=&quot;reat native android&quot; /&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;config 옵션이 app 이 아닐때&lt;/p&gt;
-    &lt;ol&gt;
-      &lt;li&gt;새로 프로젝트를 만들어서 필수 옵션을 다운로드&lt;/li&gt;
-      &lt;li&gt;프로젝트 폴더 오른쪽클릭 → open module settings JDK 경로 확인&lt;/li&gt;
-    &lt;/ol&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;</content><author><name>RightHot</name><email>&lt;suuuk3@naver.com&gt;</email></author><category term="devlog" /><category term="reactnative" /><summary type="html">애플 m1 환경이 아직 불안정 하기 때문에 인텔 버전으로 설치</summary></entry></feed>
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title></title>
+    <description>바르고, 뜨겁게... RightHot 블로그 입니다.
+</description>
+    <link>http://0.0.0.0:7070</link>
+    <atom:link href="http://0.0.0.0:7070/feed.xml" rel="self" type="application/rss+xml" />
+	<lastBuildDate>Wed, 16 Nov 2022 00:00:00 +0900</lastBuildDate>
+	
+	<item>
+		<title>[바라봄 개발log] 홈페이지 개발 후기</title>
+        
+        
+            <description>&lt;h2 id=&quot;필요성&quot;&gt;필요성&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Wed, 16 Nov 2022 00:00:00 +0900</pubDate>
+        <link>http://0.0.0.0:7070/blog/devlog/2022-11-16-homepage-update/</link>
+        <guid isPermaLink="true">http://0.0.0.0:7070/blog/devlog/2022-11-16-homepage-update/</guid>
+      </item>
+    
+	<item>
+		<title>[바라봄 개발log] UX 개선 TOAST 알림</title>
+        
+        
+            <description>&lt;h3 id=&quot;toast-notification-이란&quot;&gt;Toast notification 이란?&lt;/h3&gt;
+
+</description>
+        
+        <pubDate>Tue, 01 Nov 2022 00:00:00 +0900</pubDate>
+        <link>http://0.0.0.0:7070/blog/devlog/2022-11-01-ux-alert/</link>
+        <guid isPermaLink="true">http://0.0.0.0:7070/blog/devlog/2022-11-01-ux-alert/</guid>
+      </item>
+    
+	<item>
+		<title>[바라봄 개발log] 바라봄 유료화를 기획하며…</title>
+        
+        
+            <description>&lt;p&gt;(징징글 주의!)&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Tue, 26 Apr 2022 00:00:00 +0900</pubDate>
+        <link>http://0.0.0.0:7070/blog/devlog/2022-04-26-pay-system/</link>
+        <guid isPermaLink="true">http://0.0.0.0:7070/blog/devlog/2022-04-26-pay-system/</guid>
+      </item>
+    
+	<item>
+		<title>DAU 100 첫 돌파! 바라봄 개발 후기</title>
+        
+        
+            <description>&lt;p&gt;&lt;img src=&quot;/assets/img/post/dau100_01.png&quot; alt=&quot;barabom_dev_log.png&quot; /&gt;&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Thu, 17 Mar 2022 00:00:00 +0900</pubDate>
+        <link>http://0.0.0.0:7070/blog/devlog/2022-03-17-dau100/</link>
+        <guid isPermaLink="true">http://0.0.0.0:7070/blog/devlog/2022-03-17-dau100/</guid>
+      </item>
+    
+	<item>
+		<title>[바라봄 개발log] 접근성 개선 - 폰트 크기 (2)</title>
+        
+        
+            <description>&lt;h2 id=&quot;서체를-변경하자&quot;&gt;서체를 변경하자!&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Sun, 13 Mar 2022 00:00:00 +0900</pubDate>
+        <link>http://0.0.0.0:7070/blog/devlog/2022-03-13-fontsize2/</link>
+        <guid isPermaLink="true">http://0.0.0.0:7070/blog/devlog/2022-03-13-fontsize2/</guid>
+      </item>
+    
+	<item>
+		<title>[바라봄 개발log] 접근성 개선 - 폰트 크기 (1)</title>
+        
+        
+            <description>&lt;h2 id=&quot;들어가기에-앞서&quot;&gt;들어가기에 앞서…&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Fri, 25 Feb 2022 00:00:00 +0900</pubDate>
+        <link>http://0.0.0.0:7070/blog/devlog/2022-02-25-fontsize1/</link>
+        <guid isPermaLink="true">http://0.0.0.0:7070/blog/devlog/2022-02-25-fontsize1/</guid>
+      </item>
+    
+	<item>
+		<title>AWS LightSail 로드 밸런서를 사용하여 HTTPS 보안 연결.</title>
+        
+        
+            <description>&lt;h1 id=&quot;요약&quot;&gt;요약&lt;/h1&gt;
+
+</description>
+        
+        <pubDate>Thu, 20 Jan 2022 00:00:00 +0900</pubDate>
+        <link>http://0.0.0.0:7070/blog/devlog/2022-01-20-aws-lightsail-https/</link>
+        <guid isPermaLink="true">http://0.0.0.0:7070/blog/devlog/2022-01-20-aws-lightsail-https/</guid>
+      </item>
+    
+	<item>
+		<title>파이썬 기초 02 - 자료형 (리스트)</title>
+        
+        
+            <description>&lt;h1 id=&quot;3-리스트&quot;&gt;3. 리스트&lt;/h1&gt;
+
+</description>
+        
+        <pubDate>Thu, 11 Nov 2021 00:00:00 +0900</pubDate>
+        <link>http://0.0.0.0:7070/blog/devlog/2021-11-11-py-beginner-type2/</link>
+        <guid isPermaLink="true">http://0.0.0.0:7070/blog/devlog/2021-11-11-py-beginner-type2/</guid>
+      </item>
+    
+	<item>
+		<title>파이썬 기초 01 - 자료형 (숫자,문자)</title>
+        
+        
+            <description>&lt;h1 id=&quot;1-숫자&quot;&gt;1. 숫자&lt;/h1&gt;
+
+</description>
+        
+        <pubDate>Thu, 28 Oct 2021 00:00:00 +0900</pubDate>
+        <link>http://0.0.0.0:7070/blog/devlog/2021-10-28-py-beginner-type/</link>
+        <guid isPermaLink="true">http://0.0.0.0:7070/blog/devlog/2021-10-28-py-beginner-type/</guid>
+      </item>
+    
+	<item>
+		<title>Javascript 기초 05 - 문법 1</title>
+        
+        
+            <description>&lt;h2 id=&quot;asiautomatic-semicolon-insertion&quot;&gt;ASI(Automatic Semicolon Insertion)&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Wed, 07 Apr 2021 00:00:00 +0900</pubDate>
+        <link>http://0.0.0.0:7070/blog/devlog/2021-04-07-js-05-grammar1/</link>
+        <guid isPermaLink="true">http://0.0.0.0:7070/blog/devlog/2021-04-07-js-05-grammar1/</guid>
+      </item>
+    
+  </channel>
+</rss>
