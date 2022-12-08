@@ -131,6 +131,7 @@ skills:
       - "React"
       - "ReactNative"
       - "TypeScript"
+      - "NextJS"
   - name: "BackEnd"
     # level: "Master"
     keywords:
@@ -141,7 +142,6 @@ skills:
     # level: "Master"
     keywords:
       - "Photoshop"
-      - "Illustrator"
       - "Adobe XD"
       # - "GIF"
 # languages:
