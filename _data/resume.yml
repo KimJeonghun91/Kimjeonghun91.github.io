@@ -51,11 +51,13 @@ work:
     highlights:
       - (APP) 백그라운드 GPS 통신.
       - (APP) WebRTC 및 외부 STUN/TURN 서버를 이용한 영상 통화 앱 개발.
+      - (APP) CallKit을 사용한 통화 앱 개발.
       - (APP) 사이클링 장비와 BLE 통신을 통한 피트니스 앱 개발.
+      - (APP) 인앱(In-App Purchase) 결제 및 구독
       - (APP) PUSH 서비스.
       - (APP) Firebase를 사용한 Crash , Analytics 관리 , Deep link 처리.
       - (APP) SNS 로그인.
-      - (APP) Firebase RDB를 이용한 실시간 채팅.
+      - (APP) Firebase RDB를 이용한 실시간 처리.
       - (BE) NodeJS , Express 를 이용한 API 서버 개발.
       - (BE) Push 발송 스케쥴 개발.
       - (BE) MySql DB 설계.
