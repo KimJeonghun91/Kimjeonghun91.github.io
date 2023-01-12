@@ -43,6 +43,7 @@ SEO를 통해서 상위 노출을 시키고 싶었지만 검색 순위 상승을
 
 그리고 다양하게 활용하고 있더라.
 
+
 | [진저호텔](https://gingerhotel.site/#/) , [돌멩돌멩](https://www.cryington.com/)
 
 ![barabom_dev_log.png](/assets/img/post/update_2.png)
@@ -58,6 +59,7 @@ SEO를 통해서 상위 노출을 시키고 싶었지만 검색 순위 상승을
 
 ![barabom_dev_log.png](/assets/img/post/update_4.gif)
 
+
 하지만 인스타그램의 경우 불특정 다수가 유입이 될 수 있다는 점 때문에 바로 주의를 끌고 참여할 수 있도록 PICK 투표 위치를 제일 상단으로 변경했다.
 
 ![barabom_dev_log.png](/assets/img/post/update_5.gif)
@@ -68,6 +70,7 @@ SEO를 통해서 상위 노출을 시키고 싶었지만 검색 순위 상승을
 이렇게 홈페이지를 개선하고, 인스타그램에 게시했다.
 
 ![barabom_dev_log.png](/assets/img/post/update_6.gif)
+
 
 인스타그램에 스토리를 게시 했지만 당연히 유입은 없었다. 인스타그램 팔로워가 없었기에... 😭
 
@@ -88,7 +91,8 @@ SEO를 통해서 상위 노출을 시키고 싶었지만 검색 순위 상승을
 
 2023년 1월 DAU 200 을 10개월만에 달성했다. (APP only)
 
-![barabom_dev_log.png](/assets/img/post/update_7.gif)
+![barabom_dev_log.png](/assets/img/post/update_7.png)
+
 
 아직 작은 숫자이지만 작은 노력과 시도들이 쌓여 여기까지 올 수 있었다는 생각에 조금 뿌듯하기도 하다. 🤣
 
@@ -97,6 +101,6 @@ DAU 100 후기의 말미에 남겻던 말처럼, 포기하지 말고 바라봄�
 
 ## 👨‍💻🤝
 
-바라봄 홈페이지 : https://barabom.me
+바라봄 홈페이지 : [https://barabom.me](https://barabom.me)
 
-개발자 인스타그램 : https://www.instagram.com/right_hot
+개발자 인스타그램 : [https://www.instagram.com/right_hot](https://www.instagram.com/right_hot)
