@@ -14,7 +14,7 @@ image:
   #   480w:  /assets/img/projects/qwtel@0,25x.jpg
 links:
   - title: Link
-    url: http://바라봄.com/
+    url: https://barabom.me/
 # accent_color: '#4fb1ba'
 # accent_image:
 #   background: '#193747'
