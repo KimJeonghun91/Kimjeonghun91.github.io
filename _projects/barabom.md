@@ -1,7 +1,7 @@
 ---
 layout: project
 title: '바라봄'
-caption: 반려동물 통합 케어 플랫폼
+caption: 똑똑한 반려동물 건강수첩
 # description: >
 #   This is how I use Hydejack on my personal site. 
 #   Much of the development is informed from my experience of using it myself, creating a tight feedback loop.
@@ -24,9 +24,33 @@ sitemap: false
 
 <br>
 
-> 사용 기술 및 기여도
+> 개인 프로젝트 - 기여도
 
-ReactNative(100%), NodeJs(90%), MySql(90%), AWS(100%)
+[ 앱(RN) 100% , BE(NodeExpress)/DB(Mysql) 100% , WEB(Next) 95% , AWS 90% , 디자인 30% , 기획 70% ]
+
+<br>
+
+[홈페이지](https://barabom.me)
+
+[AOS](https://play.google.com/store/apps/details?id=com.rn_drpet)
+
+[IOS](https://apps.apple.com/kr/app/id1516235091)
+
+<br>
+
+![project barabom](/assets/img/projects/n_barabom_01.png)
+
+<br>
+
+![project barabom](/assets/img/projects/n_barabom_02.png)
+
+<br>
+
+![project barabom](/assets/img/projects/n_barabom_03.png)
+
+<br>
+
+![project barabom](/assets/img/projects/n_barabom_04.png)
 
 <br>
 
@@ -41,25 +65,3 @@ ReactNative(100%), NodeJs(90%), MySql(90%), AWS(100%)
 ![project barabom](/assets/img/projects/p03.png)
 
 <br>
-
-![project barabom](/assets/img/projects/p04.png)
-
-<br>
-
-![project barabom](/assets/img/projects/p05.png)
-
-<br>
-
-![project barabom](/assets/img/projects/p06.png)
-
-<br>
-
-![project barabom](/assets/img/projects/p07.png)
-
-<br>
-
-![project barabom](/assets/img/projects/p08.png)
-
-<br>
-
-![project barabom](/assets/img/projects/p09.png)
