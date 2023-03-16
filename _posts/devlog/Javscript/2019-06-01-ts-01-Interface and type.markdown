@@ -27,7 +27,7 @@ type Person = {
 
 ```
 
-# interface 사용 예제
+## interface 사용 예제
 
 인터페이스는 확장(extends) 가능하며 인터페이스, 클래스, 함수등 다양한 위치에서 사용가능하다.
 
@@ -123,5 +123,29 @@ const car = { brand: 'Tesla', model: 'Model 3' };
 
 printObject(person); // { name: 'John', age: 30 }
 printObject(car); // { brand: 'Tesla', model: 'Model 3' }
+
+```
+
+
+## 유연하게 사용이 가능하다.
+
+```ts
+
+interface IPerson {
+  name: string;
+  age: number;
+}
+
+type TPerson = {
+  name: string;
+  age: number;
+}
+
+const user: IPerson = { name: 'Right Hot', age: 30 };
+
+const user2: TPerson = { name: 'Old Right Hot', age: 40 };
+
+console.log(user) // {name: "Right Hot", age: 30}
+console.log(user2) // {name: "Old Right Hot", age: 40}
 
 ```
