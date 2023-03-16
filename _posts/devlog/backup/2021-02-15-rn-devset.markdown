@@ -3,7 +3,7 @@ layout: post
 title: 'ReactNative Typescript 프로젝트 환경 설정'
 subtitle: 'RN + Typescript 환경 설정'
 category: devlog
-tags: reactnative
+tags: backup
 comments: true
 # image: 
 #   path: /assets/img/default_code.png
