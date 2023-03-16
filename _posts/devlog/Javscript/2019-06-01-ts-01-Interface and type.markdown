@@ -29,7 +29,9 @@ type Person = {
 
 ## interface 사용 예제
 
-인터페이스는 확장(extends) 가능하며 인터페이스, 클래스, 함수등 다양한 위치에서 사용가능하다.
+인터페이스는 주로 객체의 형태(shape)를 정의하는 데 사용.
+
+interface는 다른 interface나 class에서 extends 키워드를 사용하여 상속할 수 있으며, 상속받은 interface에서 새로운 속성을 추가할 수 있다. 
 
 ```ts
 
@@ -86,7 +88,11 @@ const rightHot = new Programmer('Right Hot', 30, [
 
 ## Type 예제
 
-주로 튜플(Tuple), 유니온 형식(Union type), 객체 형식(Object type), 함수 등에서 사용
+type은 주로 데이터 타입 자체를 정의하는 데 사용한다. 
+
+튜플(Tuple), 유니온 형식(Union type), 객체 형식(Object type) 등
+
+type은 인터섹션(&)과 유니온(|) 타입을 사용하여 타입을 결합하거나 제한할 수 있다.
 
 ```ts
 
@@ -127,7 +133,34 @@ printObject(car); // { brand: 'Tesla', model: 'Model 3' }
 ```
 
 
+### type의 인덱스 시그니처([key: string]: any)
+
+동적으로 프로퍼티를 정의
+
+key를 동적으로 정의할 수 있지만, 타입 검사가 약해짐.
+
+```ts
+
+type Person = {
+  name: string;
+  age: number;
+  [key: string]: any;
+  // job?: string; // 형태로 하는게 더 좋음
+};
+
+const person: Person = {
+  name: 'Right Hot',
+  age: 30,
+  job: 'Developer',
+};
+
+```
+
+
+
 ## 유연하게 사용이 가능하다.
+
+사용에 있어서는 interface와 type을 모두 사용할 수 있지만, 일반적으로 interface는 객체의 형태를, type은 데이터 타입을 정의할 때 사용하는 것이 일반적이다.
 
 ```ts
 
