@@ -35,9 +35,11 @@ export default class MyComponent extends PureComponent {
 import React, { useState } from 'react';
 import { Text, TouchableOpacity } from 'react-native';
 
+// ** 자식의 상태 변화가 없으면 (title, count) 렌더링 되지 않음.
+
 // title 변경시 다시 렌더링됨.
 const MyComponent = React.memo(({ title }) => {
-  const [count, setCount] = useState(0); // memo 안에 있으므로 변경되어도 렌더링되지 않음.
+  const [count, setCount] = useState(0); // 변경시 렌더링됨.
 
   const handleClick = () => {
     setCount(count + 1);
