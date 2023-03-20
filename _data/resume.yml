@@ -17,7 +17,7 @@ basics:
     [ 기술 스택 ] <br>
     - (주력 언어) JavaScript, TypeScript <br>
     - (FE) ReactNative, React, Next <br>
-    - (BE) Node
+    - (BE) Node express
   location:
     address: ""
     postalCode: ""
