@@ -13,7 +13,7 @@ comments: true
 
 ## Atomic 디자인 패턴 이란?
 
-- Atoms: UI의 가장 작은 부분을 나타내는 컴포넌트. 예: 들어, 버튼, 아이콘, 텍스트, 이미지
+- Atoms: UI의 가장 작은 부분을 나타내는 컴포넌트. 예: 버튼, 아이콘, 텍스트, 이미지
 
 - Molecules: 두 개 이상의 Atom 컴포넌트를 조합하여 만든 작은 컴포넌트. 예: 로그인 폼, 메시지 박스
 
@@ -111,7 +111,7 @@ const TextAtom = ({ ...props }: TextAtomProps) => {
 };
 
 TextAtom.defaultProps = {
-  style: {}, // style props가 전달되지 않았을 경우 빈 객체를 기본값으로 설정합니다.
+  style: {}, // style props가 전달되지 않았을 경우 빈 객체를 기본값으로 설정.
 };
 
 export default TextAtom;
