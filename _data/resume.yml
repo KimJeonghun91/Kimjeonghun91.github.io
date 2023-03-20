@@ -35,17 +35,15 @@ basics:
       username: "righthot"
       url: "https://www.facebook.com/righthot"
 work:
-  - company: "0610studio"
-    position: "CEO"
-    website: "http://barabom.me"
+  - company: "개인프로젝트"
+    position: "개발"
+    website: "https://barabom.me"
     startDate: "2019-07-01"
     endDate: ""
     summary: >
-      프로그램 개발, WEB/APP 디자인, 영상제작 외주 작업 및<br>
-      반려동물 통합 케어 플랫폼 '바라봄(barabom)'을 운영중입니다.
+       똑똑한 반려동물 건강수첩 '바라봄(barabom)'을 운영중입니다.
     highlights:
       - 바라봄(barabom) APP은 구글 및 앱스토어에서 다운로드 가능합니다.
-      - 반려동물을 똑똑하게 관리할 수 있는 건강 수첩 APP.
   - company: "DevEdu"
     position: "개발"
     website: ""

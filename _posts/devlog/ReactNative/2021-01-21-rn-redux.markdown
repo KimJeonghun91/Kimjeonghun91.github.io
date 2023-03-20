@@ -43,6 +43,8 @@ Redux는 단방향 데이터 흐름(unidirectional data flow)을 따름.
 
 ### store
 
+store는 Redux의 핵심 개념 중 하나로, 앱 전체의 상태를 담고 있는 단일 객체. 앱의 모든 컴포넌트에서 상태에 접근하고, 상태를 업데이트할 수 있도록 중앙 집중적으로 관리.
+
 ```tsx
 
 import { configureStore } from '@reduxjs/toolkit';
@@ -68,7 +70,12 @@ RootState와 AppDispatch 타입을 정의하고, useAppDispatch와 useTypedSelec
 counterSlice는 Redux Toolkit에서 제공하는 createSlice 함수를 사용하여 만들 수 있습니다. TypeScript에서 사용하기 위해 slice의 타입도 함께 정의.
 
 
+
 ### counterSlice
+
+slice는 Redux Toolkit에서 제공하는 기능 중 하나로, Redux 앱의 일부 데이터와 그 데이터를 업데이트하기 위한 reducer 함수를 포함하는 Redux 모듈을 간단하게 만들어주는 도구.
+
+Redux 상태를 감싸는 namespace를 제공하여, 다른 slice나 상태와 충돌하지 않는 안전한 상태 관리를 할 수 있도록 함.
 
 ```tsx
 
