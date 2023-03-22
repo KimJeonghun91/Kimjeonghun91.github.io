@@ -49,11 +49,11 @@ store는 Redux의 핵심 개념 중 하나로, 앱 전체의 상태를 담고 �
 
 import { configureStore } from '@reduxjs/toolkit';
 import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux';
-import counterReducer from './counterSlice';
+import {counterSlice} from './counterSlice';
 
 export const store = configureStore({
   reducer: {
-    counter: counterReducer,
+    counter: counterSlice.reducer,
   },
 });
 
@@ -104,7 +104,6 @@ export const counterSlice = createSlice({
 });
 
 export const { increment, decrement, incrementByAmount } = counterSlice.actions;
-
 export type CounterSliceType = ReturnType<typeof counterSlice.reducer>;
 
 ```
@@ -131,7 +130,7 @@ export default function CounterScreen() {
   return (
     <View>
       <Text>Counter: {counter}</Text>
-      <TouchableOpacity   onPress={() => dispatch(increment())}>
+      <TouchableOpacity onPress={() => dispatch(increment())}>
         <Text>Increment</Text>
       </TouchableOpacity>
       <TouchableOpacity onPress={() => dispatch(decrement())}>
