@@ -15,7 +15,9 @@ comments: true
 
 부모 컴포넌트가 업데이트되었을 때 자식 컴포넌트의 불필요한 렌더링을 방지.
 
-그렇다고 해서 모든 컴포넌트에 memo를 사용하게 되면 불필요한 오버헤드가 발생.
+그렇다고 해서 모든 컴포넌트에 memo를 사용하게 되면 컴포넌트가 다시 렌더링되지 않도록 최적화를 하지만, 이를 위해서는 컴포넌트를 비교하는 작업이 추가적으로 필요. 
+
+이 작업은 일반적인 렌더링 작업보다 더 많은 리소스와 시간이 소모될 수 있기 때문에, 오버헤드가 발생할 가능성이 있음.
 
 렌더링 속도가 느린경우, 자주 불필요하게 재렌더링이 예샹되는 경우에만 사용.
 
@@ -60,6 +62,32 @@ const MyComponent = React.memo(({ title }) => {
 });
 
 export default MyComponent;
+
+```
+
+
+## useCallback
+
+useCallback으로 함수를 메모이제이션하면, 자식 컴포넌트는 의존성 목록(dependency list)이 변경된 경우에만 다시 렌더링됨.
+
+```tsx
+
+import React, { useState, useCallback } from 'react';
+import { View, Button } from 'react-native';
+
+const MyComponent = () => {
+  const [count, setCount] = useState(0);
+
+  const handleClick = useCallback(() => {
+    setCount(count + 1);
+  }, [count]);
+
+  return (
+    <View>
+      <Button title="Click me!" onPress={handleClick} />
+    </View>
+  );
+};
 
 ```
 

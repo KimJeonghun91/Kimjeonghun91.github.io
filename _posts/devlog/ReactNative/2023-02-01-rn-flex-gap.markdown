@@ -44,7 +44,7 @@ Gap 사용시 내부 간격만 조절 가능.
 ## 예제
 
 
-```jsx
+```tsx
 
 <View style={{ display: 'flex', gap: 10, backgroundColor: 'white', flex: 1 }}>
     <View style={{ flex: 1, backgroundColor: 'red' }}></View>
