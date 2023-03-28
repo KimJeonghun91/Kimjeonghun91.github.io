@@ -35,6 +35,10 @@ comments: true
 
 ## Queue
 
+![img_loop.png](/assets/img/post/img_loop.gif)
+
+[출처-saravanaeswari22](https://medium.com/@saravanaeswari22/microtasks-and-macro-tasks-in-event-loop-7b408b2949e0)
+
 - 콜 스택(Call Stack)
 자바스크립트에서 함수 호출 시, 해당 함수는 콜 스택에 쌓임. 그리고 함수가 종료되면 콜 스택에서 제거.
 콜 스택은 동기적인 코드 실행을 위해 사용.
@@ -43,12 +47,13 @@ comments: true
 마이크로태스크 큐는 Promise, Object.observe와 같은 비동기 작업이 완료되면 실행되는 작은 작업들의 큐.
 마이크로태스크 큐는 콜 스택이 비어있을 때, 가장 먼저 처리되어야 하는 작업들이 들어있는 큐.
 
-- 태스크 큐(Task Queue)
-태스크 큐는 콜백 함수, setTimeout, setInterval 등의 비동기 작업이 완료되면 실행되는 작업들의 큐.
-태스크 큐는 마이크로태스크 큐보다 우선순위가 낮아서 콜 스택이 비어있을 때, 마이크로태스크 큐가 모두 실행된 후 실행.
+- 태스크 큐(Macrotask Queue)
+매크로 태스크 큐는 콜백 함수, setTimeout, setInterval, requestAnimationFrame, I/O 등의 비동기 작업이 완료되면 실행되는 작업들의 큐.
+마이크로태스크 큐보다 우선순위가 낮아서 콜 스택이 비어있을 때, 마이크로태스크 큐가 모두 실행된 후 실행.
 
 
 마이크로태스크 큐가 우선순위가 높기 때문에 태스크 큐 보다 먼저 실행됨.
+
 
 
 ## 예제
