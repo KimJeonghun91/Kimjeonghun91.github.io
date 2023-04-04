@@ -35,8 +35,8 @@ import { View } from 'react-native';
 
 // JSX 표현식
 const element = (
-    <View style={{ backgroundColor: 'red' }}>
-        <Text style={{ color: 'black' }}>Test1</Text>
+    <View style="{{ backgroundColor: 'red' }}">
+        <Text style="{{ color: 'black' }}">Test1</Text>
     </View>
 )
 
