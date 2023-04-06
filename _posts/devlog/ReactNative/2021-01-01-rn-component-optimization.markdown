@@ -66,9 +66,34 @@ export default MyComponent;
 ```
 
 
+
+## useMemo
+
+useMemo는 계산 비용이 높은 함수의 "결과값"을 기억하여, 같은 값을 계산하는 비용을 줄이는 데 사용.
+
+useMemo는 함수를 실행하고 그 결과를 기억하여, 같은 인수로 다시 호출될 때 이전에 계산된 값을 반환. 이를 통해 계산 비용이 높은 함수를 한 번만 실행하고, 그 결과값을 재사용하여 성능을 최적화할 수 있다.
+
+```tsx
+import React, { useMemo } from 'react';
+
+function MyComponent({ number }) {
+  const result = useMemo(() => {
+    let sum = 0;
+    for (let i = 1; i <= number; i++) {
+      sum += i;
+    }
+    return sum;
+  }, [number]);
+
+  return <div>{result}</div>;
+}
+```
+
+
+
 ## useCallback
 
-useCallback으로 함수를 메모이제이션하면, 자식 컴포넌트는 의존성 목록(dependency list)이 변경된 경우에만 다시 렌더링됨.
+useCallback으로 "함수"를 메모이제이션하면, 자식 컴포넌트는 의존성 목록(dependency list)이 변경된 경우에만 다시 렌더링됨.
 
 ```tsx
 
