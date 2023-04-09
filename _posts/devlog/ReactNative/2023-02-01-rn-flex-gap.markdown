@@ -47,9 +47,9 @@ Gap 사용시 내부 간격만 조절 가능.
 ```tsx
 import { View } from 'react-native';
 
-<View style="{{ display: 'flex', gap: 10, backgroundColor: 'white', flex: 1 }}">
-    <View style="{{ flex: 1, backgroundColor: 'red' }}"></View>
-    <View style="{{ flex: 1, backgroundColor: 'blue' }}"></View>
-    <View style="{{ flex: 1, backgroundColor: 'green' }}"></View>
+<View style={ display: 'flex', gap: 10, backgroundColor: 'white', flex: 1 }>
+    <View style={ flex: 1, backgroundColor: 'red' }></View>
+    <View style={ flex: 1, backgroundColor: 'blue' }></View>
+    <View style={ flex: 1, backgroundColor: 'green' }></View>
 </View>
 ```
