@@ -24,7 +24,7 @@ SSE는 HTTP 연결을 사용하며, 클라이언트가 'text/event-stream'이라
 
 노드나 기타 JS 환경에서는 기본적으로 제공되는 객체인 EventSource , fetch 를 통해 SSE 구현이 가능하다.
 
-# EventSource
+ - EventSource
 
 ```jsx
 const eventSource = new EventSource('https://your-api-endpoint');
@@ -34,7 +34,7 @@ eventSource.onmessage = (event) => {
 };
 ```
 
-# fetch
+ - fetch
 
 ```jsx
 const response = await fetch('https://your-api-endpoint');
