@@ -31,9 +31,9 @@ basics:
     - network: "instagram"
       username: "right_hot"
       url: "https://www.instagram.com/right_hot"
-    - network: "facebook"
-      username: "righthot"
-      url: "https://www.facebook.com/righthot"
+    # - network: "facebook"
+    #   username: "righthot"
+    #   url: "https://www.facebook.com/righthot"
 work:
   - company: "개인프로젝트"
     position: "개발"
