@@ -1,5 +1,5 @@
-lang:                  en
-title:                 Hydejack
+lang:                  ko
+title:                 RightHot
 copyright:             © 2021. All rights reserved.
 
 accent_image:          /assets/img/sidebar-bg.jpg
@@ -12,7 +12,8 @@ font_heading:          Roboto Slab, Helvetica, Arial, sans-serif
 font-code:             ui-monospace, Menlo, Monaco, "Cascadia Mono", "Segoe UI Mono", "Roboto Mono", "Oxygen Mono", "Ubuntu Monospace", "Source Code Pro", "Fira Mono", "Droid Sans Mono", "Courier New", monospace;
 
 hydejack:
-  post_addons:         [about, newsletter, related, random, comments]
+  post_addons:         [about, newsletter, random, comments]
+  # post_addons:         [about, newsletter, related, random, comments]
   project_addons:      [about, newsletter, other, comments]
 
   no_mark_external:    false
