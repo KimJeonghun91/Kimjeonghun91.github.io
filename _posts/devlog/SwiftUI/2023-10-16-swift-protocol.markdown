@@ -3,7 +3,7 @@ layout: post
 title: 'SwiftUI - Protocol'
 subtitle: 'SwiftUI - Protocol'
 category: devlog
-tags: SwiftUI
+tags: swiftui
 comments: true
 # image: 
 #   path: /assets/img/default_code.png
