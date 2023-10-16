@@ -11,6 +11,11 @@ comments: true
 
 ### SwiftUI - Protocol
 
+인터페이스(Interface) 개념을 지원하는 Swift 기능.
+
+프로토콜은 특정 동작이나 속성의 청사진 또는 규약을 나타내는 추상적인 타입.
+
+
 ### 프로토콜 구현 예제
 
 ```swift
