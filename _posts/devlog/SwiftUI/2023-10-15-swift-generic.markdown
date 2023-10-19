@@ -16,6 +16,8 @@ comments: true
 제네릭은 특정한 데이터 형식에 의존하지 않고, 여러 다양한 데이터 형식에 대해 동일한 코드를 작성할 수 있음.
 
 
+## 비교 : SwiftUI , TS , JAVA
+
 ### SwiftUI
 
 ```swift
