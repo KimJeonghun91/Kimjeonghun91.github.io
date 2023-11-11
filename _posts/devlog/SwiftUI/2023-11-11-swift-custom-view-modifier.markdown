@@ -35,7 +35,6 @@ SwiftUI에서 Custom Modifier란 사용자가 정의한 수정자. SwiftUI에서
         }
     }
 
-
     extension View {
         func customViewModifier2() -> some View {
             self
@@ -47,26 +46,35 @@ SwiftUI에서 Custom Modifier란 사용자가 정의한 수정자. SwiftUI에서
 
     ```
 
-- CustomNewView.swift
+- CustomButtonView.swift
 
     ```swift
     import SwiftUI
 
-    struct CustomNewView<Content: View>: View {
+    struct CustomButtonView<Content: View>: View {
         let content: Content
+        let action: () -> Void
         
-        init(@ViewBuilder content: () -> Content) {
-            self.content = content()
+        public init(
+        @ViewBuilder content: () -> Content,
+        action: @escaping () -> Void
+        ) {
+        self.content = content()
+        self.action = action
         }
         
-        var body: some View {
-            content
-                .font(.title)
-                .padding(30)
-                .foregroundColor(.purple)
+        public var body: some View {
+            Button(action: {
+                action()
+            }) {
+                content
+                    .padding(10)
+                    .background(Color.red)
+                    .cornerRadius(10)
+                    .foregroundColor(.white)
+            }
         }
     }
-
     ```
 
 
@@ -87,11 +95,18 @@ struct ContentMainView: View {
             Text("View Modifier 2")
                 .customViewModifier2()
             
-            CustomNewView(
-                content:{
-                    Text("My View")
-                }
-            )
+            CustomButtonView {
+                Text("커스텀 버튼")
+            } action: {
+                showingAlert = true
+            }
+            .alert(isPresented: $showingAlert) {
+                Alert(
+                    title: Text("알림"),
+                    message: Text("커스텀 버튼이 탭되었습니다."),
+                    dismissButton: .default(Text("확인"))
+                )
+            }
         }
     }
 }
