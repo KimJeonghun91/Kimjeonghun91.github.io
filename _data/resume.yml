@@ -18,11 +18,27 @@ basics:
     - (주력 언어) JavaScript, TypeScript <br>
     - (FE) ReactNative, React, Next <br>
     - (BE) Node express
+    <br>
+    [ 기술 경험 ] <br>
+    - (APP) 백그라운드 GPS 기록을 통한 위치 추적 기능.
+    - (APP) WebRTC 및 외부 STUN/TURN 서버를 이용한 영상 통화 앱 개발.
+    - (APP) CallKit을 사용한 통화 앱 개발.
+    - (APP) 사이클링 장비와 BLE 통신을 통한 피트니스 앱 개발.
+    - (APP) 인앱(In-App Purchase) 결제 및 구독.
+    - (APP) Firebase를 사용한 Crash , Analytics 관리 , Deep link 처리.
+    - (APP) SNS 로그인.
+    - (APP) PUSH 서비스.
+    - (APP) Firebase RDB를 이용한 실시간 처리.
+    - (BE) NodeJS , Express 를 이용한 API 서버 개발.
+    - (BE) Push 발송 스케쥴 개발.
+    - (BE) MySql DB 설계.
+    - (WEB) React 기반 관리자 WebPage 개발.
+    - (WEB) NextJS 기반 WebPage 개발.
   location:
     address: ""
     postalCode: ""
     city: ""
-    countryCode: "부산 광역시"
+    countryCode: "서울"
     region: ""
   profiles:
     - network: "github"
@@ -44,28 +60,20 @@ work:
        똑똑한 반려동물 건강수첩 '바라봄(barabom)'을 운영중입니다.
     highlights:
       - 바라봄(barabom) APP은 구글 및 앱스토어에서 다운로드 가능합니다.
+  - company: "EVERON"
+    position: "IT센터 FE"
+    website: ""
+    startDate: "2023-09-18"
+    endDate: ""
+    summary: >
+      ReactNative 앱 유지보수 및 고도화
   - company: "DevEdu"
     position: "개발"
     website: ""
     startDate: "2017-07-01"
-    endDate: ""
+    endDate: "2023-09-15"
     summary: >
-      프로그램 개발 업무 및 강의.
-    highlights:
-      - (APP) 백그라운드 GPS 기록을 통한 위치 추적 기능.
-      - (APP) WebRTC 및 외부 STUN/TURN 서버를 이용한 영상 통화 앱 개발.
-      - (APP) CallKit을 사용한 통화 앱 개발.
-      - (APP) 사이클링 장비와 BLE 통신을 통한 피트니스 앱 개발.
-      - (APP) 인앱(In-App Purchase) 결제 및 구독.
-      - (APP) Firebase를 사용한 Crash , Analytics 관리 , Deep link 처리.
-      - (APP) SNS 로그인.
-      - (APP) PUSH 서비스.
-      - (APP) Firebase RDB를 이용한 실시간 처리.
-      - (BE) NodeJS , Express 를 이용한 API 서버 개발.
-      - (BE) Push 발송 스케쥴 개발.
-      - (BE) MySql DB 설계.
-      - (WEB) React 기반 관리자 WebPage 개발.
-      - (WEB) NextJS 기반 WebPage 개발.
+      ReactNative,Aos 앱 외주 개발 및 강의
 volunteer:
   - organization: "행정안전부"
     position: "끝장발굴대회"
