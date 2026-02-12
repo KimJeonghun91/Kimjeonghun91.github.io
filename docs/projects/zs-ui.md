@@ -22,6 +22,27 @@ JavaScript만으로 구현된 Expo용 UI 컴포넌트 라이브러리입니다. 
 
 <br>
 
+<p>
+  <a
+    href="https://0610studio.github.io/zs-ui/docs/intro"
+    target="_blank"
+    rel="noreferrer"
+    className="button button--primary"
+    style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', paddingTop: 12, paddingBottom: 12 }}
+  >
+    <span>문서 보기</span>
+  </a>
+  <a
+    href="https://snack.expo.dev/@studio0610/zs-ui_13_playground"
+    target="_blank"
+    rel="noreferrer"
+    className="button button--secondary button--outline"
+    style={{ marginLeft: '0.5rem', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', paddingTop: 12, paddingBottom: 12 }}
+  >
+    <span>Playground 열기</span>
+  </a>
+</p>
+
 ## 개발 배경
 
 ZS-ui는 **바라봄(Barabom) 앱의 UI 컴포넌트를 분리하기 위해 개발**되었습니다. 바라봄을 React Native CLI에서 Expo로 마이그레이션하면서, 프로덕션 애플리케이션에서 사용되던 UI 컴포넌트들을 독립적인 라이브러리로 추출했습니다.
@@ -38,11 +59,5 @@ ZS-ui는 **바라봄(Barabom) 앱의 UI 컴포넌트를 분리하기 위해 개�
 - **순수 JavaScript**: 네이티브 의존성 없음, Expo managed workflow 완벽 지원
 - **접힘 디바이스 지원**: iOS/Android 네이티브 스타일 자동 적응
 - **완벽한 테스트**: 123개 테스트, 100% 통과율, ~94% 코드 커버리지
-
-<br>
-
-[문서](https://0610studio.github.io/zs-ui/docs/intro)
-
-[Playground](https://snack.expo.dev/@studio0610/zs-ui_13_playground)
 
 <br>
