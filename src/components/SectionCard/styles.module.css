@@ -1,0 +1,210 @@
+.cardLink {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  width: 100%;
+}
+
+.cardLink:hover {
+  text-decoration: none;
+  color: inherit;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 2rem;
+  border-radius: 16px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--color-accent-subtle);
+  opacity: 0;
+  transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  border-color: var(--color-accent-muted);
+  box-shadow: var(--shadow-lg), var(--shadow-glow);
+}
+
+.card:hover::before {
+  opacity: 1;
+}
+
+.cardHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.75rem;
+  position: relative;
+  z-index: 1;
+}
+
+.iconWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: var(--color-accent-subtle);
+  border: 1px solid var(--color-border);
+  color: var(--color-accent);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.card:hover .iconWrapper {
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+  color: white;
+  transform: scale(1.05);
+}
+
+.badge {
+  display: inline-block;
+  padding: 0.25rem 0.65rem;
+  background: transparent;
+  color: var(--color-text-tertiary);
+  border: 1px solid var(--color-border);
+  border-radius: 100px;
+  font-family: var(--ifm-heading-font-family);
+  font-size: 0.65rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  transition: all 0.3s ease;
+}
+
+.card:hover .badge {
+  border-color: var(--color-accent-muted);
+  color: var(--color-accent);
+}
+
+.title {
+  font-family: var(--ifm-heading-font-family);
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 0 0 0.65rem 0;
+  color: var(--color-text-primary);
+  line-height: 1.3;
+  letter-spacing: -0.02em;
+  position: relative;
+  z-index: 1;
+}
+
+.description {
+  flex: 1;
+  font-size: 0.875rem;
+  line-height: 1.7;
+  color: var(--color-text-secondary);
+  margin: 0 0 1.5rem 0;
+  position: relative;
+  z-index: 1;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--color-border);
+  position: relative;
+  z-index: 1;
+}
+
+.cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: var(--ifm-heading-font-family);
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--color-text-tertiary);
+  letter-spacing: 0.01em;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.card:hover .cta {
+  color: var(--color-accent);
+}
+
+.arrow {
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.card:hover .arrow {
+  transform: translateX(3px);
+}
+
+@media screen and (max-width: 768px) {
+  .card {
+    padding: 1.5rem;
+  }
+
+  .title {
+    font-size: 1.125rem;
+  }
+
+  .description {
+    font-size: 0.85rem;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .card {
+    padding: 1.25rem;
+  }
+
+  .iconWrapper {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+  }
+
+  .iconWrapper svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .title {
+    font-size: 1.05rem;
+  }
+
+  .description {
+    font-size: 0.825rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .cardHeader {
+    margin-bottom: 1.25rem;
+  }
+}
+
+[data-theme='dark'] .card {
+  background: var(--color-surface-elevated);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-color: var(--color-border);
+}
+
+[data-theme='dark'] .card:hover {
+  border-color: var(--color-accent-muted);
+  box-shadow: var(--shadow-lg), var(--shadow-glow);
+}
+
+[data-theme='dark'] .card:hover .iconWrapper {
+  color: #0f172a;
+}

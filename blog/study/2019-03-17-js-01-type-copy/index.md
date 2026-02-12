@@ -1,0 +1,112 @@
+---
+title: Javascript 기초 01 - 타입
+description: Javascript 기초 01 - 타입
+date: '2019-03-17'
+authors:
+  - righthot
+tags:
+  - javascript
+  - study
+slug: js-01-type-copy
+---
+
+
+
+
+
+## 형검사에 따른 언어 분류
+
+타입을 어떻게 얼마나 엄격하게 검사하는지에 따라 언어를 분류할 수 있다.
+
+- 강한 타입(strong typing) : C, C++, Go, Haskell, Java, Kotlin, Rust, Scala
+
+    → 정적 파일 검사 : 타입이 올바른지에 대한 검사를 런타임 이전에 시행
+
+- 약한 타입(weak typing) : `Javascript`, Lisp, Lua, Perl, PHP, Python, Ruby
+
+<!--truncate-->
+
+
+    → 동적 파일 검사 : 타입이 올바른지에 대한 검사를 런타임에 실행
+
+## 자바스크립트의 타입 
+
+- null
+- undefined
+- boolean
+- number
+- string
+- object
+- symbol (ES6 부터 추가)
+
+```jsx
+console.log(typeof undefined === "undefined")         // true
+console.log(typeof false === "boolean")               // true
+console.log(typeof 100 === "number")                  // true
+console.log(typeof "100" === "string")                // true
+console.log(typeof {age: 100} === "object")           // true
+console.log(typeof [1,2] === "object")                // true
+console.log(typeof Symbol() === "symbol")             // true
+
+console.log(typeof null === "null")                   // false
+console.log(typeof null === "object")                 // true
+```
+
+자바스크립트의 null 은 'falsy'한 (false와 다름없는) 원시 값이지만, 타입은 'object' 인 특이점을 가지고 있기 때문에 `typeof null === "null"` 으로는 검사가 불가능하며, 아래의 조건으로 검사 할 수 있다.
+
+```jsx
+let a = null
+console.log(a === null)                    // true
+console.log(!a && typeof a === "object")   // true
+```
+
+추가로, 함수의 경우 `function` 으로 타입을 검사할 수 있는데, `function`은 `object`의 하위타입니다.
+
+```jsx
+console.log(typeof function fun() { } === "function") // true
+```
+
+## 값의 타입 , 변수의 타입
+
+자바스크립트는 타입을 강제하지 않기 때문에 변수의 값이 처음에 할당된 값과 동일한 타입일 필요가 없다.
+
+```jsx
+let a = '스물여섯'
+console.log(a)   // 스물여섯
+
+a = 26
+console.log(a)   // 26
+```
+
+이렇듯 a 라는 변수에는 타입이 없지만, 엄연히 a 안에 들어있는 값인 `스물여섯` 과 `26` 은 타입을 가지고 있다.
+
+```jsx
+let a = '스물여섯'
+console.log(typeof a)   // string
+
+a = 26
+console.log(typeof a)   // number
+```
+
+## 없는 값 , 선언되지 않은 값
+
+- undefined : 값이 없음. 
+- undeclared : 선언되지 않음.
+
+```jsx
+let a
+
+console.log(a)   // undefined
+console.log(b)   // Uncaught ReferenceError: b is not defined at ... 
+```
+
+접근 가능한 스코프에 변수 자체가 선언되지 않으면 not defined 에러가 발생된다.
+
+하지만 두 상태 모두 type 은 undefined 이므로 아래처럼 검사가 가능하다.
+
+```jsx
+let a
+
+console.log(typeof a === 'undefined')   // true
+console.log(typeof b === 'undefined')   // true
+```

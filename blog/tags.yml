@@ -1,0 +1,47 @@
+reactnative:
+  label: 'React Native'
+  description: 'React Native 관련 포스트'
+
+javascript:
+  label: 'JavaScript'
+  description: 'JavaScript 및 ES6+ 포스트'
+
+swiftui:
+  label: 'SwiftUI'
+  description: 'SwiftUI 및 iOS 개발'
+
+retrospective:
+  label: '회고'
+  description: '개발 및 프로젝트 회고'
+
+barabomlog:
+  label: '바라봄 개발로그'
+  description: '바라봄 프로젝트 개발 일지'
+
+node:
+  label: 'Node.js'
+  description: 'Node.js 및 백엔드'
+
+python:
+  label: 'Python'
+  description: 'Python 언어 및 라이브러리'
+
+backup:
+  label: 'Backup'
+  description: '레거시 포스트'
+
+study:
+  label: 'Study'
+  description: '학습 포스트'
+
+docusaurus:
+  label: 'Docusaurus'
+  description: 'Docusaurus 관련 포스트'
+
+facebook:
+  label: 'Facebook'
+  description: 'Facebook 관련 포스트'
+
+hello:
+  label: 'Hello'
+  description: 'Hello 관련 포스트'

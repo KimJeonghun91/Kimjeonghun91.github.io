@@ -1,0 +1,354 @@
+.resumePage {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 4rem;
+}
+
+/* ── Header / Basics ─────────────────────────── */
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 2px solid var(--ifm-color-emphasis-200);
+  margin-bottom: 2.5rem;
+}
+
+.profileImage {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--ifm-color-primary);
+  flex-shrink: 0;
+}
+
+.profilePlaceholder {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: var(--ifm-color-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #fff;
+  flex-shrink: 0;
+}
+
+.headerInfo {
+  flex: 1;
+  min-width: 0;
+}
+
+.name {
+  font-size: 2rem;
+  font-weight: 800;
+  margin: 0 0 0.25rem;
+  line-height: 1.2;
+  color: var(--ifm-heading-color);
+}
+
+.label {
+  font-size: 1.1rem;
+  color: var(--ifm-color-primary);
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+.contactRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.5rem;
+  font-size: 0.9rem;
+  color: var(--ifm-color-emphasis-700);
+}
+
+.contactItem {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.contactItem a {
+  color: var(--ifm-color-primary);
+  text-decoration: none;
+}
+
+.contactItem a:hover {
+  text-decoration: underline;
+}
+
+/* ── SNS Profiles ────────────────────────────── */
+
+.profiles {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 0.75rem;
+}
+
+.profileLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.3rem 0.75rem;
+  border-radius: 2rem;
+  background: var(--ifm-color-emphasis-100);
+  color: var(--ifm-color-emphasis-800);
+  font-size: 0.85rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s;
+}
+
+.profileLink:hover {
+  background: var(--ifm-color-primary);
+  color: #fff;
+  text-decoration: none;
+}
+
+/* ── Section generic ─────────────────────────── */
+
+.section {
+  margin-bottom: 2.5rem;
+}
+
+.sectionTitle {
+  font-size: 1.35rem;
+  font-weight: 700;
+  margin: 0 0 1.25rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--ifm-color-primary);
+  color: var(--ifm-heading-color);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* ── Summary ─────────────────────────────────── */
+
+.summary {
+  font-size: 0.95rem;
+  line-height: 1.8;
+  color: var(--ifm-color-emphasis-800);
+  white-space: pre-line;
+}
+
+/* ── Timeline items (Work / Volunteer) ───────── */
+
+.timelineList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  position: relative;
+}
+
+.timelineList::before {
+  content: '';
+  position: absolute;
+  left: 6px;
+  top: 8px;
+  bottom: 8px;
+  width: 2px;
+  background: var(--ifm-color-emphasis-200);
+}
+
+.timelineItem {
+  position: relative;
+  padding-left: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.timelineItem::before {
+  content: '';
+  position: absolute;
+  left: 3px;
+  top: 11px;
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: var(--ifm-color-primary);
+  border: 2px solid var(--ifm-background-color);
+  box-shadow: 0 0 0 2px var(--ifm-color-primary);
+}
+
+.timelineItem::after {
+  content: '';
+  position: absolute;
+  left: 3px;
+  top: 11px;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  box-shadow: 0 0 0 0 var(--ifm-color-primary-ligh);
+  animation: softPulse 2.5s ease-out infinite;
+}
+
+@keyframes softPulse {
+  0% {
+    box-shadow: 0 0 0 0 var(--ifm-color-primary);
+  }
+  100% {
+    box-shadow: 0 0 0 7px rgba(0, 0, 0, 0);
+  }
+}
+
+.timelineHeader {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 0.35rem;
+}
+
+.company {
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: var(--ifm-heading-color);
+}
+
+.position {
+  font-size: 0.9rem;
+  color: var(--ifm-color-emphasis-600);
+}
+
+.dateRange {
+  font-size: 0.8rem;
+  color: var(--ifm-color-emphasis-500);
+  margin-left: auto;
+  font-variant-numeric: tabular-nums;
+}
+
+.timelineSummary {
+  font-size: 0.9rem;
+  color: var(--ifm-color-emphasis-700);
+  margin: 0.25rem 0 0;
+  line-height: 1.6;
+}
+
+.highlights {
+  list-style: disc;
+  padding-left: 1.25rem;
+  margin: 0.5rem 0 0;
+  font-size: 0.85rem;
+  color: var(--ifm-color-emphasis-600);
+}
+
+.highlights li {
+  margin-bottom: 0.2rem;
+}
+
+/* ── Skills grid ─────────────────────────────── */
+
+.skillsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1.25rem;
+}
+
+.skillCard {
+  padding: 1.25rem;
+  border-radius: 0.75rem;
+  background: var(--ifm-color-emphasis-100);
+  border: 1px solid var(--ifm-color-emphasis-200);
+}
+
+.skillName {
+  font-weight: 700;
+  font-size: 1rem;
+  margin-bottom: 0.75rem;
+  color: var(--ifm-color-primary);
+}
+
+.keywords {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.keyword {
+  display: inline-block;
+  padding: 0.2rem 0.65rem;
+  border-radius: 1rem;
+  background: var(--ifm-background-color);
+  border: 1px solid var(--ifm-color-emphasis-300);
+  font-size: 0.8rem;
+  color: var(--ifm-color-emphasis-700);
+  font-weight: 500;
+}
+
+/* ── Awards ───────────────────────────────────── */
+
+.awardsList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 0.75rem;
+}
+
+.awardItem {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.25rem;
+  border-radius: 0.75rem;
+  background: var(--ifm-color-emphasis-100);
+  border: 1px solid var(--ifm-color-emphasis-200);
+}
+
+.awardIcon {
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+.awardInfo {
+  flex: 1;
+  min-width: 0;
+}
+
+.awardTitle {
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--ifm-heading-color);
+}
+
+.awardMeta {
+  font-size: 0.8rem;
+  color: var(--ifm-color-emphasis-500);
+  margin-top: 0.15rem;
+}
+
+/* ── Responsive ──────────────────────────────── */
+
+@media screen and (max-width: 640px) {
+  .header {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+
+  .contactRow {
+    justify-content: center;
+  }
+
+  .profiles {
+    justify-content: center;
+  }
+
+  .dateRange {
+    margin-left: 0;
+    width: 100%;
+  }
+
+  .timelineHeader {
+    flex-direction: column;
+    gap: 0.15rem;
+  }
+
+  .skillsGrid {
+    grid-template-columns: 1fr;
+  }
+}

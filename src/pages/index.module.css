@@ -1,0 +1,313 @@
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes orbFloat {
+  0%, 100% { transform: translate(-50%, -50%) scale(1); }
+  50% { transform: translate(-50%, -50%) scale(1.08); }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+.heroBanner {
+  position: relative;
+  padding: 8rem 2rem 6rem;
+  background: var(--color-surface);
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.heroOrb {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, var(--color-accent-subtle) 0%, transparent 70%);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  animation: orbFloat 8s ease-in-out infinite;
+  z-index: 0;
+  pointer-events: none;
+  filter: blur(40px);
+}
+
+.profileImageWrapper {
+  margin-bottom: 2.5rem;
+  animation: fadeInUp 0.8s ease-out 0.1s both;
+}
+
+.profileImage {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--color-accent);
+  box-shadow: 0 8px 32px rgba(13, 148, 136, 0.15);
+  transition: transform 0.3s ease;
+}
+
+.profileImage:hover {
+  transform: scale(1.05);
+}
+
+.heroContent {
+  position: relative;
+  z-index: 1;
+  max-width: 680px;
+  margin: 0 auto;
+  text-align: center;
+  animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.heroLabel {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 1rem;
+  background: var(--color-accent-subtle);
+  border: 1px solid var(--color-border);
+  border-radius: 100px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--color-accent);
+  letter-spacing: 0.02em;
+  margin-bottom: 2rem;
+  animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.heroDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--color-accent);
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.heroTitle {
+  font-family: var(--ifm-heading-font-family);
+  font-size: 3.75rem;
+  font-weight: 700;
+  margin: 0 0 1rem 0;
+  line-height: 1.1;
+  color: var(--color-text-primary);
+  letter-spacing: -0.04em;
+  animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.1s both;
+}
+
+.heroSubtitle {
+  font-family: var(--ifm-font-family-base);
+  font-size: 1rem;
+  color: var(--color-text-tertiary);
+  margin: 0 0 2.5rem 0;
+  font-weight: 400;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.2s both;
+}
+
+.heroCTA {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.3s both;
+}
+
+.primaryButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  background: var(--color-accent);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-family: var(--ifm-heading-font-family);
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  letter-spacing: 0.01em;
+}
+
+.primaryButton svg {
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.primaryButton:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-lg), var(--shadow-glow);
+  text-decoration: none;
+  color: white;
+}
+
+.primaryButton:hover svg {
+  transform: translateX(3px);
+}
+
+.secondaryButton {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.75rem 1.5rem;
+  background: transparent;
+  color: var(--color-text-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  font-family: var(--ifm-heading-font-family);
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  letter-spacing: 0.01em;
+}
+
+.secondaryButton:hover {
+  background: var(--color-accent-subtle);
+  border-color: var(--color-accent-muted);
+  color: var(--color-accent);
+  transform: translateY(-1px);
+  text-decoration: none;
+}
+
+.sections {
+  padding: 6rem 2rem;
+  background: var(--color-bg-subtle);
+  border-top: 1px solid var(--color-border);
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.sectionHeader {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.sectionLabel {
+  display: inline-block;
+  font-family: var(--ifm-heading-font-family);
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--color-accent);
+  margin-bottom: 0.75rem;
+}
+
+.sectionTitle {
+  font-family: var(--ifm-heading-font-family);
+  font-size: 2.25rem;
+  font-weight: 600;
+  margin: 0;
+  color: var(--color-text-primary);
+  line-height: 1.2;
+  letter-spacing: -0.03em;
+}
+
+.cardsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+@media screen and (max-width: 996px) {
+  .heroBanner {
+    padding: 6rem 1.5rem 4rem;
+  }
+
+  .heroTitle {
+    font-size: 2.75rem;
+  }
+
+  .cardsGrid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.25rem;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .heroBanner {
+    padding: 5rem 1.25rem 3.5rem;
+  }
+
+  .heroOrb {
+    width: 300px;
+    height: 300px;
+  }
+
+  .heroTitle {
+    font-size: 2.25rem;
+  }
+
+  .heroSubtitle {
+    font-size: 0.8rem;
+    margin-bottom: 2rem;
+  }
+
+  .heroLabel {
+    font-size: 0.72rem;
+  }
+
+  .heroCTA {
+    gap: 0.5rem;
+  }
+
+  .primaryButton,
+  .secondaryButton {
+    padding: 0.65rem 1.25rem;
+    font-size: 0.825rem;
+  }
+
+  .sections {
+    padding: 4rem 1.25rem;
+  }
+
+  .sectionTitle {
+    font-size: 1.75rem;
+  }
+
+  .cardsGrid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
+
+[data-theme='dark'] .heroBanner {
+  background: var(--color-surface);
+}
+
+[data-theme='dark'] .primaryButton {
+  color: #0f172a;
+  background: var(--color-accent);
+}
+
+[data-theme='dark'] .primaryButton:hover {
+  color: #0f172a;
+}
+
+[data-theme='dark'] .secondaryButton {
+  color: var(--color-text-secondary);
+  border-color: var(--color-border);
+}
+
+[data-theme='dark'] .secondaryButton:hover {
+  background: var(--color-accent-subtle);
+  border-color: var(--color-accent-muted);
+  color: var(--color-accent);
+}

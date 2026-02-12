@@ -1,0 +1,131 @@
+---
+title: Javascript 기초 05 - 문법 1
+description: Javascript 기초 05 - 문법 1
+date: '2019-04-07'
+authors:
+  - righthot
+tags:
+  - javascript
+  - study
+slug: js-05-grammar1
+---
+
+
+
+
+
+## ASI(Automatic Semicolon Insertion)
+
+자바스크립트 프로그램은 코딩시 `세미콜론(;)`이 하나라도 누락되면 돌아가지 않는다.
+
+`자바스크립트 파서(parser)`는 줄 단위로 파싱을 하다가 `세미콜론(;)`이 빠져 에러가 나면 `세미콜론(;)`을 넣어보고 타당하면  `세미콜론(;)`을 삽입한다 
+
+## 문(Statement)
+
+프로그램을 구성하는 최소 실행 단위
+
+<!--truncate-->
+
+
+```jsx
+// 변수 선언문
+let a  
+
+// 할당문
+a = 26
+
+// 함수 선언문
+function fun () {}
+
+// 조건문
+if(true) {}
+
+// 반복문
+for(let i=0;i<10;i++) {}
+```
+
+## 표현식(Expression)
+
+인터프리터가 값으로 평가(evaluate)하는 구문.
+
+- 인터프리터(interpreter)란?
+
+    인터프리터는 프로그래밍 언어의 소스 코드를 바로 실행하는 컴퓨터 프로그램 또는 환경을 말한다. 원시 코드를 기계어로 번역하는 컴파일러와 대비된다.
+
+```jsx
+// 변수 선언문은 값으로 표현될 수 없기 때문에 그냥 문(Statement)이다.
+let a;
+
+// 할당문은 26이라는 값으로 평가되므로
+// 문이자 표현식이다. = 표현식 문(Expression Statement)
+a = 26;
+
+// 표현식 문(26으로 평가되므로)
+a;
+```
+
+## 값(value)
+
+표현식이 평가(식을 해석하여 값을 생성하거나 참조)되어 생성된 결과
+
+```jsx
+let a = 26
+```
+
+## 리터럴(literal)
+
+사람이 이해할 수 있는 문자 또는 약속된 기호를 사용해 값을 생성하는 표기 방식
+
+```jsx
+"이십육"                     // 문자 리터럴
+26                         // 정수 리터럴
+26.5                       // 부동 소수점 리터럴
+{name:"RightHot", age:26}  // 객체 리터럴
+null                       // null 리터럴
+undefined                  // undefined 리터럴
+```
+
+## 변수(Variable)
+
+### **function-scoped**
+
+같은 함수내에선 위치에 관계없이 호스팅되어 `global variable`이 됨
+
+(뒤에 선언 되더라도 앞에서 사용가능)
+
+- **var** (variable): 전역변수 처리됨.
+
+    a 변수는 `호이스팅`되어 전역으로 선언 되었기 때문에 `undefined` 가 출력되지만, b 변수는 접근 가능한 스코프에 변수 자체가 선언되지 않았기 때문에 not defined 에러가 발생된다.
+
+    ```jsx
+    console.log(a)  // undefined
+    console.log(b)  // Uncaught ReferenceError: b is not defined
+    
+    var a;
+    ```
+
+### **block-scoped**
+
+기존 **var** 는 이미 만들어진 변수이름을 재 선언 해도 문제가 발생되지 않음
+
+그래서 ES2015 부터 let, const가 추가되었는데, 이 둘은 `변수를 재선언`하는게 불가능하다.
+
+- **let** : 호이스팅 안됨 , 재선언 불가 , 재할당 가능
+
+    ```jsx
+    console.log(a)   // ReferenceError: Cannot access 'a' before initialization
+        
+    let a = 'Right'
+            
+    let a = 'Hot'    // SyntaxError: Identifier 'a' has already been declared
+    ```
+
+- **const** (constant) : 재할당 불가 , 선언과 동시에 값을 할당해야됨 (Object안의 값은 변경 가능)
+
+    ```jsx
+    let a = 'Right'
+    a = 'Hot'         // 가능
+
+    const b = 'Right';
+    b = 'Hot'         // TypeError: Assignment to constant variable.
+    ```
