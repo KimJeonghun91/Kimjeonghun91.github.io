@@ -7,9 +7,23 @@ description: 사이클과 BLE 통신으로 운동 측정
 
 사이클과 BLE 통신으로 운동 측정 | 2019.06
 
-기술: Java(Android), SQLite, BLE, Firebase Realtime DB
+## 🛠 기술 스택
 
-**기여도**: JAVA-Android(100%), SQLite(100%), BLE 통신(100%), Firebase RDB(100%)
+| 분야 | 기술 |
+|------|------|
+| 모바일 | Java(Android) |
+| 데이터베이스 | SQLite |
+| 통신 | BLE |
+| 백엔드 | Firebase Realtime DB |
+
+## 👤 기여도
+
+| 항목 | 기여도 |
+|------|--------|
+| JAVA-Android | 100% |
+| SQLite | 100% |
+| BLE 통신 | 100% |
+| Firebase RDB | 100% |
 
 <br>
 
