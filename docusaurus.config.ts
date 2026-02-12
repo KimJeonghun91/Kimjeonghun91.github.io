@@ -157,11 +157,28 @@ const config: Config = {
       style: 'dark',
       links: [
         {
+          title: 'Pages',
+          items: [
+            { to: '/blog', label: 'Blog' },
+            { to: '/blog/tags', label: 'Tags' },
+            { to: '/resume', label: 'Resume' },
+            { to: '/projects', label: 'Projects' },
+          ],
+        },
+        {
           title: 'Social',
           items: [
             {
               label: 'GitHub',
               href: 'https://github.com/KimJeonghun91',
+            },
+            {
+              label: 'Threads',
+              href: 'https://www.threads.com/@right_hot',
+            },
+            {
+              label: 'Instagram',
+              href: 'https://www.instagram.com/right_hot',
             },
           ],
         },
