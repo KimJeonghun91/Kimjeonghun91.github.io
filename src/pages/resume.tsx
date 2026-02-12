@@ -337,9 +337,9 @@ export default function ResumePage(): ReactNode {
       <main className={styles.resumePage}>
         <ProfileHeader basics={basics} />
         <SummarySection summary={basics.summary} />
+        <SkillsSection skills={skills} />
         <WorkSection items={work} title="경력" icon="💼" />
         <VolunteerSection items={volunteer} />
-        <SkillsSection skills={skills} />
         <AwardsSection awards={awards} />
       </main>
     </Layout>
