@@ -7,7 +7,12 @@ description: React Native Expo UI 컴포넌트 라이브러리
 
 React Native Expo UI 컴포넌트 라이브러리 | 2026.02
 
-기술: React Native, Expo, TypeScript, JavaScript
+## 🛠 기술 스택
+
+| 분야 | 기술 |
+|------|------|
+| 모바일 | React Native, Expo |
+| 언어 | TypeScript, JavaScript |
 
 <br>
 
