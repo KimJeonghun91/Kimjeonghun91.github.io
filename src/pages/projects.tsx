@@ -66,7 +66,7 @@ function ProjectCard({project}: {project: Project}): ReactNode {
   const history = useHistory();
   
   const handleCardClick = () => {
-    history.push(`/docs/projects/${project.id}`);
+    history.push(`/projects/${project.id}`);
   };
 
   return (

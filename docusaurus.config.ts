@@ -81,6 +81,7 @@ const config: Config = {
       'classic',
       {
         docs: {
+          routeBasePath: 'projects',
           sidebarPath: './sidebars.ts',
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
@@ -117,7 +118,7 @@ const config: Config = {
         highlightSearchTermsOnTargetPage: true,
         indexBlog: true,
         indexDocs: false,
-        docsRouteBasePath: '/docs',
+        docsRouteBasePath: '/projects',
         blogRouteBasePath: '/blog',
       },
     ],
