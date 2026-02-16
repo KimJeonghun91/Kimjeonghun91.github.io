@@ -3,6 +3,7 @@ import {useHistory} from '@docusaurus/router';
 import Layout from '@theme/Layout';
 import Heading from '@theme/Heading';
 import styles from './projects.module.css';
+import {trackGAEvent} from '../utils/gaEvent';
 
 interface Project {
   id: string;
@@ -66,6 +67,12 @@ function ProjectCard({project}: {project: Project}): ReactNode {
   const history = useHistory();
   
   const handleCardClick = () => {
+    trackGAEvent('select_content', {
+      content_type: 'project',
+      item_id: `project_${project.id}`,
+      item_name: project.title,
+      item_list_name: 'projects_listing',
+    });
     history.push(`/projects/${project.id}`);
   };
 
