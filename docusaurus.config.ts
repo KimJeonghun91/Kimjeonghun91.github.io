@@ -16,7 +16,7 @@ const config: Config = {
   },
 
   // Set the production url of your site here
-  url: 'https://your-docusaurus-site.example.com',
+  url: 'https://kimjeonghun91.github.io',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/',
@@ -76,6 +76,8 @@ const config: Config = {
     },
   ],
 
+  clientModules: ['./src/ga-click-tracking.ts'],
+
   presets: [
     [
       'classic',
@@ -101,6 +103,10 @@ const config: Config = {
           onUntruncatedBlogPosts: 'ignore',
           postsPerPage: 10,
           blogSidebarCount: 0,
+        },
+        gtag: {
+          trackingID: 'G-P9D6REJLYT',
+          anonymizeIP: true,
         },
         theme: {
           customCss: './src/css/custom.css',
@@ -130,7 +136,7 @@ const config: Config = {
     },
     navbar: {
       logo: {
-        alt: 'My Site Logo',
+        alt: '김정훈 로고',
         src: 'img/logo.png',
       },
       items: [
