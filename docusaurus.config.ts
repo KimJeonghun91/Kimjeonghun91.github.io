@@ -7,7 +7,7 @@ import {addTruncateMarksToAllPosts} from './scripts/add-truncate-marks';
 
 const config: Config = {
   title: '김정훈',
-  tagline: 'Dinosaurs are cool',
+  tagline: 'Mobile and Frontend Engineer',
   favicon: 'img/favicon.ico',
 
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
@@ -20,11 +20,12 @@ const config: Config = {
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/',
+  trailingSlash: false,
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'facebook', // Usually your GitHub org/user name.
-  projectName: 'docusaurus', // Usually your repo name.
+  organizationName: 'KimJeonghun91', // Usually your GitHub org/user name.
+  projectName: 'KimJeonghun91.github.io', // Usually your repo name.
 
   onBrokenLinks: 'warn',
 
@@ -85,10 +86,8 @@ const config: Config = {
         docs: {
           routeBasePath: 'projects',
           sidebarPath: './sidebars.ts',
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+            'https://github.com/KimJeonghun91/KimJeonghun91.github.io/tree/main/',
         },
         blog: {
           showReadingTime: true,
@@ -97,12 +96,17 @@ const config: Config = {
             xslt: true,
           },
           editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+            'https://github.com/KimJeonghun91/KimJeonghun91.github.io/tree/main/',
           onInlineTags: 'warn',
           onInlineAuthors: 'warn',
           onUntruncatedBlogPosts: 'ignore',
           postsPerPage: 10,
           blogSidebarCount: 0,
+        },
+        sitemap: {
+          changefreq: 'weekly',
+          priority: 0.7,
+          filename: 'sitemap.xml',
         },
         gtag: {
           trackingID: 'G-P9D6REJLYT',
@@ -131,6 +135,19 @@ const config: Config = {
   ],
 
   themeConfig: {
+    image: '/img/og-default.png',
+    metadata: [
+      {
+        name: 'description',
+        content: '김정훈의 개발 블로그, 프로젝트 기록, 이력서 페이지',
+      },
+      {
+        name: 'keywords',
+        content: '김정훈, React Native, Expo, TypeScript, Mobile, Frontend, Blog, Portfolio',
+      },
+      {property: 'og:locale', content: 'ko_KR'},
+      {name: 'twitter:card', content: 'summary_large_image'},
+    ],
     colorMode: {
       respectPrefersColorScheme: true,
     },
