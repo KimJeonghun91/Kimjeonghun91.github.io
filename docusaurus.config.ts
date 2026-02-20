@@ -7,7 +7,7 @@ import {addTruncateMarksToAllPosts} from './scripts/add-truncate-marks';
 
 const config: Config = {
   title: '김정훈',
-  tagline: 'Mobile and Frontend Engineer',
+  tagline: 'Frontend Developer',
   favicon: 'img/favicon.ico',
 
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
@@ -86,8 +86,6 @@ const config: Config = {
         docs: {
           routeBasePath: 'projects',
           sidebarPath: './sidebars.ts',
-          editUrl:
-            'https://github.com/KimJeonghun91/KimJeonghun91.github.io/tree/main/',
         },
         blog: {
           showReadingTime: true,
@@ -95,8 +93,6 @@ const config: Config = {
             type: ['rss', 'atom'],
             xslt: true,
           },
-          editUrl:
-            'https://github.com/KimJeonghun91/KimJeonghun91.github.io/tree/main/',
           onInlineTags: 'warn',
           onInlineAuthors: 'warn',
           onUntruncatedBlogPosts: 'ignore',
