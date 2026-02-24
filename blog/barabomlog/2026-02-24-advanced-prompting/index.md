@@ -1,6 +1,6 @@
 ---
-title: '[바라봄 개발log] 반려동물과 대화 기능만들기 두번째'
-description: '[바라봄 개발log] 반려동물과 대화 기능만들기 두번째'
+title: '[바라봄 개발log] 반려동물과 대화 기능 만들기 두 번째'
+description: '[바라봄 개발log] 반려동물과 대화 기능 만들기 두 번째'
 date: '2026-02-24'
 authors:
   - righthot
@@ -13,15 +13,19 @@ slug: advanced-prompting
 
 
 
-## 다시 만드는 이유
+## 잡담
 
-단순한 아이디어로 MVP를 만든 지 벌써 3년이 지났다. ([ChatGPT 활용해 반려동물 대화 기능 만들기](/blog/chat-gpt))
+단순한 아이디어로 반려동물 채팅 MVP를 만든 지 벌써 3년이 지났다. ([ChatGPT 활용해 반려동물 대화 기능 만들기](/blog/chat-gpt))
 
-얼마 지나지 않아 당시 연결해둔 LLM API가 종료되었고, 단일 문자열 프롬프트에 강하게 의존하던 구조는 LLM이 바뀌자 쉽게 망가져버렸다.
+AI Agent도 없던 시절이라... 반려동물 채팅 기능까지 유지보수하기는 1인 개발자로선 쉽지 않않다.
+
+그렇게 얼마 지나지 않아 당시 연결해둔 LLM API가 종료되었고, 단일 문자열 프롬프트에 강하게 의존하던 구조는 LLM API 변경에도 쉽게 망가져버렸다.
 
 그렇게 방치된 기능으로 2년이 흘렀다.
 
 <!--truncate-->
+
+### 다시 만들어보자.
 
 서비스 문의 중에는 지금도 잊히지 않는 메시지가 있다.
 
@@ -29,9 +33,11 @@ slug: advanced-prompting
 
 ... 계속해서 유지보수하지 못해 죄송스럽다.
 
+하지만 이번엔 AI agent라는 든든한 지원군이 있으니 바이브 코딩을 곁들여서 만들어보기로 했다.
+
 ## 단일 프롬프트에서 오케스트레이션으로
 
-현재 바라봄 챗은 **3-Agent 오케스트레이션**을 중심으로 동작한다.
+새로운 바라봄 챗은 **3-Agent 오케스트레이션**을 중심으로 동작한다.
 
 - `PetAgent`: 보호자와 자연스럽게 대화하는 페르소나 레이어
 - `VetAgent`: 실제 수의학 판단/설명 생성 레이어
@@ -41,14 +47,14 @@ slug: advanced-prompting
 
 ```mermaid
 graph TB
-    User[사용자 질문] --> PetAgent[Pet Agent<br/>대화 페르소나]
-    PetAgent -->|의학적 판단 필요| VetAgent[Vet Agent<br/>수의학 답변]
-    PetAgent -->|응급 신호 포함| VetAgent
-    VetAgent --> RAG[RAG<br/>검증 지식베이스]
+    User["사용자 질문"] --> PetAgent["Pet Agent - 대화 페르소나"]
+    PetAgent -->|위임 문구 감지| VetAgent["Vet Agent - 수의학 답변"]
+    PetAgent -->|응급 지시어 감지| VetAgent
+    VetAgent --> RAG["RAG - 검증 지식베이스"]
     RAG --> VetAgent
-    VetAgent --> ValidatorAgent[Validator Agent<br/>하이브리드 검증]
+    VetAgent --> ValidatorAgent["Validator Agent - 하이브리드 검증"]
     PetAgent --> ValidatorAgent
-    ValidatorAgent --> Response[최종 응답]
+    ValidatorAgent --> Response["최종 응답"]
 
     style PetAgent fill:#e1f5fe
     style VetAgent fill:#f3e5f5
@@ -60,15 +66,16 @@ graph TB
 
 이번 구조에서 가장 실무적인 변화는 **응답 기반 위임**(Response-based Delegation)이다.
 
-기존처럼 질문 키워드만 보고 "의학 질문인가?"를 단정하지 않는다. 먼저 PetAgent가 응답을 만들고, 그 응답과 직전 대화 맥락을 함께 평가해 Vet 위임 여부를 결정한다.
+기존처럼 질문 키워드만 보고 "의학 질문인가?"를 단정하지 않는다. 먼저 PetAgent가 응답을 만들고, 그 응답 안의 위임 신호를 기준으로 Vet 위임 여부를 결정한다.
 
 여기에 안전 가드를 추가했다.
 
-- Pet 응답에 "응급 신고", "즉시 전화" 같은 지시가 포함되면 Vet 위임을 강제
+- Pet 응답에 "수의사 선생님", "모르는 질문" 같은 위임 문구가 있으면 Vet 위임
+- Pet 응답에 "응급 신고", "즉시 전화" 같은 지시가 포함되면 안전 fallback으로 Vet 위임 강제
 - 짧은 후속 질문("시간은?", "그때는?")도 직전 원문/요약을 함께 읽어 해석
 - "내가 방금 뭐라고 했지?" 같은 복기 질문은 직전 사용자 발화를 우선 참조
 
-즉, 라우팅의 기준이 단순 키워드 매칭이 아니라 **대화 상태**가 되었다.
+즉, 라우팅의 기준이 질문 단어 자체보다 **생성된 응답과 안전 신호**가 되었다.
 
 ## 검증 정책: 규칙 + LLM 하이브리드
 
@@ -128,7 +135,7 @@ sequenceDiagram
     Router->>Pet: 1차 응답 생성 요청
     Pet->>Pet: 일지/요약 컨텍스트 주입 후 응답 생성
 
-    alt 의학적 판단 필요 또는 응급 안전 가드
+    alt 응답 내 위임 신호 또는 응급 안전 가드
         Pet->>Vet: 위임
         Vet->>Vet: RAG + 일지/요약 컨텍스트 결합
         Vet->>Pet: 수의학 답변 결합
