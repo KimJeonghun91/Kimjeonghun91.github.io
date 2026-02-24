@@ -5,6 +5,7 @@ date: '2022-11-16'
 authors:
   - righthot
 tags:
+  - retrospective
   - barabomlog
 slug: homepage-update
 ---

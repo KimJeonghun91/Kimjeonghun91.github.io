@@ -6,6 +6,7 @@ authors:
   - righthot
 tags:
   - retrospective
+  - barabomlog
 slug: dau100
 ---
 
