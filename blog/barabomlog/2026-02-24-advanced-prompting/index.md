@@ -84,21 +84,20 @@ ValidatorAgent는 두 층으로 동작한다.
 ### RAG (검증 지식베이스)
 
 - 출처: Merck, AVMA, AAHA, WSAVA 등 권위 기관
-- 검증 현황: 2026-02-09 기준 56/56 문서 검증 완료
+- 검증 현황: 2026-02-09 기준 내부 검증 완료
 - 기준: peer-reviewed 또는 공신력 있는 협회 출처 인용
 
 ### Conversation Summary (비동기 롤링 요약)
 
-- 사용자 응답과 분리된 백그라운드 요약 (`@Async`)
+- 사용자 응답과 분리된 비동기 백그라운드 요약
 - 이전 요약 + 최근 5개 실제 메시지를 결합한 통합 요약
 - 사용자 턴 기준 3턴마다 1회 생성(요약 스로틀링)
-- 저장 위치: `conversations.summary`
 
 덕분에 긴 대화에서도 맥락이 끊기지 않고, 전체 대화 원문을 매번 넣지 않아 토큰 비용도 안정적으로 관리된다.
 
 ## 요청 처리 흐름
 
-`/api/v1/chat`(지속 대화)과 `/api/v1/ask`(단발 질문)는 동일한 원칙을 공유한다. 사용자에게는 즉시 응답을 반환하고, 무거운 맥락 정리는 뒤에서 비동기로 처리한다.
+지속 대화 API와 단발 질문 API는 동일한 원칙을 공유한다. 사용자에게는 즉시 응답을 반환하고, 무거운 맥락 정리는 뒤에서 비동기로 처리한다.
 
 ```mermaid
 sequenceDiagram
@@ -108,7 +107,7 @@ sequenceDiagram
     participant Pet as PetAgent
     participant Vet as VetAgent
     participant Validator as ValidatorAgent
-    participant Summary as 요약(@Async)
+    participant Summary as 요약(비동기)
     participant DB as DB
 
     User->>API: 메시지 전송
