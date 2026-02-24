@@ -87,6 +87,13 @@ ValidatorAgent는 두 층으로 동작한다.
 - 검증 현황: 2026-02-09 기준 내부 검증 완료
 - 기준: peer-reviewed 또는 공신력 있는 협회 출처 인용
 
+### 건강수첩 DB 컨텍스트 (실제 기록 기반)
+
+- 모든 질문에서 조회하지 않고, 메시지/직전 대화/요약을 함께 보고 "기록 맥락이 필요한 질문"일 때만 조회
+- `diary_master`에서 **최근 30일, 최대 20건, 최신순**으로 조회해 컨텍스트 문자열로 정리
+- 정리된 일지 컨텍스트를 Pet/Vet 프롬프트에 함께 주입해, "최근 어떤 증상이 있었는지" 같은 질문에 실제 기록을 반영
+- 즉, 답변은 "기록 기반 참고 정보"를 강화하는 방식이며, 최종 진단/처방은 실제 수의사 진료를 전제로 한다
+
 ### Conversation Summary (비동기 롤링 요약)
 
 - 사용자 응답과 분리된 비동기 백그라운드 요약
@@ -104,6 +111,7 @@ sequenceDiagram
     participant User as 사용자
     participant API as API
     participant Router as 라우터
+    participant Diary as 건강수첩DB
     participant Pet as PetAgent
     participant Vet as VetAgent
     participant Validator as ValidatorAgent
@@ -112,10 +120,17 @@ sequenceDiagram
 
     User->>API: 메시지 전송
     API->>Router: 라우팅
-    Router->>Pet: 1차 응답 생성
+    Router->>Router: 일지 컨텍스트 필요 여부 판단
+    alt 기록 맥락 필요
+        Router->>Diary: 최근 30일/최대 20건 조회
+        Diary-->>Router: 일지 컨텍스트
+    end
+    Router->>Pet: 1차 응답 생성 요청
+    Pet->>Pet: 일지/요약 컨텍스트 주입 후 응답 생성
 
     alt 의학적 판단 필요 또는 응급 안전 가드
         Pet->>Vet: 위임
+        Vet->>Vet: RAG + 일지/요약 컨텍스트 결합
         Vet->>Pet: 수의학 답변 결합
     end
 
@@ -137,7 +152,7 @@ sequenceDiagram
 - 대화(Pet)와 의학(Vet)의 책임 분리
 - 응답 기반 위임 + 응급 안전 가드
 - 규칙/LLM 하이브리드 검증
-- RAG + 비동기 롤링 요약
+- RAG + 건강수첩 DB 컨텍스트 + 비동기 롤링 요약
 
 아직 가야 할 길은 멀지만... 한단계 나아간 것 같다.
 
