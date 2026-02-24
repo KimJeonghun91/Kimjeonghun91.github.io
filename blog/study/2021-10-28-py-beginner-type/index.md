@@ -8,6 +8,7 @@ tags:
   - python
   - study
 slug: py-beginner-type
+draft: true
 ---
 
 

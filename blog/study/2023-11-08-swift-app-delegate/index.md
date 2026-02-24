@@ -8,6 +8,7 @@ tags:
   - swiftui
   - study
 slug: swift-app-delegate
+draft: true
 ---
 
 

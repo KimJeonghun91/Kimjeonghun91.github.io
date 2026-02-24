@@ -31,6 +31,7 @@ const config: Config = {
 
   markdown: {
     preprocessor: ({fileContent}) => fileContent.replace(/<br>/g, '<br/>'),
+    mermaid: true,
     hooks: {
       onBrokenMarkdownLinks: 'warn',
       onBrokenMarkdownImages: 'warn',
@@ -116,6 +117,7 @@ const config: Config = {
   ],
 
   themes: [
+    '@docusaurus/theme-mermaid',
     [
       '@easyops-cn/docusaurus-search-local',
       {

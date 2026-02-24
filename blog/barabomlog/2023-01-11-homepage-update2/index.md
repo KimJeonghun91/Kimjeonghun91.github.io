@@ -5,6 +5,7 @@ date: '2023-01-11'
 authors:
   - righthot
 tags:
+  - retrospective
   - barabomlog
 slug: homepage-update2
 ---

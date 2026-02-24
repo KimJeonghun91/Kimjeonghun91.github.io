@@ -8,6 +8,7 @@ tags:
   - swiftui
   - study
 slug: swift-mk-view
+draft: true
 ---
 
 

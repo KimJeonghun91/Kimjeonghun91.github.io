@@ -8,6 +8,7 @@ tags:
   - javascript
   - study
 slug: js-parallelism
+draft: true
 ---
 
 

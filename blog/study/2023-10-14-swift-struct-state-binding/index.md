@@ -8,6 +8,7 @@ tags:
   - swiftui
   - study
 slug: swift-struct-state-binding
+draft: true
 ---
 
 
