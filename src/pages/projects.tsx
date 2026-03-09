@@ -17,6 +17,15 @@ interface Project {
 
 const projects: Project[] = [
   {
+    id: 'barabom-2026',
+    title: '바라봄(2026)',
+    caption: 'Expo 기반으로 재설계한 반려동물 건강수첩 V26',
+    date: '2026.03',
+    image: '/assets/img/projects/barabom_v26_thumb.png',
+    tech: 'React Native 0.81, Expo 54, TypeScript, Kotlin, Spring Boot',
+    links: [],
+  },
+  {
     id: 'zs-ui',
     title: 'ZS-ui',
     caption: 'React Native Expo UI 컴포넌트 라이브러리',
@@ -27,7 +36,7 @@ const projects: Project[] = [
   },
   {
     id: 'barabom',
-    title: '바라봄',
+    title: '바라봄(2021)',
     caption: '똑똑한 반려동물 건강수첩',
     date: '2021.06',
     image: '/assets/img/projects/thumb_barabom.png',
