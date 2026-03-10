@@ -266,11 +266,3 @@ sequenceDiagram
 나머지 10%를 채우기 위해 아직 가야 할 길은 멀지만...
 
 적어도 올해 가을까지는 오픈하고 싶다.
-
-
-
-## 👨‍💻🤝
-
-바라봄 홈페이지 : [https://barabom.me](https://barabom.me)
-
-개발자 인스타그램 : [https://www.instagram.com/right_hot](https://www.instagram.com/right_hot)

@@ -73,10 +73,3 @@ slug: chat-gpt
 
 ChatGPT를 통해 피드백하고 육아를 도와 더 건강하게 반려동물을 기를 수 있게 하는 것이 바라봄의 목표이다.
 
-
-
-## 👨‍💻🤝
-
-바라봄 홈페이지 : [https://barabom.me](https://barabom.me)
-
-개발자 인스타그램 : [https://www.instagram.com/right_hot](https://www.instagram.com/right_hot)

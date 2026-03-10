@@ -103,10 +103,3 @@ SEO를 통해서 상위 노출을 시키고 싶었지만 검색 순위 상승을
 아직 작은 숫자이지만 작은 노력과 시도들이 쌓여 여기까지 올 수 있었다는 생각에 조금 뿌듯하기도 하다. 🤣
 
 DAU 100 후기의 말미에 남겻던 말처럼, 포기하지 말고 바라봄이 꾸준이 업데이트되었으면 좋겠다.
-
-
-## 👨‍💻🤝
-
-바라봄 홈페이지 : [https://barabom.me](https://barabom.me)
-
-개발자 인스타그램 : [https://www.instagram.com/right_hot](https://www.instagram.com/right_hot)
