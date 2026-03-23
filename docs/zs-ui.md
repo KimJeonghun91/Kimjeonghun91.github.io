@@ -1,63 +1,72 @@
 ---
 title: ZS-ui
-description: React Native Expo UI 컴포넌트 라이브러리
+description: Expo 환경을 고려해 설계한 React Native UI 라이브러리
 ---
 
 # ZS-ui
 
 React Native Expo UI 컴포넌트 라이브러리 | 2026.02
 
-## 🛠 기술 스택
+## 🌐 관련 링크
 
-| 분야 | 기술 |
-|------|------|
-| 모바일 | React Native, Expo |
-| 언어 | TypeScript, JavaScript |
+|   |   |
+|---|---|
+| 📘 문서 | [ZS-ui 문서](https://0610studio.github.io/zs-ui/docs/intro) |
+| 🧪 Playground | [Expo Snack 예제](https://snack.expo.dev/@studio0610/zs-ui_13_playground) |
 
-<br>
+## 프로젝트 개요
 
-## ZS-ui란?
+ZS-ui는 바라봄 앱을 React Native CLI에서 Expo로 마이그레이션하는 과정에서, 프로덕션 UI를 분리해 만든 라이브러리입니다.
 
-JavaScript만으로 구현된 Expo용 UI 컴포넌트 라이브러리입니다. 다크 모드, 테마, 타이포그래피, Alert과 같은 주요 UI 요소가 포함되어 있으며, 직관적이고 일관된 사용자 인터페이스를 구현할 수 있습니다.
+디자인 시스템을 서비스 밖으로 독립시키면서 앱은 도메인 로직에 집중하고, UI는 재사용 가능한 구조로 관리할 수 있도록 설계했습니다.
 
-<br>
 
-<p>
-  <a
-    href="https://0610studio.github.io/zs-ui/docs/intro"
-    target="_blank"
-    rel="noreferrer"
-    className="button button--primary"
-    style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', paddingTop: 12, paddingBottom: 12 }}
-  >
-    <span>문서 보기</span>
-  </a>
-  <a
-    href="https://snack.expo.dev/@studio0610/zs-ui_13_playground"
-    target="_blank"
-    rel="noreferrer"
-    className="button button--secondary button--outline"
-    style={{ marginLeft: '0.5rem', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', paddingTop: 12, paddingBottom: 12 }}
-  >
-    <span>Playground 열기</span>
-  </a>
-</p>
+## 주요 경험
 
-## 개발 배경
-
-ZS-ui는 **바라봄(Barabom) 앱의 UI 컴포넌트를 분리하기 위해 개발**되었습니다. 바라봄을 React Native CLI에서 Expo로 마이그레이션하면서, 프로덕션 애플리케이션에서 사용되던 UI 컴포넌트들을 독립적인 라이브러리로 추출했습니다.
-
-**설계 철학**: 초급자도 코드를 해석할 수 있도록 단순한 구조를 지향하며, Expo를 시작하는 분들에게 영감을 주는 라이브러리가 되는 것을 목표로 합니다.
-
-<br>
+- Expo managed workflow를 고려해 네이티브 의존성 없는 순수 JavaScript 기반으로 설계
+- 프로덕션 앱에서 사용하던 UI를 라이브러리로 분리해 재사용성과 유지보수성 강화
+- Alert, BottomSheet, Snackbar, Loader, Modality, PopOver를 선언적으로 관리할 수 있는 overlay 구조 설계
+- 123개 테스트, 100% 통과율, 약 94% 코드 커버리지로 품질 기반 마련
 
 ## 주요 기능
 
-- **테마 시스템**: 다크모드 지원, 커스터마이징 가능한 색상 팔레트, 의미론적 타이포그래피 토큰
-- **UI 컴포넌트**: ZSView, ZSContainer, ZSText, ZSTextField, ZSPressable, ZSBlockButton, ZSRadioGroup, ZSSwitch, ZSAboveKeyboard, ZSSkeleton 등
-- **Overlay 관리**: Alert, BottomSheet, Snackbar, Loader, Modality, PopOver를 선언적으로 관리 가능
-- **순수 JavaScript**: 네이티브 의존성 없음, Expo managed workflow 완벽 지원
-- **접힘 디바이스 지원**: iOS/Android 네이티브 스타일 자동 적응
-- **완벽한 테스트**: 123개 테스트, 100% 통과율, ~94% 코드 커버리지
+- 다크 모드와 커스터마이징 가능한 색상 팔레트, 의미론적 타이포그래피 토큰 지원
+- ZSView, ZSContainer, ZSText, ZSTextField, ZSPressable, ZSBlockButton, ZSRadioGroup, ZSSwitch, ZSAboveKeyboard, ZSSkeleton 등 기본 UI 컴포넌트 제공
+- iOS/Android 환경과 접힘 디바이스에 맞는 스타일 자동 적응 지원
 
-<br>
+## 데모
+
+<div style={{
+  display: 'flex',
+  overflowX: 'auto',
+  gap: '20px',
+  padding: '0 10px 0 0'
+}}>
+  <div style={{
+    minWidth: '300px',
+    flexShrink: 0
+  }}>
+    <video controls width="300">
+      <source src="/assets/img/projects/theme.mp4" type="video/mp4" />
+    </video>
+    <p>Theme</p>
+  </div>
+  <div style={{
+    minWidth: '300px',
+    flexShrink: 0
+  }}>
+    <video controls width="300">
+      <source src="/assets/img/projects/layout.mp4" type="video/mp4" />
+    </video>
+    <p>Layout</p>
+  </div>
+  <div style={{
+    minWidth: '300px',
+    flexShrink: 0
+  }}>
+    <video controls width="300">
+      <source src="/assets/img/projects/overlay.mp4" type="video/mp4" />
+    </video>
+    <p>Overlay</p>
+  </div>
+</div>
