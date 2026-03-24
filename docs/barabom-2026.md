@@ -11,11 +11,11 @@ Expo 기반으로 재설계한 반려동물 건강수첩 | 2026.03
 
 ## 🌐 관련 링크
 
-|   |   |
-|---|---|
-| 🌍 홈페이지 | [barabom.me](https://barabom.me) |
-| 🤖 Android | [Play Store 다운로드](https://play.google.com/store/apps/details?id=com.rn_drpet) |
-| 🍎 iOS | [App Store 다운로드](https://apps.apple.com/kr/app/id1516235091) |
+|            |                                                                                   |
+| ---------- | --------------------------------------------------------------------------------- |
+| 🌍 홈페이지 | [barabom.me](https://barabom.me)                                                  |
+| 🤖 Android  | [Play Store 다운로드](https://play.google.com/store/apps/details?id=com.rn_drpet) |
+| 🍎 iOS      | [App Store 다운로드](https://apps.apple.com/kr/app/id1516235091)                  |
 
 ## 프로젝트 개요
 
@@ -27,14 +27,15 @@ Expo 기반으로 재설계한 반려동물 건강수첩 | 2026.03
 
 ## 🛠 기술 스택
 
-| 분야 | 기술 |
-|------|------|
+| 분야              | 기술                         |
+| ----------------- | ---------------------------- |
 | 모바일 프레임워크 | React Native 0.81.5, Expo 54 |
-| 언어 | TypeScript |
-| 백엔드 | Kotlin, Spring Boot |
-| 상태/데이터 | Zustand, React Query 5 |
-| UI/디자인 시스템 | @0610studio/zs-ui |
-| 배포/운영 | EAS |
+| 언어              | TypeScript                   |
+| 상태/데이터       | Zustand, React Query 5       |
+| UI/디자인 시스템  | @0610studio/zs-ui            |
+| 배포/운영         | EAS, GitAction                          |
+| 백엔드            | Kotlin, Spring Boot          |
+| 인프라        | AWS                          |
 
 ## 주요 경험
 
@@ -52,18 +53,31 @@ Expo 기반으로 재설계한 반려동물 건강수첩 | 2026.03
 
 ## 스크린샷
 
-|  |  |
-|---|---|
+|                                                                             |                                                                             |
+| --------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
 | ![바라봄 V26 스크린샷 1](/assets/img/projects/barabom_v26_screenshot_1.png) | ![바라봄 V26 스크린샷 2](/assets/img/projects/barabom_v26_screenshot_2.png) |
 | ![바라봄 V26 스크린샷 3](/assets/img/projects/barabom_v26_screenshot_3.png) | ![바라봄 V26 스크린샷 4](/assets/img/projects/barabom_v26_screenshot_4.png) |
 | ![바라봄 V26 스크린샷 5](/assets/img/projects/barabom_v26_screenshot_5.png) | ![바라봄 V26 스크린샷 6](/assets/img/projects/barabom_v26_screenshot_6.png) |
 
-## 데모
+## 시연 영상
 
-<video controls playsinline preload="metadata" width="100%">
+React Query prefetch와 staleTime 기반 캐싱을 적용해, 로딩 없이 즉시 데이터를 보여주고 백그라운드에서 최신 상태로 자연스럽게 갱신되는 사용자 경험 제공.
+
+<div style={{
+  display: 'flex',
+  overflowX: 'auto',
+  gap: '20px',
+  padding: '0 10px 0 0'
+}}>
+<video controls playsinline preload="metadata" width="40%">
+  <source src="/assets/img/projects/barabom_v26_prefetch.mp4" type="video/mp4" />
+  브라우저가 video 태그를 지원하지 않습니다.
+</video>
+<video controls playsinline preload="metadata" width="47%">
   <source src="/assets/img/projects/barabom_v26_realtime.mp4" type="video/mp4" />
   브라우저가 video 태그를 지원하지 않습니다.
 </video>
+</div>
 
 ## 참고 자료
 
