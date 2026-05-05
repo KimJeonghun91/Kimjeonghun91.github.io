@@ -16,6 +16,7 @@ const sidebars: SidebarsConfig = {
   // 프로젝트 문서들을 루트 수준(아코디언 없이)으로 노출
   tutorialSidebar: [
     'barabom-2026',
+    'expo-skia-date-wheel-picker',
     'barabom',
     'cycle',
     'iot',

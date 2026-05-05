@@ -26,6 +26,15 @@ const projects: Project[] = [
     links: [],
   },
   {
+    id: 'expo-skia-date-wheel-picker',
+    title: 'Expo Skia Date Wheel Picker',
+    caption: 'Skia overlay와 즉시 콜백을 지원하는 Expo 날짜/시간 휠 피커',
+    date: '2026.05',
+    image: '/assets/img/projects/expo-skia-date-wheel-picker.gif',
+    tech: 'React Native, Expo, TypeScript, Skia',
+    links: [ ],
+  },
+  {
     id: 'zs-ui',
     title: 'ZS-ui',
     caption: 'React Native Expo UI 컴포넌트 라이브러리',
