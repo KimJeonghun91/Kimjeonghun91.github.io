@@ -2,6 +2,10 @@ reactnative:
   label: 'React Native'
   description: 'React Native 관련 포스트'
 
+expo:
+  label: 'Expo'
+  description: 'Expo 관련 포스트'
+
 javascript:
   label: 'JavaScript'
   description: 'JavaScript 및 ES6+ 포스트'
