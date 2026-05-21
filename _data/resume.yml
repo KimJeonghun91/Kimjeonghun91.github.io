@@ -19,13 +19,12 @@ basics:
     - Feature-Sliced Design(FSD) 기반 앱 아키텍처 적용 및 구조 개선<br>
     - 개발 생산성 향상을 위한 CI/CD, E2E 테스트, 프론트엔드 컨벤션 구축<br>
     - React Query 캐싱 최적화 및 앱 구조 개선<br>
-    - 디자인 시스템 개발 및 ZS-ui 분리<br>
-    - 위젯 개발<br>
+    - 디자인 시스템 개발 및 오픈소스 패키지 분리<br>
+    - Expo Module로 iOS, Android 위젯 개발<br>
     - Live Activity(iOS) / Ongoing Notification(Android) 개발<br>
     - 백그라운드 GPS 위치 추적 기능 개발<br>
     - WebRTC 영상 통화(STUN/TURN) 개발<br>
     - 인앱 결제 및 구독 기능 개발<br>
-    - Expo 빌드 구조를 파악하기 위해 직접 jadx로 APK를 디컴파일하고 Hermes 바이트코드 번들을 hermes-dec으로 디컴파일하며 Expo 앱의 동작 방식을 이해<br>
   location:
     address: ""
     postalCode: ""
@@ -60,11 +59,13 @@ work:
       - iOS/Android 위젯 기능을 개발해 사용자 접점을 확장하고, 사내 기능 검토용 POC로도 활용
       - Live Activity(iOS) / Ongoing Notification(Android) 기능을 개발해 실시간 상태 전달 경험을 강화하고, 사내 기능 검토용 POC로도 활용
   - company: "EVERON"
-    position: "IT센터 FE팀"
+    position: "IT개발실"
     website: ""
     startDate: "2023-09-18"
     summary: >
-      앱 유지보수와 고도화는 물론, 개발환경 개선과 배포 자동화, 품질 체계 정비를 담당했습니다.
+          앱 개발자 포지션으로, 운영 중인 서비스에서 데이터 흐름·상태 관리·지도 기반 UI·배포 품질 체계를 함께 개선해 왔습니다.
+          전국 2만 개 이상 충전소 데이터를 OpenSearch/Naver Maps 기반으로 렌더링·클러스터링하고, React Query 캐싱과 상태 흐름을 정비해 대량 위치 데이터 탐색 경험을 개선했습니다.
+          지도·차트·실시간 상태·디자인 시스템을 결합해 운영자가 빠르게 상황을 판단하고, 일관된 품질로 서비스를 확장할 수 있는 프론트엔드 기반을 만들었습니다.
     highlights:
       - React Native 0.70 기반 레거시 앱을 Expo 53으로 마이그레이션하며 복잡한 네이티브 의존성과 배포 구조를 재정비
       - GitHub Actions + EAS 기반 배포 파이프라인을 구축해 반복 빌드·배포 작업을 자동화하고 개발 생산성을 개선
@@ -72,6 +73,7 @@ work:
       - Appium에서 Maestro로 E2E 테스트 도구를 전환하고 주요 사용자 흐름 검증 체계를 구축해 품질 관리 효율을 높임
       - React Query 캐싱 구조와 사용 방식을 개선해 앱 사용성과 데이터 흐름 최적화
       - ESLint, Prettier, 네이밍·구조 규칙을 포함한 프론트엔드 컨벤션을 정리하고 프로젝트에 적용
+      - OpenSearch 기반 전국 2만개 이상 충전소 데이터를 지도 마커로 렌더링하고 클러스터링하는 기능 개발
   - company: "DEV-EDU"
     position: "개발팀"
     website: ""
